@@ -63,7 +63,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._state.Add(PlayerState.Walk);
         else
             this._state.Remove(PlayerState.Walk);
-        if (run)
+        if (walk && run)
             this._state.Add(PlayerState.Run);
         else
             this._state.Remove(PlayerState.Run);
