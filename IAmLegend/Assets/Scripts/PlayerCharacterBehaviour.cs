@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-enum PlayerState { Walk, Run }
+enum PlayerState { Walk, Run, Die }
 
 /// <summary>
 /// Class <c>PlayerCharacterBehaviour</c> implements player character actions.
@@ -14,13 +14,18 @@ enum PlayerState { Walk, Run }
 /// </remarks>
 public class PlayerCharacterBehaviour : MonoBehaviour
 {
+    public void TakeDamage(float damage)
+    {
+        this.healthPoints -= damage;
+    }
+
     private static readonly int IsRunning = Animator.StringToHash(("isRunning"));
     private static readonly int IsWalking = Animator.StringToHash(("isWalking"));
     private static readonly int Shoot = Animator.StringToHash(("shoot"));
-    private static readonly int Bash = Animator.StringToHash(("bash"));
     
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
+    [SerializeField] private float healthPoints = 100;
     
     private Animator _animator;
     private Camera _camera;
@@ -30,6 +35,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private float _speed;
     private int _layerMaskFloor;
     private bool _hasPistol;
+    private static readonly int IsDead = Animator.StringToHash("isDead");
 
 
     void Start()
@@ -47,9 +53,17 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     void Update()
     {
-        this._setState();
-        this._rotate();
-        this._move();
+        if (!this._state.Contains(PlayerState.Die))
+        {
+            this._setState();
+            this._rotate();
+            this._move();
+            this._debugBehaviour();
+        }
+        else
+        {
+            this._animator.SetBool(IsDead, true);
+        }
     }
 
     /// <summary>
@@ -60,6 +74,13 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     private void _setState()
     {
+        if (this.healthPoints <= 0)
+        {
+            this._state.Remove(PlayerState.Run);
+            this._state.Remove(PlayerState.Walk);
+            this._state.Add(PlayerState.Die);
+            return;
+        }
         bool walk = Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0;
         bool run = Input.GetAxis("Fire3") != 0;
         if (walk && !run)
@@ -117,6 +138,23 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         } 
         this._animator.SetBool(IsWalking, isWalking);
         this._animator.SetBool(IsRunning, isRunning);
+    }
+
+    private void _debugBehaviour()
+    {
+        Ray pointerRay = _camera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(pointerRay, out RaycastHit hit, 100f))
+        {
+            this._lookPoint = hit.point;
+            // Avoid rapid rotation when the cursor is over the character
+            if (Vector3.Distance(this._lookPoint, this.transform.position) > 0.2f)
+            {
+                if (hit.collider != null && hit.collider.gameObject == this.gameObject)
+                {
+                    if (Input.GetAxisRaw("Fire1") != 0f) this.TakeDamage(10);
+                }
+            }
+        }
     }
 
 }
