@@ -16,6 +16,8 @@ public class PlayerCharacterBehaviour : MonoBehaviour
 {
     private static readonly int IsRunning = Animator.StringToHash(("isRunning"));
     private static readonly int IsWalking = Animator.StringToHash(("isWalking"));
+    private static readonly int Shoot = Animator.StringToHash(("shoot"));
+    private static readonly int Bash = Animator.StringToHash(("bash"));
     
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
@@ -27,6 +29,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private Vector3 _lookPoint;
     private float _speed;
     private int _layerMaskFloor;
+    private bool _hasPistol;
 
 
     void Start()

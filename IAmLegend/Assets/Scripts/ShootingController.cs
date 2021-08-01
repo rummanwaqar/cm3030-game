@@ -9,12 +9,20 @@ public class ShootingController : MonoBehaviour
     public float waitTime = 0.4f;
 
     private float _lastShotTime = 0;
+    private Animator _animator;
+    private static readonly int Shoot = Animator.StringToHash("shoot");
+
+    void Start()
+    {
+        this._animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
         if (Input.GetAxisRaw("Fire1") != 0f)
         {
             _shoot();
+            this._animator.SetTrigger(Shoot);
         }
     }
 
