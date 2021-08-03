@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 enum PlayerState { Walk, Run, Die }
@@ -26,6 +28,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
     [SerializeField] private float healthPoints = 100;
+    [SerializeField] private GameObject weapon;
     
     private Animator _animator;
     private Camera _camera;
@@ -36,6 +39,8 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private int _layerMaskFloor;
     private bool _hasPistol;
     private static readonly int IsDead = Animator.StringToHash("isDead");
+    private static readonly int HasPistol = Animator.StringToHash("hasPistol");
+    private GameObject _droppedWeapon;
 
 
     void Start()
@@ -46,8 +51,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._speed = this.baseSpeed;
         this._animator = GetComponent<Animator>();
         this._state = new HashSet<PlayerState> { };
+        this._animator.SetBool(HasPistol, true);
     }
-
+    
     /// <summary>
     /// Executes methods that need to be executed at each frame.
     /// </summary>
@@ -64,6 +70,60 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         {
             this._animator.SetBool(IsDead, true);
         }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Item"))
+        {
+            if (other.gameObject.CompareTag("Weapon"))
+            {
+                this._handleCollideWeapon(other.gameObject);
+            }
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.gameObject == this._droppedWeapon)
+        {
+            this._droppedWeapon = null;
+        }
+    }
+
+    
+    private void _grabWeapon(GameObject droppedWeapon)
+    {
+        if (this.weapon == null && droppedWeapon != this._droppedWeapon)
+        {
+            if (droppedWeapon.tag.Contains("Weapon"))
+            {
+                this.weapon = droppedWeapon;
+                this.weapon.transform.SetPositionAndRotation(
+                    new Vector3(0, 0, 0),
+                    new Quaternion(0, 0, 0, 0)
+                    );
+                GameObject handContainer = GameObject.Find(
+                    "PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container"
+                    );
+                this.weapon.transform.SetParent(handContainer.transform, false);
+            }
+        }
+    }
+
+    private void _dropWeapon()
+    {
+        Transform tr = this.transform;
+        Vector3 position = tr.position;
+        if (this.weapon != null)
+        {
+            // Set the parent of the dropped weapon to be the same as the parent of the player character.
+            this.weapon.transform.SetParent(tr.parent, false);
+            // Move the dropped weapon to the floor
+            this.weapon.transform.position = new Vector3( position.x, 0, position.z - 2);
+        }
+        this._droppedWeapon = this.weapon;
+        this.weapon = null;
     }
 
     /// <summary>
@@ -156,5 +216,12 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             }
         }
     }
+
+    private void _handleCollideWeapon(GameObject droppedWeapon)
+    {
+        this._dropWeapon();
+        this._grabWeapon(droppedWeapon.gameObject);
+    }
+
 
 }

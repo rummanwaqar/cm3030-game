@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Item")) return;
         Destroy(this.gameObject);
     }
 }
