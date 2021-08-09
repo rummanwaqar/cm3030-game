@@ -20,15 +20,11 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     {
         this.healthPoints -= damage;
     }
-
-    private static readonly int IsRunning = Animator.StringToHash(("isRunning"));
-    private static readonly int IsWalking = Animator.StringToHash(("isWalking"));
-    private static readonly int Shoot = Animator.StringToHash(("shoot"));
     
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
     [SerializeField] private float healthPoints = 100;
-    [SerializeField] private GameObject weapon;
+    public GameObject weapon;
     
     private Animator _animator;
     private Camera _camera;
@@ -41,6 +37,11 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int IsDead = Animator.StringToHash("isDead");
     private static readonly int HasPistol = Animator.StringToHash("hasPistol");
     private GameObject _droppedWeapon;
+    private static readonly int Die = Animator.StringToHash("die");
+    private static readonly int Walk = Animator.StringToHash("walk");
+    private static readonly int Run = Animator.StringToHash("run");
+    private static readonly int Shoot = Animator.StringToHash(("shoot"));
+    private static readonly int Stop = Animator.StringToHash("stop");
 
 
     void Start()
@@ -51,7 +52,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._speed = this.baseSpeed;
         this._animator = GetComponent<Animator>();
         this._state = new HashSet<PlayerState> { };
-        this._animator.SetBool(HasPistol, true);
+        this._animator.SetBool(HasPistol, false);
     }
     
     /// <summary>
@@ -68,7 +69,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         }
         else
         {
-            this._animator.SetBool(IsDead, true);
+            this._animator.SetTrigger(Die);
         }
     }
     
@@ -92,6 +93,10 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     }
 
     
+    /// <summary>
+    /// Grab items dropped on the floor.
+    /// </summary>
+    /// <param name="droppedWeapon"></param>
     private void _grabWeapon(GameObject droppedWeapon)
     {
         if (this.weapon == null && droppedWeapon != this._droppedWeapon)
@@ -103,10 +108,12 @@ public class PlayerCharacterBehaviour : MonoBehaviour
                     new Vector3(0, 0, 0),
                     new Quaternion(0, 0, 0, 0)
                     );
+                // Add newly grabbed item to the right hand container.
                 GameObject handContainer = GameObject.Find(
                     "PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container"
                     );
                 this.weapon.transform.SetParent(handContainer.transform, false);
+                this._animator.SetBool(HasPistol, true);
             }
         }
     }
@@ -124,6 +131,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         }
         this._droppedWeapon = this.weapon;
         this.weapon = null;
+        this._animator.SetBool(HasPistol, false);
     }
 
     /// <summary>
@@ -139,6 +147,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._state.Remove(PlayerState.Run);
             this._state.Remove(PlayerState.Walk);
             this._state.Add(PlayerState.Die);
+            this._animator.SetTrigger(Die);
             return;
         }
         bool walk = Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0;
@@ -195,9 +204,14 @@ public class PlayerCharacterBehaviour : MonoBehaviour
                 movement.normalized *
                     (this._speed * Time.deltaTime)
                 );
-        } 
-        this._animator.SetBool(IsWalking, isWalking);
-        this._animator.SetBool(IsRunning, isRunning);
+            if (isWalking) this._animator.SetTrigger(Walk);
+            if (isRunning) this._animator.SetTrigger(Run);
+        }
+        else
+        {
+            this._animator.SetTrigger(Stop);
+        }
+
     }
 
     private void _debugBehaviour()
