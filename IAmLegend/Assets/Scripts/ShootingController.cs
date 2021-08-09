@@ -11,14 +11,17 @@ public class ShootingController : MonoBehaviour
     private float _lastShotTime = 0;
     private Animator _animator;
     private static readonly int Shoot = Animator.StringToHash("shoot");
+    private PlayerCharacterBehaviour _characterBehaviour;
 
     void Start()
     {
         this._animator = GetComponent<Animator>();
+        this._characterBehaviour = GetComponent<PlayerCharacterBehaviour>();
     }
 
     private void Update()
     {
+        if (!this._characterBehaviour.weapon) return;
         if (Input.GetAxisRaw("Fire1") != 0f)
         {
             _shoot();
