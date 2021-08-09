@@ -534,6 +534,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 95139892970602600}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1001 &95139892970602600
 PrefabInstance:
   m_ObjectHideFlags: 0
