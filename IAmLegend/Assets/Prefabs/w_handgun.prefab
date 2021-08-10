@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3525680324292770309}
   - component: {fileID: 3525680324295637903}
   - component: {fileID: 3525680324294539727}
-  m_Layer: 0
+  - component: {fileID: 7150727424299642023}
+  m_Layer: 10
   m_Name: w_handgun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,3 +81,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7150727424299642023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525680324292535845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4967349, y: 0.1730956, z: 0.7669114}
+  m_Center: {x: 0.004245535, y: -0.0043927957, z: 0.20793766}
