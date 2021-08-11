@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 0f5dfb8be5c39b946b61e27c2e1912f4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 99227254f8e02c1408bcee0ce7dadc9e, type: 2}
 --- !u!1 &155454876
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,8 +639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1190601789873990, guid: 7be131ba3625b464e93d4c806f74022e, type: 3}
   startTime: 1
-  spawnRate: 1.5
-  endTime: 6
+  spawnRate: 2
+  endTime: 20
 --- !u!4 &386565648
 Transform:
   m_ObjectHideFlags: 0

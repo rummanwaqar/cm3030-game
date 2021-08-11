@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Weapon
   - Gun
+  - Enemy
+  - Dog
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - 
   - 
   - Floor
-  - Player
   - Item
-  - 
+  - Player
+  - Walls
   - 
   - 
   - 
