@@ -177,9 +177,9 @@ public class EnemyBehaviour : MonoBehaviour
     private void ReceiveDamage( float damage )
     {
         
-        health -= damage;           // Update health
-        health /= 100;              // Normalize the value
-        healthbar.value = health;
+        health -= damage;                           // Update health
+        float healthNormalized = ( health / 100 );  // Normalize the value
+        healthbar.value = healthNormalized;
     }
 
     private void DealDamage()
