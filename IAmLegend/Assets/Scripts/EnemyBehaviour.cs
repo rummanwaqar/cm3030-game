@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿#undef DEBUG
+//#define DEBUG
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,7 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     private enum EnemyState { Idle, ChaseTarget, AttackTarget, GotHit, Dead }
 
-    // AI & navigation
+    [Header("AI & Navigation")]
     [SerializeField] private float distanceSight;
     [SerializeField] private float distanceAttack;
     [SerializeField] private float angleView;
@@ -17,12 +20,12 @@ public class EnemyBehaviour : MonoBehaviour
     private Collider detectedTarget;
     private NavMeshAgent agent;
 
-    // Health & damage
+    [Header("Health & Damage")]
     [SerializeField] private float bulletDamage;
     [SerializeField] private float deathAnimationTime;
     [SerializeField] private float health;
     [SerializeField] private Slider healthbar;
-    
+
     // Animation
     private EnemyState enemyCurrentState;
     private Animator animator;
@@ -202,15 +205,15 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    //#if UNITY_EDITOR
-    //    // visual gizmos
-    //    private void OnDrawGizmos()
-    //    {
-    //        {
-    //            // Display how far the zombie can see
-    //            Gizmos.color = Color.red;
-    //            Gizmos.DrawSphere(transform.position, distanceSight);
-    //        }
-    //    }
-    //#endif
+#if DEBUG
+    // visual gizmos
+    private void OnDrawGizmos()
+    {
+        {
+            // Display how far the zombie can see
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(transform.position, distanceSight);
+        }
+    }
+#endif
 }
