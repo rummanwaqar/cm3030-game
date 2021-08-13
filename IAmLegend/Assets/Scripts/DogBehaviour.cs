@@ -3,87 +3,165 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-enum DogState { Walk, Attack, nearPlayer, Hit, Dead }
-
 public class DogBehaviour : MonoBehaviour
 {
+    #region Variables
+    [Header("AI & Navigation")]
     [SerializeField] GameObject followTarget;
-
-    private static readonly int IsWalking = Animator.StringToHash(("isWalking"));
-    private static readonly int IsNearPlayer = Animator.StringToHash(("isNearPlayer"));
-    private static readonly int IsAttacking = Animator.StringToHash(("isAttacking"));
-    private static readonly int IsHit = Animator.StringToHash(("isHit"));
-    private static readonly int IsDead = Animator.StringToHash(("isDead"));
-    
-    private Animator animator;
+    [SerializeField] private float radiusToStartFollow; // The dog will start follow the player
+    [SerializeField] private float radiusToSit;         // Distance to the player
+    [SerializeField] private float delayTimeFSM;
     private NavMeshAgent agent;
-    private HashSet<DogState> state;
 
-    private Vector3 posPlayer;
-    private Vector3 posDog;
+    [Header("Attacking Targets")]
+    [SerializeField] private float distanceSight;
+    [SerializeField] private float distanceAttack;
+    [SerializeField] private float angleView;
+    [SerializeField] private LayerMask targetsLayers;
+    [SerializeField] private LayerMask obstaclesLayers;
+    private Collider detectedTarget;
+    private bool attackTarget;
 
-    // Distance between the player and the dog which the dog will go up and follow him
-    [SerializeField] private float radiusToFollow;
-    // Distance between the player and the dog which the dog will sit
-    [SerializeField] private float radiusToSit;
-    // Distance between the player and the enemies to attack
-    [SerializeField] private float radiusToAttack;
+    [Header("Health & Damage")]
+    [SerializeField] private float zombieDamage;
+    [SerializeField] private float deathAnimationTime;
+    [SerializeField] private float health;
+
+    // Animation
+    private Animator animator;
+    #endregion
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         this.animator = GetComponent<Animator>();
-        this.state = new HashSet<DogState> { };
         this.agent = GetComponent<NavMeshAgent>();
+        attackTarget = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.SetState();
-        this.Move();
+        StartCoroutine(this.ScanArea());        // Look for targets
+        StartCoroutine(this.UpdateState());     // FSM
     }
 
-    private void SetState()
+    private IEnumerator ScanArea()
+    {
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
+
+        // Get all the targets which the AI should attack
+        Collider[] targets = Physics.OverlapSphere(this.transform.position, this.distanceSight, this.targetsLayers);
+        detectedTarget = null;
+
+        // Iterate through all of them to see which target is close
+        for( int i = 0; i < targets.Length; i++ )
+        {
+            Collider target = targets[i];
+
+            // Calculate the distance to the target
+            Vector3 directionToTarget = Vector3.Normalize(target.bounds.center - this.transform.position);
+
+            // Calculate the angle view between the AI and the target
+            float angleToTarget = Vector3.Angle(this.transform.forward, directionToTarget);
+
+            // Check if the target is in the view angle of the AI
+            if( angleToTarget < angleView )
+            {
+                // Check if there are any obstacles between the AI and the target
+                if( !Physics.Linecast(this.transform.position, target.bounds.center, this.obstaclesLayers) )
+                {
+                    // The target was detected
+                    detectedTarget = target;
+                    break;
+                }
+            }
+        }
+    }
+
+    private IEnumerator UpdateState()
+    {
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
+
+        float distanceFromPlayer = GetDistanceFromPlayer();
+
+        if( this.health <= 0 )
+        {
+            // No health, die
+            StartCoroutine(Dead());
+        }
+        else if( distanceFromPlayer >= radiusToStartFollow )
+        {
+            // Walk to the player
+            Walk(followTarget.transform.position);
+        }
+        else if( this.detectedTarget != null && attackTarget == true )
+        {
+            // If a target was detected, attack
+            Attack();
+        }
+        else if( distanceFromPlayer <= radiusToSit )
+        {
+            Idle();
+        }
+    }
+
+    private float GetDistanceFromPlayer()
     {
         // Get the current position of the player and the dog
-        posPlayer = followTarget.transform.position;
-        posDog = transform.position;
+        Vector3 posPlayer = followTarget.transform.position;
+        Vector3 posDog = transform.position;
 
-        // Using the distance formula to calculate each axis
-        float distanceX = Mathf.Pow(posPlayer.x - posDog.x, 2);
-        float distanceZ = Mathf.Pow(posPlayer.z - posDog.z, 2);
-        float distance = Mathf.Pow(distanceX + distanceZ, 0.5f);
-
-        // If the distance radius is bigger than 'radiusToIdle', the dog shall go to his master
-        if( distance >= radiusToFollow )
-            this.state.Add(DogState.Walk);
-
-        // If the dog is close enough to the player, the dog shall sit
-        if( distance <= radiusToSit )
-        {
-            this.state.Add(DogState.nearPlayer);
-            this.state.Remove(DogState.Walk);
-        }
-        else
-            this.state.Remove(DogState.nearPlayer);
+        // Return the result from the distance
+        return Mathf.Abs(Vector3.Distance(posPlayer, posDog));
     }
 
-    private void Move()
+    private void Idle()
     {
-        // Update the logic state based on _setState()
-        bool isWalking = this.state.Contains(DogState.Walk);
-        bool isNearPlayer = this.state.Contains(DogState.nearPlayer);
-
-        if( isWalking )
-        {
-            // Pathfinding algorithm (the terrain must be baked first)
-            Vector3 offset = new Vector3(1f, 0, 1f);  // to avoid collisions with the player
-            agent.SetDestination(posPlayer - offset);
-        }
-
         // Update animations
-        this.animator.SetBool(IsWalking, isWalking);
-        this.animator.SetBool(IsNearPlayer, isNearPlayer);
+        this.agent.isStopped = true;
+        this.animator.SetBool("Walking", false);
+        this.animator.SetBool("Idle", true);
+    }
+
+    private void Walk(Vector3 _posPLayer)
+    {
+        // Update animations
+        this.agent.isStopped = false;
+        this.animator.SetBool("Idle", false);
+        this.animator.SetBool("Walking", true);
+
+        // Pathfinding algorithm
+        Vector3 offset = new Vector3(1f, 0, 1f);  // Avoid collisions with the player
+        agent.SetDestination(_posPLayer - offset);
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Attacking");
+
+        // If the target is close, deal damange
+        DealDamage();
+    }
+
+    private void DealDamage()
+    {
+        // Call external functions: Target.damage()
+    }
+
+    private void ReceiveDamage(float damage)
+    {
+        Debug.Log("Damage");
+    }
+
+    private IEnumerator Dead()
+    {
+        // Play death animation manually
+        animator.Play("death");
+
+        // Wait for the death animation to finish
+        yield return new WaitForSeconds(deathAnimationTime);
     }
 }

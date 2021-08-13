@@ -9,14 +9,15 @@ using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    private enum EnemyState { Idle, ChaseTarget, AttackTarget, GotHit, Dead }
+    #region Variables
 
-    [Header("AI & Navigation")]
+    [Header("AI, Navigation & Attacking")]
     [SerializeField] private float distanceSight;
-    [SerializeField] private float distanceAttack;
+    [SerializeField] private float distanceToAttack;
     [SerializeField] private float angleView;
     [SerializeField] private LayerMask targetsLayers;
     [SerializeField] private LayerMask obstaclesLayers;
+    [SerializeField] float delayTimeFSM;
     private Collider detectedTarget;
     private NavMeshAgent agent;
 
@@ -27,7 +28,6 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private Slider healthbar;
 
     // Animation
-    private EnemyState enemyCurrentState;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -35,22 +35,26 @@ public class EnemyBehaviour : MonoBehaviour
     {
         this.agent = GetComponent<NavMeshAgent>();
         this.animator = GetComponent<Animator>();
-        this.enemyCurrentState = EnemyState.Idle;    // Enemy is idle on initial spawn
     }
+    #endregion
 
     // Update is called once per frame
     void Update()
     {
-        this.ScanArea();     // Look for targets
-        this.UpdateState();  // FSM
+        StartCoroutine(this.ScanArea());        // Look for targets
+        StartCoroutine(this.UpdateState());     // FSM
     }
 
-    private void ScanArea()
+    private IEnumerator ScanArea()
     {
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
+
         // Get all the targets which the AI should attack
         Collider[] targets = Physics.OverlapSphere(this.transform.position, this.distanceSight, this.targetsLayers);
-
         detectedTarget = null;
+
+        // Iterate through all of them to see which target is close
         for( int i = 0; i < targets.Length; i++ )
         {
             Collider target = targets[i];
@@ -62,7 +66,7 @@ public class EnemyBehaviour : MonoBehaviour
             float angleToTarget = Vector3.Angle(this.transform.forward, directionToTarget);
 
             // Check if the target is in the view angle of the AI
-            if( angleToTarget < angleView )
+            if( angleToTarget < this.angleView )
             {
                 // Check if there are any obstacles between the AI and the target
                 if( !Physics.Linecast(this.transform.position, target.bounds.center, this.obstaclesLayers) )
@@ -75,97 +79,85 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    // Update the enemy's state
-    private void UpdateState()
+    private IEnumerator UpdateState()
     {
-        if( enemyCurrentState == EnemyState.Dead || health <= 0 )
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
+
+        float distanceToTarget = GetDistanceToTarget(detectedTarget);
+
+        if( this.health <= 0 )
+        {
             StartCoroutine(Dead());
-        else if( enemyCurrentState == EnemyState.Idle )
-            Idle();
-        else if( enemyCurrentState == EnemyState.ChaseTarget )
-            ChaseTarget();
-        else if( enemyCurrentState == EnemyState.AttackTarget )
+        }
+        // Attack near targets
+        else if( this.detectedTarget != null && distanceToTarget < distanceToAttack )
+        {
             AttackTarget();
-        else if( enemyCurrentState == EnemyState.GotHit )
-            ReceiveDamage(50);
+        }
+        // If a target was detected, chase him
+        else if( this.detectedTarget != null )
+        {
+            ChaseTarget();
+        }
+        // else if --> ReceiveDamage(bulletDamage);
+        else
+        {
+            Idle(); // or patrol?
+        }
+    }
+
+    private float GetDistanceToTarget( Collider _detectedTarget )
+    {
+        if( _detectedTarget != null )
+        {
+            // Calculate the distance to the target
+            Vector3 posEnemy = this.transform.position;
+            Vector3 postTarget = _detectedTarget.transform.position;
+
+            return Mathf.Abs(Vector3.Distance(posEnemy, postTarget));
+        }
+
+        return -1;  // unusable value
     }
 
     private void Idle()
     {
-        // If target was detected, chase him
-        if( this.detectedTarget != null )
-        {
-            // Target detected, chase him
-            this.enemyCurrentState = EnemyState.ChaseTarget;
-            return;
-        }
-        else if( this.health <= 0 )
-        {
-            // No health, die
-            this.enemyCurrentState = EnemyState.Dead;
-            return;
-        }
-
         this.agent.isStopped = true;
-        this.animator.SetTrigger("Idle");
+        this.animator.SetBool("Walking", false);
+        this.animator.SetBool("Idle", true);
     }
 
     private void ChaseTarget()
     {
-        // If target wasn't detected, be idle
-        if( this.detectedTarget == null )
-        {
-            this.enemyCurrentState = EnemyState.Idle;
-            return;
-        }
-        else if( this.health <= 0 )
-        {
-            // No health, die
-            this.enemyCurrentState = EnemyState.Dead;
-            return;
-        }
-
-        // Calculate the distance to the target
-        float distanceToTarget = Vector3.Distance(this.transform.position, this.detectedTarget.transform.position);
-        this.agent.SetDestination(this.detectedTarget.transform.position);
-
-        // Attack the near targets
-        if( Mathf.Abs(distanceToTarget) < distanceAttack )
-            this.AttackTarget();
-        else
-        {
-            // Chase the target
-            this.agent.isStopped = false;
-            this.animator.SetTrigger("Walking");
-        }
+        this.agent.isStopped = false;
+        this.agent.SetDestination(detectedTarget.transform.position);
+        this.animator.SetBool("Idle", false);
+        this.animator.SetBool("Walking", true);
     }
 
     private void AttackTarget()
     {
-        // If target wasn't detected, be idle
-        if( this.detectedTarget == null )
-        {
-            this.enemyCurrentState = EnemyState.Idle;
-            return;
-        }
-        else if( this.health <= 0 )
-        {
-            // No health, die
-            this.enemyCurrentState = EnemyState.Dead;
-            return;
-        }
-
         this.agent.isStopped = true;
         this.animator.SetTrigger("Attacking");
 
         // If the target is close, deal damange
         DealDamage();
     }
+    private void DealDamage()
+    {
+        // Call external functions: Target.damage()
+    }
+
+    private void ReceiveDamage( float damage )
+    {
+        health -= damage;                           // Update health
+        float healthNormalized = (health / 100);    // Normalize the value
+        healthbar.value = healthNormalized;
+    }
 
     private IEnumerator Dead()
     {
-        this.agent.isStopped = true;
-
         // Play death animation manually
         animator.Play("zombie_death_standing");
 
@@ -174,21 +166,6 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Delete the zombie from the scene
         Destroy(gameObject);
-    }
-
-    // The zombie was attacked successfully
-    private void ReceiveDamage( float damage )
-    {
-        
-        health -= damage;                           // Update health
-        float healthNormalized = ( health / 100 );  // Normalize the value
-        healthbar.value = healthNormalized;
-    }
-
-    private void DealDamage()
-    {
-        // Call external functions:
-        // Target.damage()
     }
 
     // Collision with tag bullets/ammo receive damage
