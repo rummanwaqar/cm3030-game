@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 54174046382449110}
   - component: {fileID: 136043099458248162}
   - component: {fileID: -4719584757538018700}
+  - component: {fileID: 2029544974028759515}
   - component: {fileID: 707510629}
   m_Layer: 12
   m_Name: ZombieSimple
@@ -744,6 +745,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2029544974028759515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190601789873990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e48c8c62ce23e4caa38ed526475e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!114 &707510629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,11 +779,14 @@ MonoBehaviour:
   obstaclesLayers:
     serializedVersion: 2
     m_Bits: 2048
-  delayTimeFSM: 0.5
-  bulletDamage: 20
+  detectedTarget: {fileID: 0}
+  damagePower: 10
+  attackingCountdown: 5
+  attackingRate: 0.5
   deathAnimationTime: 1.25
-  health: 100
-  healthbar: {fileID: 933284180}
+  healthSystem: {fileID: 2029544974028759515}
+  healthBar: {fileID: 933284180}
+  delayTimeFSM: 0.5
 --- !u!1 &1236329582464368
 GameObject:
   m_ObjectHideFlags: 0

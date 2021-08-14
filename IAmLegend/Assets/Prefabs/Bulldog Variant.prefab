@@ -48,18 +48,22 @@ MonoBehaviour:
   radiusToStartFollow: 5
   radiusToSit: 1.5
   delayTimeFSM: 0.5
-  distanceSight: 0
-  distanceAttack: 0
-  angleView: 0
+  distanceSight: 8
+  distanceToAttack: 2.5
+  angleView: 180
   targetsLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   obstaclesLayers:
     serializedVersion: 2
-    m_Bits: 0
-  zombieDamage: 0
-  deathAnimationTime: 0
-  health: 100
+    m_Bits: 2048
+  detectedTarget: {fileID: 0}
+  damagePower: 10
+  attackingCountdown: 5
+  attackingRate: 0.5
+  deathAnimationTime: 1.25
+  healthSystem: {fileID: 727668495049699423}
+  healthBar: {fileID: 0}
 --- !u!195 &2087457839
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -82,6 +86,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &727668495049699423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171820306135132964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e48c8c62ce23e4caa38ed526475e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &7171820306135231876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,7 +112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cff63f7b6e6f9af4395feaec4444d7f4, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cff63f7b6e6f9af4395feaec4444d7f4, type: 3}
       propertyPath: m_TagString

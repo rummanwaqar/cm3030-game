@@ -10,39 +10,42 @@ using UnityEngine.UI;
 public class EnemyBehaviour : MonoBehaviour
 {
     #region Variables
-
-    [Header("AI, Navigation & Attacking")]
+    [Header("Attacking Targets")]
     [SerializeField] private float distanceSight;
     [SerializeField] private float distanceToAttack;
     [SerializeField] private float angleView;
     [SerializeField] private LayerMask targetsLayers;
     [SerializeField] private LayerMask obstaclesLayers;
-    [SerializeField] float delayTimeFSM;
-    private Collider detectedTarget;
-    private NavMeshAgent agent;
+    [SerializeField] private HealthSystem detectedTarget;
+    [SerializeField] private float damagePower;
+    [SerializeField] private float attackingCountdown;
+    [SerializeField] private float attackingRate;
 
     [Header("Health & Damage")]
-    [SerializeField] private float bulletDamage;
     [SerializeField] private float deathAnimationTime;
-    [SerializeField] private float health;
-    [SerializeField] private Slider healthbar;
+    [SerializeField] private HealthSystem healthSystem;
+    [SerializeField] private Slider healthBar;
+    private float currentDamage;
 
+    [Header("AI")]
+    [SerializeField] float delayTimeFSM;
+    private NavMeshAgent agent;
     // Animation
     private Animator animator;
 
     // Start is called before the first frame update
     void Awake()
     {
-        this.agent = GetComponent<NavMeshAgent>();
-        this.animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
     #endregion
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(this.ScanArea());        // Look for targets
-        StartCoroutine(this.UpdateState());     // FSM
+        StartCoroutine(ScanArea());        // Look for targets
+        StartCoroutine(UpdateState());     // FSM
     }
 
     private IEnumerator ScanArea()
@@ -52,9 +55,8 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Get all the targets which the AI should attack
         Collider[] targets = Physics.OverlapSphere(this.transform.position, this.distanceSight, this.targetsLayers);
-        detectedTarget = null;
 
-        // Iterate through all of them to see which target is close
+        detectedTarget = null;
         for( int i = 0; i < targets.Length; i++ )
         {
             Collider target = targets[i];
@@ -66,13 +68,13 @@ public class EnemyBehaviour : MonoBehaviour
             float angleToTarget = Vector3.Angle(this.transform.forward, directionToTarget);
 
             // Check if the target is in the view angle of the AI
-            if( angleToTarget < this.angleView )
+            if( angleToTarget < angleView )
             {
                 // Check if there are any obstacles between the AI and the target
                 if( !Physics.Linecast(this.transform.position, target.bounds.center, this.obstaclesLayers) )
                 {
                     // The target was detected
-                    detectedTarget = target;
+                    detectedTarget = target.GetComponentInParent<HealthSystem>();
                     break;
                 }
             }
@@ -84,78 +86,115 @@ public class EnemyBehaviour : MonoBehaviour
         // Wait some time to prevent overloading
         yield return new WaitForSeconds(delayTimeFSM);
 
+        // Update variables for the FSM's decisions
         float distanceToTarget = GetDistanceToTarget(detectedTarget);
+        UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
 
-        if( this.health <= 0 )
+        // No health, die
+        if( healthSystem.GetHealth() <= 0 )
         {
             StartCoroutine(Dead());
         }
+        // If a damage is needed to be processed
+        else if( currentDamage != 0 )
+        {
+            healthSystem.SetDamage(currentDamage);
+            healthSystem.Hit();
+            currentDamage = 0;      // The damage was processed
+        }
         // Attack near targets
-        else if( this.detectedTarget != null && distanceToTarget < distanceToAttack )
+        else if( detectedTarget != null && distanceToTarget < distanceToAttack )
         {
             AttackTarget();
         }
         // If a target was detected, chase him
-        else if( this.detectedTarget != null )
+        else if( detectedTarget != null )
         {
             ChaseTarget();
         }
-        // else if --> ReceiveDamage(bulletDamage);
         else
         {
             Idle(); // or patrol?
         }
     }
 
-    private float GetDistanceToTarget( Collider _detectedTarget )
+    private float GetDistanceToTarget( HealthSystem _detectedTarget )
     {
         if( _detectedTarget != null )
         {
             // Calculate the distance to the target
-            Vector3 posEnemy = this.transform.position;
+            Vector3 posEnemy = transform.position;
             Vector3 postTarget = _detectedTarget.transform.position;
 
             return Mathf.Abs(Vector3.Distance(posEnemy, postTarget));
         }
 
-        return -1;  // unusable value
+        return 100;  // unusable value
     }
 
     private void Idle()
     {
-        this.agent.isStopped = true;
-        this.animator.SetBool("Walking", false);
-        this.animator.SetBool("Idle", true);
+        agent.isStopped = true;
+        animator.SetBool("Walking", false);
+        animator.SetBool("Idle", true);
     }
 
     private void ChaseTarget()
     {
-        this.agent.isStopped = false;
-        this.agent.SetDestination(detectedTarget.transform.position);
-        this.animator.SetBool("Idle", false);
-        this.animator.SetBool("Walking", true);
+        agent.isStopped = false;
+        agent.SetDestination(detectedTarget.transform.position);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walking", true);
     }
 
     private void AttackTarget()
     {
-        this.agent.isStopped = true;
-        this.animator.SetTrigger("Attacking");
+        agent.isStopped = true;
+        animator.SetTrigger("Attacking");
 
         // If the target is close, deal damange
         DealDamage();
     }
     private void DealDamage()
     {
-        // Call external functions: Target.damage()
+        // Countdown between attacks
+        if( attackingCountdown <= 0 )
+        {
+            detectedTarget.SetDamage(damagePower);
+            detectedTarget.Hit();
+            attackingCountdown = 1 / attackingRate;
+        }
+
+        attackingCountdown -= Time.deltaTime;
     }
 
-    private void ReceiveDamage( float damage )
+    private void UpdateHealthBar( float _health )
     {
-        health -= damage;                           // Update health
-        float healthNormalized = (health / 100);    // Normalize the value
-        healthbar.value = healthNormalized;
+        float healthNormalized = (_health / 100);    // Normalize the value
+        healthBar.value = healthNormalized;
     }
 
+    public void SetDamage( float damage )
+    {
+        // The damange which will be received
+        currentDamage = damage;
+    }
+
+    // Collision with tag bullets/ammo receive damage
+    void OnTriggerEnter( Collider other )
+    {
+        switch( other.tag )
+        {
+            case "Bullet":
+                healthSystem.SetDamage(20);
+                healthSystem.Hit();
+                break;
+            default:
+                healthSystem.SetDamage(0);
+                healthSystem.Hit();
+                break;
+        }
+    }
     private IEnumerator Dead()
     {
         // Play death animation manually
@@ -166,20 +205,6 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Delete the zombie from the scene
         Destroy(gameObject);
-    }
-
-    // Collision with tag bullets/ammo receive damage
-    void OnTriggerEnter( Collider other )
-    {
-        switch( other.tag )
-        {
-            case "Bullet":
-                ReceiveDamage(bulletDamage);
-                break;
-            default:
-                ReceiveDamage(0);
-                break;
-        }
     }
 
 #if DEBUG

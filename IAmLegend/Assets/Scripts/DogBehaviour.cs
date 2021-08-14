@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class DogBehaviour : MonoBehaviour
 {
@@ -15,17 +16,21 @@ public class DogBehaviour : MonoBehaviour
 
     [Header("Attacking Targets")]
     [SerializeField] private float distanceSight;
-    [SerializeField] private float distanceAttack;
+    [SerializeField] private float distanceToAttack;
     [SerializeField] private float angleView;
     [SerializeField] private LayerMask targetsLayers;
     [SerializeField] private LayerMask obstaclesLayers;
-    private Collider detectedTarget;
-    private bool attackTarget;
+    [SerializeField] private HealthSystem detectedTarget;
+    [SerializeField] private float damagePower;
+    [SerializeField] private float attackingCountdown;
+    [SerializeField] private float attackingRate;
+    private bool runAway;
 
     [Header("Health & Damage")]
-    [SerializeField] private float zombieDamage;
     [SerializeField] private float deathAnimationTime;
-    [SerializeField] private float health;
+    [SerializeField] private HealthSystem healthSystem;
+    [SerializeField] private Slider healthBar;
+    private float currentDamage;
 
     // Animation
     private Animator animator;
@@ -34,16 +39,16 @@ public class DogBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        this.animator = GetComponent<Animator>();
-        this.agent = GetComponent<NavMeshAgent>();
-        attackTarget = false;
+        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        runAway = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(this.ScanArea());        // Look for targets
-        StartCoroutine(this.UpdateState());     // FSM
+        StartCoroutine(ScanArea());        // Look for targets
+        StartCoroutine(UpdateState());     // FSM
     }
 
     private IEnumerator ScanArea()
@@ -53,9 +58,8 @@ public class DogBehaviour : MonoBehaviour
 
         // Get all the targets which the AI should attack
         Collider[] targets = Physics.OverlapSphere(this.transform.position, this.distanceSight, this.targetsLayers);
-        detectedTarget = null;
 
-        // Iterate through all of them to see which target is close
+        detectedTarget = null;
         for( int i = 0; i < targets.Length; i++ )
         {
             Collider target = targets[i];
@@ -73,7 +77,7 @@ public class DogBehaviour : MonoBehaviour
                 if( !Physics.Linecast(this.transform.position, target.bounds.center, this.obstaclesLayers) )
                 {
                     // The target was detected
-                    detectedTarget = target;
+                    detectedTarget = target.GetComponentInParent<HealthSystem>();
                     break;
                 }
             }
@@ -85,26 +89,44 @@ public class DogBehaviour : MonoBehaviour
         // Wait some time to prevent overloading
         yield return new WaitForSeconds(delayTimeFSM);
 
+        // Update variables for the FSM's decisions
         float distanceFromPlayer = GetDistanceFromPlayer();
+        float distanceToTarget = GetDistanceToTarget(detectedTarget);
+        UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
 
-        if( this.health <= 0 )
+        // No health, die
+        if( healthSystem.GetHealth() <= 0 )
         {
-            // No health, die
             StartCoroutine(Dead());
+        }
+        // If a damage is needed to be processed
+        else if( currentDamage != 0 )
+        {
+            healthSystem.SetDamage(currentDamage);
+            healthSystem.Hit();
+            currentDamage = 0;          // The damage was processed
+        }
+        else if( detectedTarget != null && runAway == false && distanceToTarget < distanceToAttack )
+        {
+            // If a target was detected, attack
+            AttackTarget();
         }
         else if( distanceFromPlayer >= radiusToStartFollow )
         {
             // Walk to the player
-            Walk(followTarget.transform.position);
-        }
-        else if( this.detectedTarget != null && attackTarget == true )
-        {
-            // If a target was detected, attack
-            Attack();
+            FollowPlayer(followTarget.transform.position);
         }
         else if( distanceFromPlayer <= radiusToSit )
         {
             Idle();
+        }
+        else if( detectedTarget != null )
+        {
+            ChaseTarget();
+        }
+        else if( runAway )
+        {
+            // running away on player's command
         }
     }
 
@@ -118,29 +140,62 @@ public class DogBehaviour : MonoBehaviour
         return Mathf.Abs(Vector3.Distance(posPlayer, posDog));
     }
 
+    private float GetDistanceToTarget( HealthSystem _detectedTarget )
+    {
+        if( _detectedTarget != null )
+        {
+            // Calculate the distance to the target
+            Vector3 posDog = transform.position;
+            Vector3 postTarget = _detectedTarget.GetComponent<Transform>().position;
+
+            return Mathf.Abs(Vector3.Distance(posDog, postTarget));
+        }
+
+        return 100;  // unusable value
+    }
+
     private void Idle()
     {
         // Update animations
-        this.agent.isStopped = true;
-        this.animator.SetBool("Walking", false);
-        this.animator.SetBool("Idle", true);
+        agent.isStopped = true;
+        animator.SetBool("Walking", false);
+        animator.SetBool("Idle", true);
+
+        // Remove from the enemies' targeted LayerMask
+        gameObject.layer = LayerMask.NameToLayer("Default");
     }
 
-    private void Walk(Vector3 _posPLayer)
+    private void FollowPlayer( Vector3 _posPLayer )
     {
         // Update animations
-        this.agent.isStopped = false;
-        this.animator.SetBool("Idle", false);
-        this.animator.SetBool("Walking", true);
+        agent.isStopped = false;
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walking", true);
+
+        // Remove from the enemies' targeted LayerMask
+        gameObject.layer = LayerMask.NameToLayer("Default");
 
         // Pathfinding algorithm
         Vector3 offset = new Vector3(1f, 0, 1f);  // Avoid collisions with the player
         agent.SetDestination(_posPLayer - offset);
     }
 
-    private void Attack()
+    private void ChaseTarget()
     {
-        Debug.Log("Attacking");
+        agent.isStopped = false;
+        agent.SetDestination(detectedTarget.transform.position);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walking", true);
+    }
+
+    private void AttackTarget()
+    {
+        // Update animations
+        agent.isStopped = true;
+        animator.SetTrigger("Attacking");
+
+        // Add to the enemies' targeted LayerMask
+        gameObject.layer = LayerMask.NameToLayer("Player");
 
         // If the target is close, deal damange
         DealDamage();
@@ -148,12 +203,27 @@ public class DogBehaviour : MonoBehaviour
 
     private void DealDamage()
     {
-        // Call external functions: Target.damage()
+        // Countdown between attacks
+        if( attackingCountdown <= 0 )
+        {
+            detectedTarget.SetDamage(damagePower);
+            detectedTarget.Hit();
+            attackingCountdown = 1 / attackingRate;
+        }
+
+        attackingCountdown -= Time.deltaTime;
     }
 
-    private void ReceiveDamage(float damage)
+    private void UpdateHealthBar( float _health )
     {
-        Debug.Log("Damage");
+        float healthNormalized = (_health / 100);    // Normalize the value
+        healthBar.value = healthNormalized;
+    }
+
+    public void SetDamage( float damage )
+    {
+        // The damange which will be received
+        currentDamage = damage;
     }
 
     private IEnumerator Dead()
