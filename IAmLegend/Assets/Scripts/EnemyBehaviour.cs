@@ -87,49 +87,43 @@ public class EnemyBehaviour : MonoBehaviour
         yield return new WaitForSeconds(delayTimeFSM);
 
         // Update variables for the FSM's decisions
-        float distanceToTarget = GetDistanceToTarget(detectedTarget);
+        //float distanceToTarget = GetDistanceToTarget(detectedTarget);
         UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
-
-        // No health, die
+     
         if( healthSystem.GetHealth() <= 0 )
         {
+            // No health, die
             StartCoroutine(Dead());
         }
-        // If a damage is needed to be processed
         else if( currentDamage != 0 )
         {
+            // If a damage is needed to be processed
             healthSystem.SetDamage(currentDamage);
-            healthSystem.Hit();
-            currentDamage = 0;      // The damage was processed
+            healthSystem.Hit();                                            // Process damage
+            currentDamage = 0;                                             // The damage was processed
         }
-        // Attack near targets
-        else if( detectedTarget != null && distanceToTarget < distanceToAttack )
-        {
-            AttackTarget();
-        }
-        // If a target was detected, chase him
         else if( detectedTarget != null )
         {
-            ChaseTarget();
+            // Calculate the distance to the target
+            Vector3 posEnemy = transform.position;
+            Vector3 posTarget = detectedTarget.transform.position;
+            float distanceToTarget = Mathf.Abs(Vector3.Distance(posEnemy, posTarget));
+
+            if( distanceToTarget < distanceToAttack )
+            {
+                // If a target was detected and near, attack
+                AttackTarget();
+            }
+            else
+            {
+                // If a target was detectet but far, chase
+                ChaseTarget();
+            }
         }
         else
         {
             Idle(); // or patrol?
         }
-    }
-
-    private float GetDistanceToTarget( HealthSystem _detectedTarget )
-    {
-        if( _detectedTarget != null )
-        {
-            // Calculate the distance to the target
-            Vector3 posEnemy = transform.position;
-            Vector3 postTarget = _detectedTarget.transform.position;
-
-            return Mathf.Abs(Vector3.Distance(posEnemy, postTarget));
-        }
-
-        return 100;  // unusable value
     }
 
     private void Idle()
@@ -161,7 +155,7 @@ public class EnemyBehaviour : MonoBehaviour
         if( attackingCountdown <= 0 )
         {
             detectedTarget.SetDamage(damagePower);
-            detectedTarget.Hit();
+            detectedTarget.Hit();                    // Process damage
             attackingCountdown = 1 / attackingRate;
         }
 

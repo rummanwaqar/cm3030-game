@@ -91,42 +91,52 @@ public class DogBehaviour : MonoBehaviour
 
         // Update variables for the FSM's decisions
         float distanceFromPlayer = GetDistanceFromPlayer();
-        float distanceToTarget = GetDistanceToTarget(detectedTarget);
+        //float distanceToTarget = GetDistanceToTarget(detectedTarget);
         UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
 
-        // No health, die
         if( healthSystem.GetHealth() <= 0 )
         {
+            // No health, die
             StartCoroutine(Dead());
         }
-        // If a damage is needed to be processed
         else if( currentDamage != 0 )
         {
+            // If a damage is needed to be processed
             healthSystem.SetDamage(currentDamage);
-            healthSystem.Hit();
-            currentDamage = 0;          // The damage was processed
+            healthSystem.Hit();                                            // Process damage
+            currentDamage = 0;                                             // The damage was processed
         }
-        else if( detectedTarget != null && runAway == false && distanceToTarget < distanceToAttack )
-        {
-            // If a target was detected, attack
-            AttackTarget();
-        }
-        else if( distanceFromPlayer >= radiusToStartFollow )
+        else if( distanceFromPlayer >= radiusToStartFollow && runAway == false )
         {
             // Walk to the player
             FollowPlayer(followTarget.transform.position);
         }
-        else if( distanceFromPlayer <= radiusToSit )
-        {
-            Idle();
-        }
-        else if( detectedTarget != null )
-        {
-            ChaseTarget();
-        }
         else if( runAway )
         {
             // running away on player's command
+        }
+        else if( detectedTarget != null )
+        {
+            // Calculate the distance to the target
+            Vector3 posDog = transform.position;
+            Vector3 postTarget = detectedTarget.transform.position;
+            float distanceToTarget = Mathf.Abs(Vector3.Distance(posDog, postTarget));
+
+            if( runAway == false && distanceToTarget < distanceToAttack )
+            {
+                // If a target was detected and near, attack
+                AttackTarget();
+            }
+            else
+            {
+                // If a target was detectet but far, chase
+                ChaseTarget();
+            }
+
+        }
+        else if( distanceFromPlayer <= radiusToSit )
+        {
+            Idle();
         }
     }
 
@@ -138,20 +148,6 @@ public class DogBehaviour : MonoBehaviour
 
         // Return the result from the distance
         return Mathf.Abs(Vector3.Distance(posPlayer, posDog));
-    }
-
-    private float GetDistanceToTarget( HealthSystem _detectedTarget )
-    {
-        if( _detectedTarget != null )
-        {
-            // Calculate the distance to the target
-            Vector3 posDog = transform.position;
-            Vector3 postTarget = _detectedTarget.GetComponent<Transform>().position;
-
-            return Mathf.Abs(Vector3.Distance(posDog, postTarget));
-        }
-
-        return 100;  // unusable value
     }
 
     private void Idle()
@@ -207,7 +203,7 @@ public class DogBehaviour : MonoBehaviour
         if( attackingCountdown <= 0 )
         {
             detectedTarget.SetDamage(damagePower);
-            detectedTarget.Hit();
+            detectedTarget.Hit();                    // Process damage
             attackingCountdown = 1 / attackingRate;
         }
 
@@ -230,6 +226,9 @@ public class DogBehaviour : MonoBehaviour
     {
         // Play death animation manually
         animator.Play("death");
+
+        // Remove 'Player' LayerMask so it won't be attacked while its dead
+        gameObject.layer = LayerMask.NameToLayer("Default");
 
         // Wait for the death animation to finish
         yield return new WaitForSeconds(deathAnimationTime);
