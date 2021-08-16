@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Dog
   - Bullet
+  - DogSafeLoc
   layers:
   - Default
   - TransparentFX

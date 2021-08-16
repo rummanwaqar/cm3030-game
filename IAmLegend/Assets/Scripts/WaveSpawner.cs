@@ -24,9 +24,9 @@ public class WaveSpawner : MonoBehaviour
     private void Spawn()
     {
         // Don't spawn them on each other (spawn diagonally)
-        Vector3 spawnPos = new Vector3(this.transform.position.x + zombiesNum, this.transform.position.y, this.transform.position.z + zombiesNum);
+        Vector3 spawnPos = new Vector3(transform.position.x + zombiesNum, transform.position.y, transform.position.z + zombiesNum);
         
-        Instantiate(this.prefab, spawnPos, this.transform.rotation);
+        Instantiate(prefab, spawnPos, transform.rotation);
         zombiesNum++;
     }
 }

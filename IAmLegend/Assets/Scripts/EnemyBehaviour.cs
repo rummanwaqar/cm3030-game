@@ -54,7 +54,7 @@ public class EnemyBehaviour : MonoBehaviour
         yield return new WaitForSeconds(delayTimeFSM);
 
         // Get all the targets which the AI should attack
-        Collider[] targets = Physics.OverlapSphere(this.transform.position, this.distanceSight, this.targetsLayers);
+        Collider[] targets = Physics.OverlapSphere(transform.position, distanceSight, targetsLayers);
 
         detectedTarget = null;
         for( int i = 0; i < targets.Length; i++ )
@@ -62,16 +62,16 @@ public class EnemyBehaviour : MonoBehaviour
             Collider target = targets[i];
 
             // Calculate the distance to the target
-            Vector3 directionToTarget = Vector3.Normalize(target.bounds.center - this.transform.position);
+            Vector3 directionToTarget = Vector3.Normalize(target.bounds.center - transform.position);
 
             // Calculate the angle view between the AI and the target
-            float angleToTarget = Vector3.Angle(this.transform.forward, directionToTarget);
+            float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
 
             // Check if the target is in the view angle of the AI
             if( angleToTarget < angleView )
             {
                 // Check if there are any obstacles between the AI and the target
-                if( !Physics.Linecast(this.transform.position, target.bounds.center, this.obstaclesLayers) )
+                if( !Physics.Linecast(transform.position, target.bounds.center, obstaclesLayers) )
                 {
                     // The target was detected
                     detectedTarget = target.GetComponentInParent<HealthSystem>();
@@ -87,7 +87,6 @@ public class EnemyBehaviour : MonoBehaviour
         yield return new WaitForSeconds(delayTimeFSM);
 
         // Update variables for the FSM's decisions
-        //float distanceToTarget = GetDistanceToTarget(detectedTarget);
         UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
      
         if( healthSystem.GetHealth() <= 0 )
@@ -105,9 +104,7 @@ public class EnemyBehaviour : MonoBehaviour
         else if( detectedTarget != null )
         {
             // Calculate the distance to the target
-            Vector3 posEnemy = transform.position;
-            Vector3 posTarget = detectedTarget.transform.position;
-            float distanceToTarget = Mathf.Abs(Vector3.Distance(posEnemy, posTarget));
+            float distanceToTarget = Mathf.Abs(Vector3.Distance(transform.position, detectedTarget.transform.position));
 
             if( distanceToTarget < distanceToAttack )
             {
