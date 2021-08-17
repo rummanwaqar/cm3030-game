@@ -102,7 +102,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     {
         if (this.meleeWeapon)
         {
-            this.meleeWeapon.transform.SetParent(this._handContainer.transform, false);
             this.meleeWeapon.SetActive(true);
             this._animator.SetBool(HasPistol, false);
         }
@@ -123,6 +122,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             if (other.gameObject.CompareTag("Weapon"))
             {
                 this._handleCollideWeapon(other.gameObject);
+            } else if (other.gameObject.CompareTag("WeaponMelee"))
+            {
+                this._grabMeleeWeapon(other.gameObject);
             }
         }
     }
@@ -139,11 +141,25 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         }
     }
 
+    private void _grabMeleeWeapon(GameObject droppedWeapon)
+    {
+        if (droppedWeapon.tag.Contains("WeaponMelee"))
+        {
+            this.meleeWeapon = droppedWeapon;
+            this.meleeWeapon.transform.SetPositionAndRotation(
+                new Vector3(0, 0, 0),
+                new Quaternion(0, 0, 0, 0)
+                );
+            // Add newly grabbed item to the right hand container.
+            this.meleeWeapon.transform.SetParent(this._handContainer.transform, false);
+        }
+    }
+    
     /// <summary>
     /// Grab items dropped on the floor.
     /// </summary>
     /// <param name="droppedWeapon"></param>
-    private void _grabWeapon(GameObject droppedWeapon)
+    private void _grabPistol(GameObject droppedWeapon)
     {
         if (this.weapon == null && droppedWeapon != this._droppedWeapon)
         {
@@ -291,7 +307,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private void _handleCollideWeapon(GameObject droppedWeapon)
     {
         this._dropWeapon();
-        this._grabWeapon(droppedWeapon.gameObject);
+        this._grabPistol(droppedWeapon.gameObject);
     }
 
 }
