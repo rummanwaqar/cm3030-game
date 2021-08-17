@@ -10,6 +10,7 @@ TagManager:
   - Dog
   - Bullet
   - DogSafeLoc
+  - WeaponMelee
   layers:
   - Default
   - TransparentFX

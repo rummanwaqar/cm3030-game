@@ -33,6 +33,11 @@ public class EnemyBehaviour : MonoBehaviour
     // Animation
     private Animator animator;
 
+    public void TakeDamage(GameObject weapon)
+    {
+        Debug.Log(weapon.name);
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,6 +52,7 @@ public class EnemyBehaviour : MonoBehaviour
         StartCoroutine(ScanArea());        // Look for targets
         StartCoroutine(UpdateState());     // FSM
     }
+    
 
     private IEnumerator ScanArea()
     {
