@@ -71,10 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7685fcee298745899cbf0e3e711a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  meleeWeapon: {fileID: 0}
   baseSpeed: 1.5
   runBoost: 2
   healthPoints: 100
-  weapon: {fileID: 0}
 --- !u!114 &1581428860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +92,18 @@ MonoBehaviour:
     type: 3}
   bulletSpawnPoint: {fileID: 2067876587}
   waitTime: 0.4
+--- !u!114 &6775287685770807628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392095413093461565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71b29b35b958e17ca4b61c025c806d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &95139893062521389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,7 +239,7 @@ PrefabInstance:
     - target: {fileID: 7478225697116208144, guid: 6fb37f825ee63264b9c2600bf1a52006,
         type: 3}
       propertyPath: m_Name
-      value: PlayerCharacter Variant
+      value: PlayerCharacter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fb37f825ee63264b9c2600bf1a52006, type: 3}

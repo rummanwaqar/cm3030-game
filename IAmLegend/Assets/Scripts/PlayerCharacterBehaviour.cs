@@ -16,15 +16,24 @@ enum PlayerState { Walk, Run, Die }
 /// </remarks>
 public class PlayerCharacterBehaviour : MonoBehaviour
 {
+    private static readonly int Die = Animator.StringToHash("die");
+    private static readonly int HasPistol = Animator.StringToHash("hasPistol");
+    private static readonly int Run = Animator.StringToHash("run");
+    private static readonly int Shoot = Animator.StringToHash(("shoot"));
+    private static readonly int Stop = Animator.StringToHash("stop");
+    private static readonly int Walk = Animator.StringToHash("walk");
+    
     public void TakeDamage(float damage)
     {
         this.healthPoints -= damage;
     }
     
+    public GameObject weapon;
+    public GameObject meleeWeapon;
+    
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
     [SerializeField] private float healthPoints = 100;
-    public GameObject weapon;
     
     private Animator _animator;
     private Camera _camera;
@@ -34,17 +43,10 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private float _speed;
     private int _layerMaskFloor;
     private bool _hasPistol;
-    private static readonly int IsDead = Animator.StringToHash("isDead");
-    private static readonly int HasPistol = Animator.StringToHash("hasPistol");
     private GameObject _droppedWeapon;
-    private static readonly int Die = Animator.StringToHash("die");
-    private static readonly int Walk = Animator.StringToHash("walk");
-    private static readonly int Run = Animator.StringToHash("run");
-    private static readonly int Shoot = Animator.StringToHash(("shoot"));
-    private static readonly int Stop = Animator.StringToHash("stop");
+    private GameObject _handContainer;
 
-
-    void Start()
+    private void Start()
     {
         this._layerMaskFloor = LayerMask.GetMask("Floor");
         this._camera = Camera.main;
@@ -53,12 +55,13 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._animator = GetComponent<Animator>();
         this._state = new HashSet<PlayerState> { };
         this._animator.SetBool(HasPistol, false);
+        this._handContainer =  GameObject.Find("/PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container").gameObject;
     }
     
     /// <summary>
-    /// Executes methods that need to be executed at each frame.
+    /// Executes methods that need to be executed at Physics update.
     /// </summary>
-    void Update()
+    private void FixedUpdate()
     {
         if (!this._state.Contains(PlayerState.Die))
         {
@@ -72,7 +75,47 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._animator.SetTrigger(Die);
         }
     }
-    
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void UsePistol()
+    {
+        if (this.meleeWeapon)
+        {
+            this.meleeWeapon.SetActive(false);
+        }
+        if (this.weapon)
+        {
+            this.weapon.SetActive(true);
+            this._animator.SetBool(HasPistol, true);
+        }
+    }
+
+    /// <summary>
+    /// Prepare the Player Character to use a melee weapon.
+    ///
+    /// If there is no melee weapon, it still deactivates the pistol. Use UsePistol method to reactivate pistol.
+    /// It sets the proper parent of the melee weapon and sets the trigger for melee attack animation.
+    /// </summary>
+    public void UseMelee()
+    {
+        if (this.meleeWeapon)
+        {
+            this.meleeWeapon.transform.SetParent(this._handContainer.transform, false);
+            this.meleeWeapon.SetActive(true);
+            this._animator.SetBool(HasPistol, false);
+        }
+        if (this.weapon)
+        {
+            this.weapon.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Executes when entering triggers colliders.
+    /// </summary>
+    /// <param name="other"></param> the game object the player has collided with.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Item"))
@@ -84,6 +127,10 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Executes when leaving a trigger collider.
+    /// </summary>
+    /// <param name="other"></param> the game object the player is leaving.
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.gameObject == this._droppedWeapon)
@@ -92,7 +139,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         }
     }
 
-    
     /// <summary>
     /// Grab items dropped on the floor.
     /// </summary>
@@ -109,15 +155,15 @@ public class PlayerCharacterBehaviour : MonoBehaviour
                     new Quaternion(0, 0, 0, 0)
                     );
                 // Add newly grabbed item to the right hand container.
-                GameObject handContainer = GameObject.Find(
-                    "PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container"
-                    );
-                this.weapon.transform.SetParent(handContainer.transform, false);
-                this._animator.SetBool(HasPistol, true);
+                this.weapon.transform.SetParent(this._handContainer.transform, false);
+                this.UsePistol();
             }
         }
     }
 
+    /// <summary>
+    /// Drops the current weapon.
+    /// </summary>
     private void _dropWeapon()
     {
         Transform tr = this.transform;
@@ -214,6 +260,11 @@ public class PlayerCharacterBehaviour : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Behaviour that is only executed in Debug mode.
+    /// This will be executed in the editor, but not in the deployed version of the game.
+    /// No code should rely on these behaviours. 
+    /// </summary>
     private void _debugBehaviour()
     {
         Ray pointerRay = _camera.ScreenPointToRay(Input.mousePosition);
@@ -231,11 +282,16 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the consequences of colliding with weapon items.
+    ///
+    /// This method is responsible for deciding whether to grab an item and orchestrate the consequences.
+    /// </summary>
+    /// <param name="droppedWeapon"></param>
     private void _handleCollideWeapon(GameObject droppedWeapon)
     {
         this._dropWeapon();
         this._grabWeapon(droppedWeapon.gameObject);
     }
-
 
 }

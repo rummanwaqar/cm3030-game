@@ -22,11 +22,10 @@ public class ShootingController : MonoBehaviour
     private void Update()
     {
         if (!this._characterBehaviour.weapon) return;
-        if (Input.GetAxisRaw("Fire1") != 0f)
-        {
-            _shoot();
-            this._animator.SetTrigger(Shoot);
-        }
+        if (Input.GetAxisRaw("Fire1") == 0f) return;
+        this._characterBehaviour.UsePistol();
+        this._shoot();
+        this._animator.SetTrigger(Shoot);
     }
 
     private void _shoot()
