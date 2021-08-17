@@ -23,17 +23,11 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Stop = Animator.StringToHash("stop");
     private static readonly int Walk = Animator.StringToHash("walk");
     
-    public void TakeDamage(float damage)
-    {
-        this.healthPoints -= damage;
-    }
-    
     public GameObject weapon;
     public GameObject meleeWeapon;
     
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
-    [SerializeField] private float healthPoints = 100;
     
     private Animator _animator;
     private Camera _camera;
@@ -45,6 +39,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private bool _hasPistol;
     private GameObject _droppedWeapon;
     private GameObject _handContainer;
+    private HealthSystem _healthSystem;
 
     private void Start()
     {
@@ -56,6 +51,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._state = new HashSet<PlayerState> { };
         this._animator.SetBool(HasPistol, false);
         this._handContainer =  GameObject.Find("/PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container").gameObject;
+        this._healthSystem = GetComponent<HealthSystem>();
     }
     
     /// <summary>
@@ -68,11 +64,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._setState();
             this._rotate();
             this._move();
-            this._debugBehaviour();
-        }
-        else
-        {
-            this._animator.SetTrigger(Die);
         }
     }
 
@@ -204,7 +195,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     private void _setState()
     {
-        if (this.healthPoints <= 0)
+        if (this._healthSystem.GetHealth() <= 0)
         {
             this._state.Remove(PlayerState.Run);
             this._state.Remove(PlayerState.Walk);
@@ -274,28 +265,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._animator.SetTrigger(Stop);
         }
 
-    }
-
-    /// <summary>
-    /// Behaviour that is only executed in Debug mode.
-    /// This will be executed in the editor, but not in the deployed version of the game.
-    /// No code should rely on these behaviours. 
-    /// </summary>
-    private void _debugBehaviour()
-    {
-        Ray pointerRay = _camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(pointerRay, out RaycastHit hit, 100f))
-        {
-            this._lookPoint = hit.point;
-            // Avoid rapid rotation when the cursor is over the character
-            if (Vector3.Distance(this._lookPoint, this.transform.position) > 0.2f)
-            {
-                if (hit.collider != null && hit.collider.gameObject == this.gameObject)
-                {
-                    if (Input.GetAxisRaw("Fire1") != 0f) this.TakeDamage(10);
-                }
-            }
-        }
     }
 
     /// <summary>
