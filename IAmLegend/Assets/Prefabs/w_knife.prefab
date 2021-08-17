@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2512088820947370526}
   - component: {fileID: 62869589734480924}
   - component: {fileID: 7217211594031557567}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: w_knife
   m_TagString: WeaponMelee
   m_Icon: {fileID: 0}
