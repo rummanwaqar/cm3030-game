@@ -1,82 +1,264 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-enum DogState { Walk, Attack, nearPlayer, Hit, Dead }
+using UnityEngine.UI;
 
 public class DogBehaviour : MonoBehaviour
 {
+    #region Variables
+    [Header("AI & Navigation")]
     [SerializeField] GameObject followTarget;
+    [SerializeField] private float radiusToStartFollow; // The dog will start follow the player
+    [SerializeField] private float radiusToSit;         // Distance to the player
+    [SerializeField] private float delayTimeFSM;
+    private GameObject nearestSafeLoc;                  // The dog can run to the nearest safe location
+    private NavMeshAgent agent;
 
-    private static readonly int IsWalking = Animator.StringToHash(("isWalking"));
-    private static readonly int IsNearPlayer = Animator.StringToHash(("isNearPlayer"));
-    private static readonly int IsAttacking = Animator.StringToHash(("isAttacking"));
-    private static readonly int IsHit = Animator.StringToHash(("isHit"));
-    private static readonly int IsDead = Animator.StringToHash(("isDead"));
-    
-    private Animator _animator;
-    private HashSet<DogState> _state;
+    [Header("Attacking Targets")]
+    [SerializeField] private float distanceSight;
+    [SerializeField] private float distanceToAttack;
+    [SerializeField] private float angleView;
+    [SerializeField] private LayerMask targetsLayers;
+    [SerializeField] private LayerMask obstaclesLayers;
+    [SerializeField] private HealthSystem detectedTarget;
+    [SerializeField] private float damagePower;
+    [SerializeField] private float attackingCountdown;
+    [SerializeField] private float attackingRate;
+    private bool runAway;
 
-    private Vector3 _posPlayer;
-    private Vector3 _posDog;
-    private NavMeshAgent _agent;
+    [Header("Health & Damage")]
+    [SerializeField] private float deathAnimationTime;
+    [SerializeField] private HealthSystem healthSystem;
+    [SerializeField] private Slider healthBar;
+    private float currentDamage;
+
+    // Animation
+    private Animator animator;
+    #endregion
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        this._animator = GetComponent<Animator>();
-        this._state = new HashSet<DogState> { };
-        this._agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        runAway = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this._setState();
-        this._move();
+        StartCoroutine(ScanArea());        // Look for targets
+        StartCoroutine(UpdateState());     // FSM
     }
 
-    private void _setState()
+    private IEnumerator ScanArea()
     {
-        // Get the current position of the player and the dog
-        _posPlayer = followTarget.transform.position;
-        _posDog = transform.position;
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
 
-        // Using the distance formula to calculate each position
-        float distanceX = Mathf.Pow(_posPlayer.x - _posDog.x, 2);
-        float distanceZ = Mathf.Pow(_posPlayer.z - _posDog.z, 2);
-        float distance = Mathf.Pow(distanceX + distanceZ, 0.5f);
+        // Get all the targets which the AI should attack
+        Collider[] targets = Physics.OverlapSphere(transform.position, distanceSight, targetsLayers);
 
-        // If the distance radius is bigger than 5, the dog shall go to his master
-        if( distance >= 5 )
-            this._state.Add(DogState.Walk);
-
-        // If the dog is close enough to the player, the dog shall sit
-        if( distance <= 1.5f )
+        detectedTarget = null;
+        for( int i = 0; i < targets.Length; i++ )
         {
-            this._state.Add(DogState.nearPlayer);
-            this._state.Remove(DogState.Walk);
+            Collider target = targets[i];
+
+            // Calculate the distance to the target
+            Vector3 directionToTarget = Vector3.Normalize(target.bounds.center - transform.position);
+
+            // Calculate the angle view between the AI and the target
+            float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
+
+            // Check if the target is in the view angle of the AI
+            if( angleToTarget < angleView )
+            {
+                // Check if there are any obstacles between the AI and the target
+                if( !Physics.Linecast(transform.position, target.bounds.center, obstaclesLayers) )
+                {
+                    // The target was detected
+                    detectedTarget = target.GetComponentInParent<HealthSystem>();
+                    break;
+                }
+            }
         }
-        else
-            this._state.Remove(DogState.nearPlayer);
     }
 
-    private void _move()
+    private IEnumerator UpdateState()
     {
-        // Update the logic state based on _setState()
-        bool isWalking = this._state.Contains(DogState.Walk);
-        bool isNearPlayer = this._state.Contains(DogState.nearPlayer);
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
 
-        if( isWalking )
+        // Update variables for the FSM's decisions
+        float distanceFromPlayer = Vector3.Distance(transform.position, followTarget.transform.position);
+        UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
+
+        if( healthSystem.GetHealth() <= 0 )
         {
-            // Pathfinding algorithm (the terrain must be baked first)
-            Vector3 offset = new Vector3(1f, 0, 1f);  // to avoid collisions with the player
-            _agent.SetDestination(_posPlayer - offset);
+            // No health, die
+            StartCoroutine(Dead());
         }
+        else if( currentDamage != 0 )
+        {
+            // If a damage is needed to be processed
+            healthSystem.SetDamage(currentDamage);
+            healthSystem.Hit();                                            // Process damage
+            currentDamage = 0;                                             // The damage was processed
+        }
+        else if( distanceFromPlayer >= radiusToStartFollow && runAway == false )
+        {
+            // Walk to the player
+            FollowPlayer(followTarget.transform.position);
+        }
+        else if( runAway )
+        {
+            nearestSafeLoc = GetNearestSafeLoc();                           // Find the nearest safe location
+            float distanceFromSafeLoc = Vector3.Distance(transform.position, nearestSafeLoc.transform.position);
+            if( distanceFromSafeLoc <= radiusToSit )
+            {
+                // If near safe location, sit there
+                Idle();
+            }
+            else
+            {
+                // running away on player's command
+                RunAway();
+            }
+        }
+        else if( detectedTarget != null && runAway == false )
+        {
+            // Calculate the distance to the target
+            Vector3 posDog = transform.position;
+            Vector3 postTarget = detectedTarget.transform.position;
+            float distanceToTarget = Mathf.Abs(Vector3.Distance(posDog, postTarget));
 
+            if( distanceToTarget < distanceToAttack && runAway == false )
+            {
+                // If a target was detected and near, attack
+                AttackTarget();
+            }
+            else
+            {
+                // If a target was detectet but far, chase
+                ChaseTarget();
+            }
+        }
+        else if( distanceFromPlayer <= radiusToSit )
+        {
+            Idle();
+        }
+    }
+
+    private void Idle()
+    {
         // Update animations
-        this._animator.SetBool(IsWalking, isWalking);
-        this._animator.SetBool(IsNearPlayer, isNearPlayer);
+        agent.isStopped = true;
+        animator.SetBool("Walking", false);
+        animator.SetBool("Idle", true);
+    }
+
+    private void FollowPlayer( Vector3 _posPLayer )
+    {
+        // Update animations
+        agent.isStopped = false;
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walking", true);
+
+        // Pathfinding algorithm
+        Vector3 offset = new Vector3(1f, 0, 1f);  // Avoid collisions with the player
+        agent.SetDestination(_posPLayer - offset);
+    }
+
+    private void ChaseTarget()
+    {
+        agent.isStopped = false;
+        agent.SetDestination(detectedTarget.transform.position);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walking", true);
+    }
+
+    private void AttackTarget()
+    {
+        // Update animations
+        agent.isStopped = true;
+        animator.SetTrigger("Attacking");
+
+        // If the target is close, deal damange
+        DealDamage();
+    }
+
+    private void DealDamage()
+    {
+        // Countdown between attacks
+        if( attackingCountdown <= 0 )
+        {
+            detectedTarget.SetDamage(damagePower);
+            detectedTarget.Hit();                                           // Process damage
+            attackingCountdown = 1 / attackingRate;
+        }
+
+        attackingCountdown -= Time.deltaTime;
+    }
+
+    private void RunAway()
+    {
+        agent.isStopped = false;
+        agent.SetDestination(nearestSafeLoc.transform.position);           // Run to the nearest safe place
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walking", true);
+    }
+
+    public void SetRunAway( bool state )
+    {
+        // Set the dong's runaway state
+        runAway = state;
+    }
+
+    private GameObject GetNearestSafeLoc()
+    {
+        GameObject[] locations = GameObject.FindGameObjectsWithTag("DogSafeLoc");
+        if( locations != null )
+        {
+            float chosenLocDist = Vector3.Distance(transform.position, locations[0].transform.position);
+            GameObject chosenLoc = locations[0];
+
+            foreach( GameObject loc in locations )
+            {
+                float calcDist = Vector3.Distance(transform.position, loc.transform.position);
+                // If the current location is closer, chose it
+                if( calcDist < chosenLocDist )
+                {
+                    chosenLoc = loc;
+                    chosenLocDist = calcDist;
+                }
+            }
+            return chosenLoc;
+        }
+        // Return the player's location if no safe locations around
+        return followTarget;
+    }
+
+    private void UpdateHealthBar( float _health )
+    {
+        float healthNormalized = (_health / 100);    // Normalize the value
+        healthBar.value = healthNormalized;
+    }
+
+    public void SetDamage( float damage )
+    {
+        // The damange which will be received
+        currentDamage = damage;
+    }
+
+    private IEnumerator Dead()
+    {
+        // Play death animation manually
+        animator.Play("death");
+
+        // Remove 'Player' LayerMask so it won't be attacked while its dead
+        gameObject.layer = LayerMask.NameToLayer("Default");
+
+        // Wait for the death animation to finish
+        yield return new WaitForSeconds(deathAnimationTime);
     }
 }

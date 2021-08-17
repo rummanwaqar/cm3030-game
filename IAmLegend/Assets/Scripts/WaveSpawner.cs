@@ -8,7 +8,9 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] float startTime;   // time to start the wave
     [SerializeField] float spawnRate;   // time between waves
     [SerializeField] float endTime;     // time to end the wave
-    
+
+    int zombiesNum = 0;                 // track how many zombies spawned
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,13 @@ public class WaveSpawner : MonoBehaviour
         Invoke("CancelInvoke", endTime);
     }
 
+    
     private void Spawn()
     {
-        Instantiate(this.prefab, this.transform.position, this.transform.rotation);
+        // Don't spawn them on each other (spawn diagonally)
+        Vector3 spawnPos = new Vector3(transform.position.x + zombiesNum, transform.position.y, transform.position.z + zombiesNum);
+        
+        Instantiate(prefab, spawnPos, transform.rotation);
+        zombiesNum++;
     }
 }

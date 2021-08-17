@@ -1,41 +1,60 @@
-﻿using System.Collections;
+﻿#undef DEBUG
+//#define DEBUG
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    private enum EnemyState { Idle, ChaseTarget, AttackTarget }
-   
+    #region Variables
+    [Header("Attacking Targets")]
     [SerializeField] private float distanceSight;
-    [SerializeField] private float angleView; // both left & right
+    [SerializeField] private float distanceToAttack;
+    [SerializeField] private float angleView;
     [SerializeField] private LayerMask targetsLayers;
     [SerializeField] private LayerMask obstaclesLayers;
+    [SerializeField] private HealthSystem detectedTarget;
+    [SerializeField] private float damagePower;
+    [SerializeField] private float attackingCountdown;
+    [SerializeField] private float attackingRate;
 
-    private EnemyState enemyCurrentState;
-    private Collider detectedTarget;
+    [Header("Health & Damage")]
+    [SerializeField] private float deathAnimationTime;
+    [SerializeField] private HealthSystem healthSystem;
+    [SerializeField] private Slider healthBar;
+    private float currentDamage;
+
+    [Header("AI")]
+    [SerializeField] float delayTimeFSM;
     private NavMeshAgent agent;
+    // Animation
     private Animator animator;
 
     // Start is called before the first frame update
     void Awake()
     {
-        this.agent = GetComponentInParent<NavMeshAgent>();
-        this.animator = GetComponentInParent<Animator>();
-        this.enemyCurrentState = EnemyState.Idle;    // Enemy is idle on initial spawn
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
+    #endregion
 
     // Update is called once per frame
     void Update()
     {
-        this.ScanArea();     // Look for targets
-        this.UpdateState();  // FSM
+        StartCoroutine(ScanArea());        // Look for targets
+        StartCoroutine(UpdateState());     // FSM
     }
 
-    private void ScanArea()
+    private IEnumerator ScanArea()
     {
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
+
         // Get all the targets which the AI should attack
-        Collider[] targets = Physics.OverlapSphere(this.transform.position, this.distanceSight, this.targetsLayers);
+        Collider[] targets = Physics.OverlapSphere(transform.position, distanceSight, targetsLayers);
 
         detectedTarget = null;
         for( int i = 0; i < targets.Length; i++ )
@@ -43,85 +62,151 @@ public class EnemyBehaviour : MonoBehaviour
             Collider target = targets[i];
 
             // Calculate the distance to the target
-            Vector3 directionToTarget = Vector3.Normalize(target.bounds.center - this.transform.position);
+            Vector3 directionToTarget = Vector3.Normalize(target.bounds.center - transform.position);
 
             // Calculate the angle view between the AI and the target
-            float angleToTarget = Vector3.Angle(this.transform.forward, directionToTarget);
+            float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
 
             // Check if the target is in the view angle of the AI
             if( angleToTarget < angleView )
             {
                 // Check if there are any obstacles between the AI and the target
-                if( !Physics.Linecast(this.transform.position, target.bounds.center, this.obstaclesLayers) )
+                if( !Physics.Linecast(transform.position, target.bounds.center, obstaclesLayers) )
                 {
                     // The target was detected
-                    detectedTarget = target;
+                    detectedTarget = target.GetComponentInParent<HealthSystem>();
                     break;
                 }
             }
         }
     }
 
-    private void UpdateState()
+    private IEnumerator UpdateState()
     {
-        if( enemyCurrentState == EnemyState.Idle )
-            Idle();
-        else if( enemyCurrentState == EnemyState.ChaseTarget )
-            ChaseTarget();
-        else if( enemyCurrentState == EnemyState.AttackTarget )
-            AttackTarget();
+        // Wait some time to prevent overloading
+        yield return new WaitForSeconds(delayTimeFSM);
+
+        // Update variables for the FSM's decisions
+        UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
+     
+        if( healthSystem.GetHealth() <= 0 )
+        {
+            // No health, die
+            StartCoroutine(Dead());
+        }
+        else if( currentDamage != 0 )
+        {
+            // If a damage is needed to be processed
+            healthSystem.SetDamage(currentDamage);
+            healthSystem.Hit();                                            // Process damage
+            currentDamage = 0;                                             // The damage was processed
+        }
+        else if( detectedTarget != null )
+        {
+            // Calculate the distance to the target
+            float distanceToTarget = Mathf.Abs(Vector3.Distance(transform.position, detectedTarget.transform.position));
+
+            if( distanceToTarget < distanceToAttack )
+            {
+                // If a target was detected and near, attack
+                AttackTarget();
+            }
+            else
+            {
+                // If a target was detectet but far, chase
+                ChaseTarget();
+            }
+        }
+        else
+        {
+            Idle(); // or patrol?
+        }
     }
 
     private void Idle()
     {
-        // If target was detected, change state
-        if( this.detectedTarget != null )
-        {
-            this.enemyCurrentState = EnemyState.ChaseTarget;
-            return;
-        }
-
-        this.agent.isStopped = true;
-        this.animator.SetTrigger("Idle");
+        agent.isStopped = true;
+        animator.SetBool("Walking", false);
+        animator.SetBool("Idle", true);
     }
 
     private void ChaseTarget()
     {
-        // If target wasn't detected, change state
-        if( this.detectedTarget == null )
-        {
-            this.enemyCurrentState = EnemyState.Idle;
-            return;
-        }
-
-        this.agent.isStopped = false;
-        this.animator.SetTrigger("Walking");
-
-        // Calculate the distance to the target
-        float distanceToTarget = Vector3.Distance(this.transform.position, this.detectedTarget.transform.position);
-        this.agent.SetDestination(this.detectedTarget.transform.position);
-        
-        // TODO: if near target -> attack.
+        agent.isStopped = false;
+        agent.SetDestination(detectedTarget.transform.position);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walking", true);
     }
 
     private void AttackTarget()
     {
-        // If target wasn't detected, change state
-        if( this.detectedTarget == null )
-        {
-            this.enemyCurrentState = EnemyState.Idle;
-            return;
-        }
-        // else if(target runs) -> chase him
+        agent.isStopped = true;
+        animator.SetTrigger("Attacking");
 
-        this.agent.isStopped = true;
-        this.animator.SetTrigger("Attacking");
+        // If the target is close, deal damange
+        DealDamage();
+    }
+    private void DealDamage()
+    {
+        // Countdown between attacks
+        if( attackingCountdown <= 0 )
+        {
+            detectedTarget.SetDamage(damagePower);
+            detectedTarget.Hit();                    // Process damage
+            attackingCountdown = 1 / attackingRate;
+        }
+
+        attackingCountdown -= Time.deltaTime;
     }
 
-    //// Debugging variables with visual gizmos
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawSphere(transform.position, distanceSight);
-    //}
+    private void UpdateHealthBar( float _health )
+    {
+        float healthNormalized = (_health / 100);    // Normalize the value
+        healthBar.value = healthNormalized;
+    }
+
+    public void SetDamage( float damage )
+    {
+        // The damange which will be received
+        currentDamage = damage;
+    }
+
+    // Collision with tag bullets/ammo receive damage
+    void OnTriggerEnter( Collider other )
+    {
+        switch( other.tag )
+        {
+            case "Bullet":
+                healthSystem.SetDamage(20);
+                healthSystem.Hit();
+                break;
+            default:
+                healthSystem.SetDamage(0);
+                healthSystem.Hit();
+                break;
+        }
+    }
+    private IEnumerator Dead()
+    {
+        // Play death animation manually
+        animator.Play("zombie_death_standing");
+
+        // Wait for the death animation to finish
+        yield return new WaitForSeconds(deathAnimationTime);
+
+        // Delete the zombie from the scene
+        Destroy(gameObject);
+    }
+
+#if DEBUG
+    // visual gizmos
+    private void OnDrawGizmos()
+    {
+        {
+            // Display how far the zombie can see
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(transform.position, distanceSight);
+        }
+    }
+#endif
 }

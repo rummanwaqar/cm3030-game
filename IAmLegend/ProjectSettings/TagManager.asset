@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Weapon
   - Gun
+  - Enemy
+  - Dog
+  - Bullet
+  - DogSafeLoc
   layers:
   - Default
   - TransparentFX
@@ -16,10 +20,10 @@ TagManager:
   - 
   - 
   - Floor
-  - Player
   - Item
-  - 
-  - 
+  - Player
+  - Walls
+  - Enemies
   - 
   - 
   - 
