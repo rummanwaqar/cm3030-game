@@ -13,7 +13,6 @@ public class MeleeWeaponController : MonoBehaviour
     private PlayerCharacterBehaviour _characterBehaviour;
     private MeleeState _meleeState;
 
-    private static readonly int HasPistol = Animator.StringToHash("hasPistol");
     private static readonly int Bash = Animator.StringToHash("bash");
     // Start is called before the first frame update
     void Start()
