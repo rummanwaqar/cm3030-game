@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
       propertyPath: m_RootOrder
@@ -215,6 +220,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -370,6 +379,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!1001 &14275970
@@ -382,6 +396,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -455,6 +473,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -553,6 +575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -660,6 +687,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -783,6 +814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
@@ -931,6 +967,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
       propertyPath: m_RootOrder
@@ -1026,6 +1067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -1166,6 +1212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &72817435
@@ -1240,6 +1291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &78013858
@@ -1253,6 +1309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -1337,6 +1398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -1405,6 +1470,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -1472,6 +1542,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -1543,6 +1617,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -1666,6 +1744,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_02
       objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!1001 &112474497
@@ -1679,6 +1762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -1846,6 +1934,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1936,6 +2029,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
       propertyPath: m_RootOrder
@@ -2018,6 +2116,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -2102,6 +2204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2167,6 +2273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -2250,6 +2361,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -2366,8 +2481,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281677109
-  m_fontColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    rgba: 4293125091
+  m_fontColor: {r: 0.8901961, g: 0.8901961, b: 0.8901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2507,6 +2622,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!1001 &165700028
@@ -2520,6 +2640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -2627,6 +2752,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -2757,6 +2886,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &188205120
@@ -2769,6 +2903,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -2837,6 +2975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2897,6 +3039,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -3035,6 +3181,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
       propertyPath: m_RootOrder
@@ -3125,6 +3276,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -3211,6 +3367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3284,6 +3444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3345,6 +3509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
@@ -3419,6 +3588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -3502,6 +3676,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -3629,6 +3807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &244754777
@@ -3713,6 +3896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &246462364 stripped
@@ -3750,6 +3938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -3825,6 +4018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1,
         type: 3}
@@ -4051,6 +4249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4166,8 +4368,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281677109
-  m_fontColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    rgba: 4293125091
+  m_fontColor: {r: 0.8901961, g: 0.8901961, b: 0.8901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4245,6 +4447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -4305,6 +4511,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -4411,6 +4621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4476,6 +4690,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -4747,6 +4966,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
       propertyPath: m_RootOrder
@@ -4815,6 +5039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -4899,6 +5128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -4966,6 +5199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -5051,6 +5289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -5124,6 +5367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5189,6 +5436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -5273,6 +5525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -5375,6 +5632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -5456,10 +5717,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1199126084, guid: 2b02e19be1e86e147b536a72307aa5a9, type: 3}
-      propertyPath: m_Mass
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 2087457838, guid: 2b02e19be1e86e147b536a72307aa5a9, type: 3}
       propertyPath: healthBar
       value: 
@@ -5528,7 +5785,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulldog Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7063767647415130441, guid: 2b02e19be1e86e147b536a72307aa5a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2b02e19be1e86e147b536a72307aa5a9, type: 3}
 --- !u!1001 &385244938
 PrefabInstance:
@@ -5712,6 +5970,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5773,6 +6035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -5866,6 +6133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -6017,6 +6289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!4 &435826278 stripped
@@ -6041,6 +6318,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -6103,6 +6384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6164,6 +6449,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
         type: 3}
@@ -6272,6 +6562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -6337,6 +6631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -6406,6 +6705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -6473,6 +6776,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -6547,6 +6855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -6724,6 +7037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6846,6 +7163,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_02
       objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!4 &500008529 stripped
@@ -6871,6 +7193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -6962,6 +7289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
       propertyPath: m_RootOrder
@@ -7051,6 +7383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -7242,6 +7579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &525428179
@@ -7316,6 +7658,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &525482596
@@ -7328,6 +7675,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -7461,6 +7812,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &532920036
@@ -7534,6 +7890,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
@@ -7619,6 +7980,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &541915404
@@ -7631,6 +7997,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -7693,6 +8063,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -7777,6 +8152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -7872,6 +8252,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -8009,6 +8393,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &557272786
@@ -8083,6 +8472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &570219168
@@ -8095,6 +8489,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -8163,6 +8561,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -8247,6 +8650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -8392,6 +8800,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_02
       objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!4 &581169014 stripped
@@ -8411,6 +8824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -8480,6 +8898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -8540,6 +8962,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -8802,6 +9228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -8873,6 +9303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -8934,6 +9368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
         type: 3}
@@ -9089,6 +9528,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &631475548
@@ -9101,6 +9545,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -9162,6 +9610,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -9227,6 +9679,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -9296,6 +9752,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -9599,6 +10059,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &667722330 stripped
@@ -9618,6 +10083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -9866,6 +10336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &678543318
@@ -9879,6 +10354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -10037,6 +10517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &686470297 stripped
@@ -10056,6 +10541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -10140,6 +10630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -10201,6 +10695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -10356,6 +10855,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!4 &698691744 stripped
@@ -10442,6 +10946,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!4 &703565649 stripped
@@ -10461,6 +10970,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -10545,6 +11059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -10668,8 +11187,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281677109
-  m_fontColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    rgba: 4293125091
+  m_fontColor: {r: 0.8901961, g: 0.8901961, b: 0.8901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10753,6 +11272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -10942,6 +11466,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!4 &738714659 stripped
@@ -10960,6 +11489,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -11021,6 +11554,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -11206,6 +11743,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
       propertyPath: m_RootOrder
@@ -11289,6 +11831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -11526,6 +12073,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1 &773398160 stripped
@@ -11563,6 +12115,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -11624,6 +12180,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -11880,6 +12440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &796075805
@@ -11892,6 +12457,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -11972,6 +12541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12033,6 +12606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
@@ -12106,6 +12684,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -12245,6 +12827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!4 &804024605 stripped
@@ -12263,6 +12850,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -12393,6 +12984,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &811210344
@@ -12405,6 +13001,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -12473,6 +13073,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
@@ -12546,6 +13151,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -12651,6 +13260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -12876,6 +13490,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!1001 &849740061
@@ -12960,6 +13579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5202732821079448320, guid: cebfacc247a640945a2c30b442202fca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cebfacc247a640945a2c30b442202fca, type: 3}
 --- !u!4 &850699887 stripped
@@ -12990,6 +13614,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -13064,6 +13692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -13124,6 +13756,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -13204,6 +13840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -13289,6 +13930,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -13356,6 +14002,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -13458,6 +14108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -13518,6 +14172,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -13591,6 +14249,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -13676,6 +14338,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -13813,6 +14479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5202732821079448320, guid: cebfacc247a640945a2c30b442202fca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cebfacc247a640945a2c30b442202fca, type: 3}
 --- !u!1001 &917725384
@@ -13825,6 +14496,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -13930,6 +14605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1,
         type: 3}
       propertyPath: m_RootOrder
@@ -14004,6 +14684,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
       propertyPath: m_RootOrder
@@ -14076,6 +14761,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1fc5bb90ac285e4486771552d63bcb8, type: 3}
+--- !u!1 &984869720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7171820306135132964, guid: 2b02e19be1e86e147b536a72307aa5a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 385102206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &984869721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984869720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.13, y: 1.45, z: 1.33}
+  m_Center: {x: 0, y: 0.62, z: 0.06}
 --- !u!4 &985942103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3356751432537613521, guid: ffbddc4ef9676cc419e81e06aaa836d8,
@@ -14164,6 +14868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &988855294
@@ -14176,6 +14885,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -14313,6 +15026,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
       propertyPath: m_RootOrder
@@ -14408,6 +15126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -14469,6 +15191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -14614,6 +15341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
       propertyPath: m_RootOrder
@@ -14697,6 +15429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -14794,6 +15531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -14862,6 +15604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -14923,6 +15669,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -15013,6 +15764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -15074,6 +15829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1,
         type: 3}
@@ -15154,6 +15914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -15309,6 +16074,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!4 &1056055733 stripped
@@ -15333,6 +16103,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -15550,6 +16324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &1075322927
@@ -15562,6 +16341,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -15783,6 +16566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -15930,6 +16717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -16088,6 +16880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -16148,6 +16944,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -16291,6 +17091,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &1110017356 stripped
@@ -16321,6 +17126,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -16388,6 +17197,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -16460,6 +17273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -16535,6 +17353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -16595,6 +17417,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -16669,6 +17495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -16765,6 +17596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -16826,6 +17661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -16917,6 +17757,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
       propertyPath: m_RootOrder
@@ -17000,6 +17845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -17073,6 +17922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -17152,7 +18006,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 385102206}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 984869720}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d28db078ba9df9948848fdfc605df5c0, type: 3}
@@ -17199,6 +18053,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -17340,6 +18198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -17466,6 +18328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &1202374038
@@ -17478,6 +18345,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -17545,6 +18416,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -17678,6 +18553,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &1221064257 stripped
@@ -17721,6 +18601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -17795,6 +18680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -17861,6 +18750,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -18068,6 +18961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -18184,6 +19081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stump_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
@@ -18355,6 +19257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -18415,6 +19321,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -18642,6 +19552,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
       propertyPath: m_RootOrder
@@ -18846,6 +19761,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
       propertyPath: m_RootOrder
@@ -18929,6 +19849,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -19019,6 +19944,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -19079,6 +20008,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -19197,6 +20130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!4 &1323947599 stripped
@@ -19294,6 +20232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -19402,6 +20345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -19582,6 +20530,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &1379963685
@@ -19665,6 +20618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202732821079448320, guid: cebfacc247a640945a2c30b442202fca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cebfacc247a640945a2c30b442202fca, type: 3}
@@ -19750,6 +20708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &1389277130 stripped
@@ -19768,6 +20731,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -19833,6 +20800,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -19966,6 +20937,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &1396305127 stripped
@@ -20058,6 +21034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &1403083695
@@ -20071,6 +21052,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -20139,6 +21125,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -20271,6 +21261,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &1410111042
@@ -20283,6 +21278,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -20677,6 +21676,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!4 &1441706726 stripped
@@ -20752,6 +21756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!1001 &1448144480
@@ -20765,6 +21774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1,
         type: 3}
@@ -20839,6 +21853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -20905,6 +21923,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -21056,6 +22078,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -21257,6 +22283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -21394,6 +22424,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Branch_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
       propertyPath: m_RootOrder
@@ -21476,6 +22511,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -21621,6 +22660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &1510577963
@@ -21690,6 +22734,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!4 &1510833650 stripped
@@ -21708,6 +22757,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -21776,6 +22829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -21931,6 +22989,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!4 &1525784268 stripped
@@ -22015,6 +23078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
@@ -22136,6 +23204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -22196,6 +23268,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -22270,6 +23346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -22359,6 +23440,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -22493,8 +23578,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281677109
-  m_fontColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    rgba: 4293125091
+  m_fontColor: {r: 0.8901961, g: 0.8901961, b: 0.8901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -22572,6 +23657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -22656,6 +23746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -22706,122 +23800,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 93caadf4359ae8143aad35b3145d31af, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
---- !u!1 &1573716061
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1573716064}
-  - component: {fileID: 1573716063}
-  - component: {fileID: 1573716062}
-  - component: {fileID: 1573716065}
-  m_Layer: 8
-  m_Name: Terrain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!154 &1573716062
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573716061}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: fd73ff80da2117a3ebe9e0597eda46c4, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &1573716063
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573716061}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: fd73ff80da2117a3ebe9e0597eda46c4, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 0
-  m_DrawTreesAndFoliage: 1
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.0256
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 1
-  m_AllowAutoConnect: 1
---- !u!4 &1573716064
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573716061}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1573716065
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573716061}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 71802d3a8b91efc4b8833222b5c3c152, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!4 &1574049944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
@@ -22918,6 +23896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &1583556485
@@ -22930,6 +23913,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -22996,6 +23983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -23061,6 +24052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -23121,6 +24116,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -23198,6 +24197,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -23340,6 +24343,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
 --- !u!1001 &1604501295
@@ -23352,6 +24360,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -23414,6 +24426,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -23521,6 +24538,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -23644,6 +24665,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_02
       objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!1001 &1620213135
@@ -23656,6 +24682,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -23729,6 +24759,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -23864,6 +24898,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &1646434537
@@ -23876,6 +24915,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -23976,6 +25019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -24051,7 +25098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1663094835
 Transform:
   m_ObjectHideFlags: 0
@@ -24086,6 +25133,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -24291,6 +25342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -24351,6 +25406,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -24450,6 +25509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -24552,6 +25616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -24619,6 +25687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -24708,6 +25781,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -24814,6 +25891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
       propertyPath: m_RootOrder
@@ -24897,6 +25979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -24957,6 +26043,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -25163,6 +26253,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!1001 &1790821852
@@ -25175,6 +26270,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -25236,6 +26335,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -25303,6 +26406,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -25374,6 +26481,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -25581,6 +26692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -25648,6 +26763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
         type: 3}
@@ -25860,6 +26980,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847656398}
   m_CullTransparentMesh: 0
+--- !u!1 &1850816479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850816482}
+  - component: {fileID: 1850816481}
+  - component: {fileID: 1850816480}
+  m_Layer: 8
+  m_Name: Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!154 &1850816480
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850816479}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: 1d4479551b8694e4f985532ed31c9713, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1850816481
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850816479}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 1d4479551b8694e4f985532ed31c9713, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &1850816482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850816479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1855191476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29,
@@ -25883,6 +27079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -26099,6 +27300,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -26317,6 +27522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -26452,6 +27661,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1 &1889600862
@@ -26552,6 +27766,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -26619,6 +27838,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -26756,6 +27979,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &1925258827
@@ -26840,6 +28068,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!4 &1928867462 stripped
@@ -26858,6 +28091,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -26920,6 +28157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -26980,6 +28221,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -27048,6 +28293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440707293445505367, guid: 494f6d43e170e9145bc7865d243ee00b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
         type: 3}
@@ -27132,6 +28382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -27205,6 +28459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
@@ -27315,6 +28574,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -27445,6 +28708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -27506,6 +28773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -27684,6 +28956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!4 &1994132232 stripped
@@ -27702,6 +28979,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -27853,6 +29134,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!4 &2023393529 stripped
@@ -27871,6 +29157,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -27932,6 +29222,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -28005,6 +29299,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -28084,6 +29382,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -28217,6 +29519,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &2054928048 stripped
@@ -28247,6 +29554,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -28349,6 +29660,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -28482,6 +29797,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!1001 &2085052833
@@ -28494,6 +29814,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -28555,6 +29879,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_Name
       value: Tree_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
@@ -28637,6 +29965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -28704,6 +30036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
         type: 3}
@@ -28787,6 +30124,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_Name
       value: Tree_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c7eaede4efc960409fb9ef2dfb77f29, type: 3}
       propertyPath: m_RootOrder
@@ -28910,6 +30251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
 --- !u!4 &2117389295 stripped
@@ -28940,6 +30286,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
@@ -29073,6 +30423,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5202732821079448320, guid: cebfacc247a640945a2c30b442202fca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cebfacc247a640945a2c30b442202fca, type: 3}
 --- !u!1001 &2124519724
@@ -29086,6 +30441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
         type: 3}
@@ -29315,6 +30675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -29376,6 +30740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
         type: 3}
@@ -29531,6 +30900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!4 &2136842245 stripped
@@ -29550,6 +30924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -29629,6 +31008,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_Name
       value: Tree_02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4471b1f7f824e4d44887e1364c6fc61a, type: 3}
       propertyPath: m_RootOrder
