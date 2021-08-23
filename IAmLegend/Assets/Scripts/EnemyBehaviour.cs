@@ -30,13 +30,10 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("AI")]
     [SerializeField] float delayTimeFSM;
     private NavMeshAgent agent;
+
     // Animation
     private Animator animator;
-
-    public void TakeDamage(GameObject weapon)
-    {
-        Debug.Log(weapon.name);
-    }
+    #endregion
 
     // Start is called before the first frame update
     void Awake()
@@ -44,7 +41,7 @@ public class EnemyBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
-    #endregion
+    
 
     // Update is called once per frame
     void Update()
@@ -52,7 +49,6 @@ public class EnemyBehaviour : MonoBehaviour
         StartCoroutine(ScanArea());        // Look for targets
         StartCoroutine(UpdateState());     // FSM
     }
-    
 
     private IEnumerator ScanArea()
     {
@@ -86,7 +82,6 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
     }
-
     private IEnumerator UpdateState()
     {
         // Wait some time to prevent overloading
@@ -128,7 +123,6 @@ public class EnemyBehaviour : MonoBehaviour
             Idle(); // or patrol?
         }
     }
-
     private void Idle()
     {
         agent.isStopped = true;
@@ -143,7 +137,6 @@ public class EnemyBehaviour : MonoBehaviour
         animator.SetBool("Idle", false);
         animator.SetBool("Walking", true);
     }
-
     private void AttackTarget()
     {
         agent.isStopped = true;
@@ -164,7 +157,6 @@ public class EnemyBehaviour : MonoBehaviour
 
         attackingCountdown -= Time.deltaTime;
     }
-
     private void UpdateHealthBar( float _health )
     {
         float healthNormalized = (_health / 100);    // Normalize the value
@@ -177,7 +169,7 @@ public class EnemyBehaviour : MonoBehaviour
         currentDamage = damage;
     }
 
-    // Collision with tag bullets/ammo receive damage
+    // Collision with tag weapons to receive damage
     void OnTriggerEnter( Collider other )
     {
         switch( other.tag )

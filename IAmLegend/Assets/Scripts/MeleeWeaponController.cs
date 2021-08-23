@@ -12,6 +12,7 @@ public class MeleeWeaponController : MonoBehaviour
     private Animator _animator;
     private PlayerCharacterBehaviour _characterBehaviour;
     private MeleeState _meleeState;
+    [SerializeField] private float _damagePower;
 
     private static readonly int HasPistol = Animator.StringToHash("hasPistol");
     private static readonly int Bash = Animator.StringToHash("bash");
@@ -55,14 +56,10 @@ public class MeleeWeaponController : MonoBehaviour
     {
         if (this._meleeState != MeleeState.Bashing) return;
         if (other.gameObject.GetComponent<EnemyBehaviour>() == null) return;
-        foreach (ContactPoint cp in other.contacts)
-        {
-            Collider c = cp.thisCollider;
-            if (!c.CompareTag("")) continue;
-            // Inflict the damage.
-            // EnemyBehaviour is responsible for computing the damage. This is simply a trigger.
-            c.GetComponent<EnemyBehaviour>().TakeDamage(c.gameObject);
-        }
+
+        if( !other.gameObject.CompareTag("Enemy") ) return;
+        // EnemyBehaviour is responsible for computing the damage. This is simply a trigger.
+        other.gameObject.GetComponent<EnemyBehaviour>().SetDamage(_damagePower);
     }
 
     private void _bash()

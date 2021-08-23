@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 enum PlayerState { Walk, Run, Die }
 
 /// <summary>
@@ -40,6 +40,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private GameObject _droppedWeapon;
     private GameObject _handContainer;
     private HealthSystem _healthSystem;
+    [SerializeField] private Slider healthBar;
 
     private void Start()
     {
@@ -195,6 +196,8 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     private void _setState()
     {
+        _updateHealthBar(_healthSystem.GetHealth());      // Update health bar
+
         if (this._healthSystem.GetHealth() <= 0)
         {
             this._state.Remove(PlayerState.Run);
@@ -279,4 +282,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._grabPistol(droppedWeapon.gameObject);
     }
 
+    private void _updateHealthBar( float _health )
+    {
+        float healthNormalized = (_health / 100);    // Normalize the value
+        healthBar.value = healthNormalized;
+    }
 }
