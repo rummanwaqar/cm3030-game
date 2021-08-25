@@ -8,8 +8,8 @@ public class HUD : MonoBehaviour
 {
     [Header("UI Texts")]
     [SerializeField] private TMP_Text tmpScore;
-    [SerializeField] private TMP_Text tmpTime;
     [SerializeField] private TMP_Text tmpAmmo;
+    [SerializeField] private TMP_Text tmpTime;
 
     [Header("Low Health Filter")]
     [SerializeField] private HealthSystem playerHealth;
@@ -24,10 +24,14 @@ public class HUD : MonoBehaviour
     {
         emptyColor = lowHealthFilter.color;
         redFilter = new Color(120, 0, 0, 0.25f);
+        
     }
 
     private void Update()
     {
+        // Display time in seconds since the beginning 
+        tmpTime.SetText(Mathf.Round(Time.time).ToString());
+
         // Lerp to a red filter screen when player's health is low
         if( playerHealth.GetHealth() <= 30 && lerpToRed <= 1 )
         {
