@@ -30,6 +30,9 @@ public class DogBehaviour : MonoBehaviour
     [SerializeField] private float deathAnimationTime;
     [SerializeField] private HealthSystem healthSystem;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private float recoverAmount;
+    [SerializeField] private float recoveringCountdown;
+    [SerializeField] private float recoverRate;
     private float currentDamage;
 
     // Animation
@@ -116,8 +119,9 @@ public class DogBehaviour : MonoBehaviour
             float distanceFromSafeLoc = Vector3.Distance(transform.position, nearestSafeLoc.transform.position);
             if( distanceFromSafeLoc <= radiusToSit )
             {
-                // If near safe location, sit there
+                // If near safe location, sit there. Health will regenerate
                 Idle();
+                RegenerateHealth();
             }
             else
             {
@@ -196,7 +200,6 @@ public class DogBehaviour : MonoBehaviour
             detectedTarget.Hit();                                           // Process damage
             attackingCountdown = 1 / attackingRate;
         }
-
         attackingCountdown -= Time.deltaTime;
     }
 
@@ -250,8 +253,22 @@ public class DogBehaviour : MonoBehaviour
         currentDamage = damage;
     }
 
+    private void RegenerateHealth()
+    {
+        healthSystem.SetRecover(recoverAmount);
+        // Countdown between health recovering
+        if( recoveringCountdown <= 0  && healthSystem.GetHealth() < 100)
+        {
+            healthSystem.Recover();
+            recoveringCountdown = 1 / recoverRate;
+        }
+        recoveringCountdown -= Time.deltaTime;
+    }
+
     private IEnumerator Dead()
     {
+        agent.isStopped = true;
+
         // Play death animation manually
         animator.Play("death");
 
