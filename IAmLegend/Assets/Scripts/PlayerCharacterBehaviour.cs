@@ -37,7 +37,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private float _speed;
     private int _layerMaskFloor;
     private bool _hasPistol;
-    private GameObject _droppedWeapon;
     private GameObject _handContainer;
     private HealthSystem _healthSystem;
     [SerializeField] private Slider healthBar;
@@ -101,91 +100,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         {
             this.weapon.SetActive(false);
         }
-    }
-
-    /// <summary>
-    /// Executes when entering triggers colliders.
-    /// </summary>
-    /// <param name="other"></param> the game object the player has collided with.
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Item"))
-        {
-            if (other.gameObject.CompareTag("Weapon"))
-            {
-                this._handleCollideWeapon(other.gameObject);
-            } else if (other.gameObject.CompareTag("WeaponMelee"))
-            {
-                this._grabMeleeWeapon(other.gameObject);
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Executes when leaving a trigger collider.
-    /// </summary>
-    /// <param name="other"></param> the game object the player is leaving.
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.gameObject == this._droppedWeapon)
-        {
-            this._droppedWeapon = null;
-        }
-    }
-
-    private void _grabMeleeWeapon(GameObject droppedWeapon)
-    {
-        if (droppedWeapon.tag.Contains("WeaponMelee"))
-        {
-            this.meleeWeapon = droppedWeapon;
-            this.meleeWeapon.transform.SetPositionAndRotation(
-                new Vector3(0, 0, 0),
-                new Quaternion(0, 0, 0, 0)
-                );
-            // Add newly grabbed item to the right hand container.
-            this.meleeWeapon.transform.SetParent(this._handContainer.transform, false);
-        }
-    }
-    
-    /// <summary>
-    /// Grab items dropped on the floor.
-    /// </summary>
-    /// <param name="droppedWeapon"></param>
-    private void _grabPistol(GameObject droppedWeapon)
-    {
-        if (this.weapon == null && droppedWeapon != this._droppedWeapon)
-        {
-            if (droppedWeapon.tag.Contains("Weapon"))
-            {
-                this.weapon = droppedWeapon;
-                this.weapon.transform.SetPositionAndRotation(
-                    new Vector3(0, 0, 0),
-                    new Quaternion(0, 0, 0, 0)
-                    );
-                // Add newly grabbed item to the right hand container.
-                this.weapon.transform.SetParent(this._handContainer.transform, false);
-                this.UsePistol();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Drops the current weapon.
-    /// </summary>
-    private void _dropWeapon()
-    {
-        Transform tr = this.transform;
-        Vector3 position = tr.position;
-        if (this.weapon != null)
-        {
-            // Set the parent of the dropped weapon to be the same as the parent of the player character.
-            this.weapon.transform.SetParent(tr.parent, false);
-            // Move the dropped weapon to the floor
-            this.weapon.transform.position = new Vector3( position.x, 0, position.z - 2);
-        }
-        this._droppedWeapon = this.weapon;
-        this.weapon = null;
-        this._animator.SetBool(HasPistol, false);
     }
 
     /// <summary>
@@ -270,21 +184,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// Handles the consequences of colliding with weapon items.
-    ///
-    /// This method is responsible for deciding whether to grab an item and orchestrate the consequences.
-    /// </summary>
-    /// <param name="droppedWeapon"></param>
-    private void _handleCollideWeapon(GameObject droppedWeapon)
+    private void _updateHealthBar( float health )
     {
-        this._dropWeapon();
-        this._grabPistol(droppedWeapon.gameObject);
-    }
-
-    private void _updateHealthBar( float _health )
-    {
-        float healthNormalized = (_health / 100);    // Normalize the value
+        float healthNormalized = (health / 100);    // Normalize the value
         healthBar.value = healthNormalized;
     }
 }

@@ -118,6 +118,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damagePower: 20
+--- !u!114 &3876588956805185637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392095413093461565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03db617e7c9d45f72939020288953839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeWeapon1: {fileID: 0}
+  meleeWeapon2: {fileID: 0}
+  rangeWeapon1: {fileID: 0}
+  rangeWeapon2: {fileID: 0}
+  inUse: {fileID: 0}
 --- !u!1001 &95139893062521389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 7478225697116208144, guid: 6fb37f825ee63264b9c2600bf1a52006,
         type: 3}
       propertyPath: m_Name
-      value: PlayerCharacter
+      value: PlayerCharacter Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7478225697116208144, guid: 6fb37f825ee63264b9c2600bf1a52006,
         type: 3}
