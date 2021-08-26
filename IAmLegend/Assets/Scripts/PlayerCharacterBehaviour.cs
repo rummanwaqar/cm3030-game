@@ -40,7 +40,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private HealthSystem _healthSystem;
     private static readonly int Dead = Animator.StringToHash("dead");
     private static readonly int Die = Animator.StringToHash("die");
-    [SerializeField] private Slider healthBar;
+    private Slider _healthBar;
 
     private void Start()
     {
@@ -53,6 +53,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._animator.SetBool(HasPistol, false);
         this._handContainer =  GameObject.Find("/PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container").gameObject;
         this._healthSystem = GetComponent<HealthSystem>();
+        this._healthBar = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
     }
     
     /// <summary>
@@ -189,6 +190,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private void _updateHealthBar( float health )
     {
         float healthNormalized = (health / 100);    // Normalize the value
-        healthBar.value = healthNormalized;
+        _healthBar.value = healthNormalized;
     }
 }
