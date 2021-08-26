@@ -14,7 +14,6 @@ public class MeleeWeaponController : MonoBehaviour
     private MeleeState _meleeState;
     [SerializeField] private float _damagePower;
 
-    private static readonly int HasPistol = Animator.StringToHash("hasPistol");
     private static readonly int Bash = Animator.StringToHash("bash");
     // Start is called before the first frame update
     void Start()

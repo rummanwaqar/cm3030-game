@@ -16,7 +16,6 @@ enum PlayerState { Walk, Run, Die }
 /// </remarks>
 public class PlayerCharacterBehaviour : MonoBehaviour
 {
-    private static readonly int Die = Animator.StringToHash("die");
     private static readonly int HasPistol = Animator.StringToHash("hasPistol");
     private static readonly int Run = Animator.StringToHash("run");
     private static readonly int Shoot = Animator.StringToHash(("shoot"));
@@ -39,6 +38,8 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private bool _hasPistol;
     private GameObject _handContainer;
     private HealthSystem _healthSystem;
+    private static readonly int Dead = Animator.StringToHash("dead");
+    private static readonly int Die = Animator.StringToHash("die");
     [SerializeField] private Slider healthBar;
 
     private void Start()
@@ -59,7 +60,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        if (!this._state.Contains(PlayerState.Die))
+        if (!this._animator.GetBool(Dead))
         {
             this._setState();
             this._rotate();
@@ -118,6 +119,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._state.Remove(PlayerState.Walk);
             this._state.Add(PlayerState.Die);
             this._animator.SetTrigger(Die);
+            this._animator.SetBool(Dead, true);
             return;
         }
         bool walk = Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0;
