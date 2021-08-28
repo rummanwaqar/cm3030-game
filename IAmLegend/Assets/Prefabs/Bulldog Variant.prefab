@@ -74,8 +74,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   detectedTarget: {fileID: 0}
-  damagePower: 10
-  attackingCountdown: 5
+  damagePower: 35
+  attackingCountdown: 2
   attackingRate: 0.5
   deathAnimationTime: 1.25
   healthSystem: {fileID: 727668495049699423}

@@ -27,11 +27,18 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private float distanceToShowHealthBar;
     [SerializeField] private GameObject player;
+    [SerializeField] private int scoreWhenDead;
     private float currentDamage;
 
     [Header("AI")]
     [SerializeField] float delayTimeFSM;
     private NavMeshAgent agent;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource attackingSound;
+
+    // Game manager
+    private GameManager gameManager;
 
     // Animation
     private Animator animator;
@@ -43,6 +50,7 @@ public class EnemyBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectsWithTag("Player")[0];
+        gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
     }
     
 
@@ -148,6 +156,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent.isStopped = true;
         animator.SetTrigger("Attacking");
+        attackingSound.Play();
 
         // If the target is close, deal damange
         DealDamage();
@@ -199,7 +208,8 @@ public class EnemyBehaviour : MonoBehaviour
         // Wait for the death animation to finish
         yield return new WaitForSeconds(deathAnimationTime);
 
-        // Delete the zombie from the scene
+        // Delete the zombie from the scene & update score
+        gameManager.addScore(scoreWhenDead);
         Destroy(gameObject);
     }
 
