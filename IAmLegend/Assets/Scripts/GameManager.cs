@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,12 @@ public class GameManager : MonoBehaviour
     [Header("Zombie Waves Spawn Settings")]
     [SerializeField] private GameObject zombieWave;
     [SerializeField] private float spawnDistance;
-    [SerializeField] private float spawnRate;
+    [SerializeField] private float spawnRateMin;
+    [SerializeField] private float spawnRateMax;
+
+    [Header("Scoring")]
+    [SerializeField] private TMP_Text scoreTMP;
+    private int score;
 
     Vector3 playerCurPosition;
     Vector3 playerLastPosition;
@@ -16,8 +22,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+
         // Spawn a new wave every time cycle to increase difficulty
-        InvokeRepeating("SpawnZombies", 0f, spawnRate);
+        float randomNum = Random.Range(spawnRateMin, spawnRateMax);
+        InvokeRepeating("SpawnZombies", 0f, randomNum);
+    }
+
+    void Update()
+    {
+        // Update score in the UI
+        scoreTMP.SetText(score.ToString());
     }
 
     void SpawnZombies()
@@ -35,5 +50,10 @@ public class GameManager : MonoBehaviour
             Instantiate(zombieWave, spawnPos, playerRotation);
         }
         playerLastPosition = playerCurPosition;
+    }
+
+    public void addScore(int points)
+    {
+        score += points;
     }
 }
