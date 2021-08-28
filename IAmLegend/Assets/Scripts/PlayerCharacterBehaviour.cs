@@ -60,13 +60,11 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        if (!this._animator.GetBool(Dead))
-        {
-            this._setState();
-            this._rotate();
-            this._move();
-            this._chooseWeapon();
-        }
+        if (this._animator.GetBool(Dead)) return;
+        this._setState();
+        this._rotate();
+        this._move();
+        this._chooseWeapon();
     }
 
     private void _chooseWeapon()
@@ -93,6 +91,22 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         {
             this._animator.SetBool(HasPistol, true);
         }
+        this._inventory.transform.SetParent(this._handContainer.transform);
+        this._holdWeapon();
+    }
+
+    private void _holdWeapon()
+    {
+        // Add newly grabbed item to the inventory slot.
+        this.weapon.transform.SetParent(this._handContainer.transform, false);
+        this.weapon.transform.SetPositionAndRotation(
+            new Vector3(0, 0, -10),
+            new Quaternion(0, 0, 0, 0)
+            );
+        // Reset the position and rotation of the weapon before use.
+        this.weapon.transform.localPosition = new Vector3(0, 0, 0);
+        this.weapon.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        this.weapon.transform.localScale = new Vector3(1, 1, 1);
     }
 
     /// <summary>
@@ -105,6 +119,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     {
         this.weapon = this._inventory.GETMeleeWeapon();
         this._animator.SetBool(HasPistol, false);
+        this._holdWeapon();
     }
 
     /// <summary>

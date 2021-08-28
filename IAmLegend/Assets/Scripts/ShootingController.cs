@@ -12,6 +12,7 @@ public class ShootingController : MonoBehaviour
     private Animator _animator;
     private static readonly int Shoot = Animator.StringToHash("shoot");
     private PlayerCharacterBehaviour _characterBehaviour;
+    private static readonly int Dead = Animator.StringToHash("dead");
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class ShootingController : MonoBehaviour
 
     private void Update()
     {
+        if (this._animator.GetBool(Dead)) return;
         if (Input.GetAxisRaw("Fire1") == 0f) return;
         this._characterBehaviour.UsePistol();
         this._shoot();
