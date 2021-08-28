@@ -25,6 +25,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float deathAnimationTime;
     [SerializeField] private HealthSystem healthSystem;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private float distanceToShowHealthBar;
+    [SerializeField] private GameObject player;
     private float currentDamage;
 
     [Header("AI")]
@@ -40,6 +42,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
     
 
@@ -89,7 +92,10 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Update variables for the FSM's decisions
         UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
-     
+
+        // If the player is close, display health bar
+        ShowHealthBar();
+
         if( healthSystem.GetHealth() <= 0 )
         {
             // No health, die
@@ -111,6 +117,7 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 // If a target was detected and near, attack
                 AttackTarget();
+
             }
             else
             {
@@ -194,6 +201,16 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Delete the zombie from the scene
         Destroy(gameObject);
+    }
+
+    // If the player is close show health bar
+    private void ShowHealthBar()
+    {
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if( distance < distanceToShowHealthBar )
+            healthBar.gameObject.SetActive(true);
+        else
+            healthBar.gameObject.SetActive(false);
     }
 
 #if DEBUG
