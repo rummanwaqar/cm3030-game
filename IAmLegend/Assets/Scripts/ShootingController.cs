@@ -21,15 +21,15 @@ public class ShootingController : MonoBehaviour
 
     private void Update()
     {
-        if (!this._characterBehaviour.weapon) return;
         if (Input.GetAxisRaw("Fire1") == 0f) return;
         this._characterBehaviour.UsePistol();
         this._shoot();
-        this._animator.SetTrigger(Shoot);
     }
 
     private void _shoot()
     {
+        if (!this._characterBehaviour.weapon) return;
+        this._animator.SetTrigger(Shoot);
         if (Time.fixedTime > (_lastShotTime + waitTime))
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position,

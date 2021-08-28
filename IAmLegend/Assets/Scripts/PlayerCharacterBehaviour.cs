@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using TMPro;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 enum PlayerState { Walk, Run, Die }
@@ -23,7 +21,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Walk = Animator.StringToHash("walk");
     
     public GameObject weapon;
-    public GameObject meleeWeapon;
     
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
@@ -41,6 +38,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Dead = Animator.StringToHash("dead");
     private static readonly int Die = Animator.StringToHash("die");
     private Slider _healthBar;
+    private InventoryController _inventory;
 
     private void Start()
     {
@@ -54,6 +52,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._handContainer =  GameObject.Find("/PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container").gameObject;
         this._healthSystem = GetComponent<HealthSystem>();
         this._healthBar = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
+        this._inventory = GetComponent<InventoryController>();
     }
     
     /// <summary>
@@ -66,6 +65,21 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._setState();
             this._rotate();
             this._move();
+            this._chooseWeapon();
+        }
+    }
+
+    private void _chooseWeapon()
+    {
+        if (this.weapon.Equals(null)) return;
+        bool change = Input.GetAxis("Jump") != 0;
+        if (this.weapon.tag.Contains("WeaponMelee"))
+        {
+            this._inventory.SwitchMeleeWeapon();
+        }
+        else
+        {
+            this._inventory.SwitchRangeWeapon();
         }
     }
 
@@ -74,13 +88,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UsePistol()
     {
-        if (this.meleeWeapon)
-        {
-            this.meleeWeapon.SetActive(false);
-        }
+        this.weapon = this._inventory.GETRangeWeapon();
         if (this.weapon)
         {
-            this.weapon.SetActive(true);
             this._animator.SetBool(HasPistol, true);
         }
     }
@@ -93,15 +103,8 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UseMelee()
     {
-        if (this.meleeWeapon)
-        {
-            this.meleeWeapon.SetActive(true);
-            this._animator.SetBool(HasPistol, false);
-        }
-        if (this.weapon)
-        {
-            this.weapon.SetActive(false);
-        }
+        this.weapon = this._inventory.GETMeleeWeapon();
+        this._animator.SetBool(HasPistol, false);
     }
 
     /// <summary>
