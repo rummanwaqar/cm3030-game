@@ -7,10 +7,10 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     [Header("UI Texts")]
-    [SerializeField] private TMP_Text tmpScore;
-    [SerializeField] private TMP_Text tmpTime;
-    [SerializeField] private TMP_Text tmpAmmo;
-
+    [SerializeField] private TMP_Text scoreTMP;
+    [SerializeField] private TMP_Text timeTMP;
+    [SerializeField] private TMP_Text ammoTMP;
+   
     [Header("Low Health Filter")]
     [SerializeField] private HealthSystem playerHealth;
     [SerializeField] private Image lowHealthFilter;
@@ -27,6 +27,14 @@ public class HUD : MonoBehaviour
     }
 
     private void Update()
+    {
+        // Display time in seconds since the beginning 
+        timeTMP.SetText(Mathf.Round(Time.time).ToString());
+
+        LowHealthFilter();
+    }
+
+    private void LowHealthFilter()
     {
         // Lerp to a red filter screen when player's health is low
         if( playerHealth.GetHealth() <= 30 && lerpToRed <= 1 )

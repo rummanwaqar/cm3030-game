@@ -24,7 +24,7 @@ public class DogBehaviour : MonoBehaviour
     [SerializeField] private float damagePower;
     [SerializeField] private float attackingCountdown;
     [SerializeField] private float attackingRate;
-    private bool runAway;
+    private bool dogSit;
 
     [Header("Health & Damage")]
     [SerializeField] private float deathAnimationTime;
@@ -44,7 +44,7 @@ public class DogBehaviour : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        runAway = false;
+        dogSit = false;
     }
 
     // Update is called once per frame
@@ -108,35 +108,25 @@ public class DogBehaviour : MonoBehaviour
             healthSystem.Hit();                                            // Process damage
             currentDamage = 0;                                             // The damage was processed
         }
-        else if( distanceFromPlayer >= radiusToStartFollow && runAway == false )
+        else if( distanceFromPlayer >= radiusToStartFollow && dogSit == false )
         {
             // Walk to the player
             FollowPlayer(followTarget.transform.position);
         }
-        else if( runAway )
+        else if( dogSit )
         {
-            nearestSafeLoc = GetNearestSafeLoc();                           // Find the nearest safe location
-            float distanceFromSafeLoc = Vector3.Distance(transform.position, nearestSafeLoc.transform.position);
-            if( distanceFromSafeLoc <= radiusToSit )
-            {
-                // If near safe location, sit there. Health will regenerate
-                Idle();
-                RegenerateHealth();
-            }
-            else
-            {
-                // running away on player's command
-                RunAway();
-            }
+            // Sit + health will regenerate
+            Idle();
+            RegenerateHealth();
         }
-        else if( detectedTarget != null && runAway == false )
+        else if( detectedTarget != null && dogSit == false )
         {
             // Calculate the distance to the target
             Vector3 posDog = transform.position;
             Vector3 postTarget = detectedTarget.transform.position;
             float distanceToTarget = Mathf.Abs(Vector3.Distance(posDog, postTarget));
 
-            if( distanceToTarget < distanceToAttack && runAway == false )
+            if( distanceToTarget < distanceToAttack && dogSit == false )
             {
                 // If a target was detected and near, attack
                 AttackTarget();
@@ -150,6 +140,8 @@ public class DogBehaviour : MonoBehaviour
         else if( distanceFromPlayer <= radiusToSit )
         {
             Idle();
+            // Health regenerate while Idle
+            RegenerateHealth();
         }
     }
 
@@ -203,42 +195,10 @@ public class DogBehaviour : MonoBehaviour
         attackingCountdown -= Time.deltaTime;
     }
 
-    private void RunAway()
-    {
-        agent.isStopped = false;
-        agent.SetDestination(nearestSafeLoc.transform.position);           // Run to the nearest safe place
-        animator.SetBool("Idle", false);
-        animator.SetBool("Walking", true);
-    }
-
-    public void SetRunAway( bool state )
+    public void SetSitState( bool state )
     {
         // Set the dong's runaway state
-        runAway = state;
-    }
-
-    private GameObject GetNearestSafeLoc()
-    {
-        GameObject[] locations = GameObject.FindGameObjectsWithTag("DogSafeLoc");
-        if( locations != null )
-        {
-            float chosenLocDist = Vector3.Distance(transform.position, locations[0].transform.position);
-            GameObject chosenLoc = locations[0];
-
-            foreach( GameObject loc in locations )
-            {
-                float calcDist = Vector3.Distance(transform.position, loc.transform.position);
-                // If the current location is closer, chose it
-                if( calcDist < chosenLocDist )
-                {
-                    chosenLoc = loc;
-                    chosenLocDist = calcDist;
-                }
-            }
-            return chosenLoc;
-        }
-        // Return the player's location if no safe locations around
-        return followTarget;
+        dogSit = state;
     }
 
     private void UpdateHealthBar( float _health )

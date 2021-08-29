@@ -9,12 +9,16 @@ public class Bullet : MonoBehaviour
     public float maxTimeAlive = 2f;
 
     private float _startTime;
-    
+    [SerializeField] private AudioSource audioSFX;
+
     private void Start()
     {
         _startTime = Time.fixedTime;
         var rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * bulletForce, ForceMode.Impulse);
+
+        // Using a static function to keep playing SFX when the object is destroyed
+        AudioSource.PlayClipAtPoint(audioSFX.clip, transform.position);
     }
 
     private void Update()

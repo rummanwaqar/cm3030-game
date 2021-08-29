@@ -25,11 +25,20 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float deathAnimationTime;
     [SerializeField] private HealthSystem healthSystem;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private float distanceToShowHealthBar;
+    [SerializeField] private GameObject player;
+    [SerializeField] private int scoreWhenDead;
     private float currentDamage;
 
     [Header("AI")]
     [SerializeField] float delayTimeFSM;
     private NavMeshAgent agent;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource attackingSound;
+
+    // Game manager
+    private GameManager gameManager;
 
     // Animation
     private Animator animator;
@@ -40,6 +49,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
     }
     
 
@@ -89,7 +100,10 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Update variables for the FSM's decisions
         UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
-     
+
+        // If the player is close, display health bar
+        ShowHealthBar();
+
         if( healthSystem.GetHealth() <= 0 )
         {
             // No health, die
@@ -111,6 +125,7 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 // If a target was detected and near, attack
                 AttackTarget();
+
             }
             else
             {
@@ -141,6 +156,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent.isStopped = true;
         animator.SetTrigger("Attacking");
+        attackingSound.Play();
 
         // If the target is close, deal damange
         DealDamage();
@@ -192,8 +208,19 @@ public class EnemyBehaviour : MonoBehaviour
         // Wait for the death animation to finish
         yield return new WaitForSeconds(deathAnimationTime);
 
-        // Delete the zombie from the scene
+        // Delete the zombie from the scene & update score
+        gameManager.addScore(scoreWhenDead);
         Destroy(gameObject);
+    }
+
+    // If the player is close show health bar
+    private void ShowHealthBar()
+    {
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if( distance < distanceToShowHealthBar )
+            healthBar.gameObject.SetActive(true);
+        else
+            healthBar.gameObject.SetActive(false);
     }
 
 #if DEBUG

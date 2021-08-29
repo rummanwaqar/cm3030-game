@@ -9,8 +9,8 @@ TagManager:
   - Enemy
   - Dog
   - Bullet
-  - DogSafeLoc
   - WeaponMelee
+  - ZombieWave
   layers:
   - Default
   - TransparentFX

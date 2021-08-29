@@ -8,7 +8,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7171820306135132964}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -16,8 +16,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &7063767647415130441
-CapsuleCollider:
+--- !u!65 &984869721
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -26,10 +26,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.63
-  m_Height: 3.86
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.09}
+  serializedVersion: 2
+  m_Size: {x: 1.13, y: 1.45, z: 1.33}
+  m_Center: {x: 0, y: 0.62, z: 0.06}
 --- !u!95 &2087457840
 Animator:
   serializedVersion: 3
@@ -75,8 +74,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   detectedTarget: {fileID: 0}
-  damagePower: 10
-  attackingCountdown: 5
+  damagePower: 35
+  attackingCountdown: 2
   attackingRate: 0.5
   deathAnimationTime: 1.25
   healthSystem: {fileID: 727668495049699423}
@@ -272,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cff63f7b6e6f9af4395feaec4444d7f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 501.659
+      value: 499.01
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cff63f7b6e6f9af4395feaec4444d7f4, type: 3}
       propertyPath: m_LocalPosition.y
