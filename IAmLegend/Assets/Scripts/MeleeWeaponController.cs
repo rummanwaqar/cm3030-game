@@ -15,6 +15,9 @@ public class MeleeWeaponController : MonoBehaviour
     [SerializeField] private float _damagePower;
 
     private static readonly int Bash = Animator.StringToHash("bash");
+
+    private static readonly int Dead = Animator.StringToHash("dead");
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +33,12 @@ public class MeleeWeaponController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        if (Input.GetAxis("Fire2") != 0f)
+        if (this._animator.GetBool(Dead)) return;
+        if (Input.GetAxis("Fire2") == 0f) return;
+        this._setState();
+        if (this._meleeState == MeleeState.Idle)
         {
-            this._setState();
-            if (this._meleeState == MeleeState.Idle)
-            {
-                this._bash();
-            }
+            this._bash();
         }
     }
 

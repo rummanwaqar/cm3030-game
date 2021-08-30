@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 enum PlayerState { Walk, Run, Die }
@@ -23,7 +22,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Walk = Animator.StringToHash("walk");
     
     public GameObject weapon;
-    public GameObject meleeWeapon;
     
     [SerializeField] private float baseSpeed = 1.5f;
     [SerializeField] private float runBoost = 2f;
@@ -36,12 +34,15 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private float _speed;
     private int _layerMaskFloor;
     private bool _hasPistol;
-    private GameObject _droppedWeapon;
     private GameObject _handContainer;
     private HealthSystem _healthSystem;
     private static readonly int Dead = Animator.StringToHash("dead");
     private static readonly int Die = Animator.StringToHash("die");
-    [SerializeField] private Slider healthBar;
+    private Slider _healthBar;
+    private InventoryController _inventory;
+    private static readonly int Forward = Animator.StringToHash("forward");
+    private static readonly int Sideways = Animator.StringToHash("sideways");
+    private int[] _previousMoveState = new []{0, 0, 0, 0};
 
     private void Start()
     {
@@ -54,6 +55,8 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._animator.SetBool(HasPistol, false);
         this._handContainer =  GameObject.Find("/PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container").gameObject;
         this._healthSystem = GetComponent<HealthSystem>();
+        this._healthBar = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
+        this._inventory = GetComponent<InventoryController>();
     }
     
     /// <summary>
@@ -61,11 +64,24 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        if (!this._animator.GetBool(Dead))
+        if (this._animator.GetBool(Dead)) return;
+        this._setState();
+        this._rotate();
+        this._move();
+        this._chooseWeapon();
+    }
+
+    private void _chooseWeapon()
+    {
+        if (this.weapon.Equals(null)) return;
+        bool change = Input.GetAxis("Jump") != 0;
+        if (this.weapon.tag.Contains("WeaponMelee"))
         {
-            this._setState();
-            this._rotate();
-            this._move();
+            this._inventory.SwitchMeleeWeapon();
+        }
+        else
+        {
+            this._inventory.SwitchRangeWeapon();
         }
     }
 
@@ -74,15 +90,27 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UsePistol()
     {
-        if (this.meleeWeapon)
-        {
-            this.meleeWeapon.SetActive(false);
-        }
+        this.weapon = this._inventory.GETRangeWeapon();
         if (this.weapon)
         {
-            this.weapon.SetActive(true);
             this._animator.SetBool(HasPistol, true);
         }
+        this._inventory.transform.SetParent(this._handContainer.transform);
+        this._holdWeapon();
+    }
+
+    private void _holdWeapon()
+    {
+        // Add newly grabbed item to the inventory slot.
+        this.weapon.transform.SetParent(this._handContainer.transform, false);
+        this.weapon.transform.SetPositionAndRotation(
+            new Vector3(0, 0, -10),
+            new Quaternion(0, 0, 0, 0)
+            );
+        // Reset the position and rotation of the weapon before use.
+        this.weapon.transform.localPosition = new Vector3(0, 0, 0);
+        this.weapon.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        this.weapon.transform.localScale = new Vector3(1, 1, 1);
     }
 
     /// <summary>
@@ -93,100 +121,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UseMelee()
     {
-        if (this.meleeWeapon)
-        {
-            this.meleeWeapon.SetActive(true);
-            this._animator.SetBool(HasPistol, false);
-        }
-        if (this.weapon)
-        {
-            this.weapon.SetActive(false);
-        }
-    }
-
-    /// <summary>
-    /// Executes when entering triggers colliders.
-    /// </summary>
-    /// <param name="other"></param> the game object the player has collided with.
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Item"))
-        {
-            if (other.gameObject.CompareTag("Weapon"))
-            {
-                this._handleCollideWeapon(other.gameObject);
-            } else if (other.gameObject.CompareTag("WeaponMelee"))
-            {
-                this._grabMeleeWeapon(other.gameObject);
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Executes when leaving a trigger collider.
-    /// </summary>
-    /// <param name="other"></param> the game object the player is leaving.
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.gameObject == this._droppedWeapon)
-        {
-            this._droppedWeapon = null;
-        }
-    }
-
-    private void _grabMeleeWeapon(GameObject droppedWeapon)
-    {
-        if (droppedWeapon.tag.Contains("WeaponMelee"))
-        {
-            this.meleeWeapon = droppedWeapon;
-            this.meleeWeapon.transform.SetPositionAndRotation(
-                new Vector3(0, 0, 0),
-                new Quaternion(0, 0, 0, 0)
-                );
-            // Add newly grabbed item to the right hand container.
-            this.meleeWeapon.transform.SetParent(this._handContainer.transform, false);
-        }
-    }
-    
-    /// <summary>
-    /// Grab items dropped on the floor.
-    /// </summary>
-    /// <param name="droppedWeapon"></param>
-    private void _grabPistol(GameObject droppedWeapon)
-    {
-        if (this.weapon == null && droppedWeapon != this._droppedWeapon)
-        {
-            if (droppedWeapon.tag.Contains("Weapon"))
-            {
-                this.weapon = droppedWeapon;
-                this.weapon.transform.SetPositionAndRotation(
-                    new Vector3(0, 0, 0),
-                    new Quaternion(0, 0, 0, 0)
-                    );
-                // Add newly grabbed item to the right hand container.
-                this.weapon.transform.SetParent(this._handContainer.transform, false);
-                this.UsePistol();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Drops the current weapon.
-    /// </summary>
-    private void _dropWeapon()
-    {
-        Transform tr = this.transform;
-        Vector3 position = tr.position;
-        if (this.weapon != null)
-        {
-            // Set the parent of the dropped weapon to be the same as the parent of the player character.
-            this.weapon.transform.SetParent(tr.parent, false);
-            // Move the dropped weapon to the floor
-            this.weapon.transform.position = new Vector3( position.x, 0, position.z - 2);
-        }
-        this._droppedWeapon = this.weapon;
-        this.weapon = null;
+        this.weapon = this._inventory.GETMeleeWeapon();
         this._animator.SetBool(HasPistol, false);
+        this._holdWeapon();
     }
 
     /// <summary>
@@ -208,8 +145,14 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._animator.SetBool(Dead, true);
             return;
         }
+        // Walk if any directional axis is not zero
         bool walk = Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0;
-        bool run = Input.GetAxis("Fire3") != 0;
+        // Only if going forwards and holding run button
+        bool run = (
+            Input.GetAxis("Fire3") != 0 &&
+            Input.GetAxis("Vertical") > 0 &&
+            Input.GetAxis("Horizontal") == 0
+            );
         if (walk && !run)
             this._state.Add(PlayerState.Walk);
         else
@@ -262,31 +205,60 @@ public class PlayerCharacterBehaviour : MonoBehaviour
                 movement.normalized *
                     (this._speed * Time.deltaTime)
                 );
-            if (isWalking) this._animator.SetTrigger(Walk);
-            if (isRunning) this._animator.SetTrigger(Run);
+        }
+        this._updateAnimator();
+    }
+
+    private void _updateAnimator()
+    {
+        // Collect values for forward, sideways, walk and run into integers
+        // for forward and sideways negative values mean backwards and to the left, zero mean no movement.
+        int forward = _floatToDirectionInt(Input.GetAxis("Vertical"));
+        int sideways = _floatToDirectionInt(Input.GetAxis("Horizontal"));
+        int isWalking = this._state.Contains(PlayerState.Walk) ? 1 : 0;
+        int isRunning = this._state.Contains(PlayerState.Run) ? 1 : 0;
+        // create an integer list that represent the current move state
+        int[] currentState = new int[] { isWalking, isRunning, forward, sideways };
+        // trigger stop animation if moving state has changed. This allows us to have transitions from stop to move
+        // animations without the need to have transitions between each possible movement animation.
+        bool resetMoveState = false;
+        for (int i = 0; i < currentState.Length; i++)
+        {
+            if (currentState[i] != this._previousMoveState[i])
+            {
+                resetMoveState = true;
+                break;
+            }
+        }
+        if (resetMoveState)
+        {
+            this._animator.SetTrigger(Stop);
+        }
+        if (isWalking == 1 && isRunning == 0)
+        {
+            this._animator.SetTrigger(Walk);
+        } else if (isRunning == 1)
+        {
+            this._animator.SetTrigger(Run);
         }
         else
         {
             this._animator.SetTrigger(Stop);
         }
-
+        this._animator.SetInteger(Forward, forward);
+        this._animator.SetInteger(Sideways, sideways);
+        this._previousMoveState = currentState;
     }
 
-    /// <summary>
-    /// Handles the consequences of colliding with weapon items.
-    ///
-    /// This method is responsible for deciding whether to grab an item and orchestrate the consequences.
-    /// </summary>
-    /// <param name="droppedWeapon"></param>
-    private void _handleCollideWeapon(GameObject droppedWeapon)
+    private static int _floatToDirectionInt(float n)
     {
-        this._dropWeapon();
-        this._grabPistol(droppedWeapon.gameObject);
+        if (n == 0f) return 0;
+        return (int) (n / Math.Abs(n));
     }
 
-    private void _updateHealthBar( float _health )
+    private void _updateHealthBar( float health )
     {
-        float healthNormalized = (_health / 100);    // Normalize the value
-        healthBar.value = healthNormalized;
+        float healthNormalized = (health / 100);    // Normalize the value
+        _healthBar.value = healthNormalized;
     }
 }
