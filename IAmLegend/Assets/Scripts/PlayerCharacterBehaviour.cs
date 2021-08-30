@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 enum PlayerState { Walk, Run, Die }
@@ -39,6 +40,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Die = Animator.StringToHash("die");
     private Slider _healthBar;
     private InventoryController _inventory;
+    private static readonly int Forward = Animator.StringToHash("forward");
+    private static readonly int Sideways = Animator.StringToHash("sideways");
+    private int[] _previousMoveState = new []{0, 0, 0, 0};
 
     private void Start()
     {
@@ -141,8 +145,14 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._animator.SetBool(Dead, true);
             return;
         }
+        // Walk if any directional axis is not zero
         bool walk = Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0;
-        bool run = Input.GetAxis("Fire3") != 0;
+        // Only if going forwards and holding run button
+        bool run = (
+            Input.GetAxis("Fire3") != 0 &&
+            Input.GetAxis("Vertical") > 0 &&
+            Input.GetAxis("Horizontal") == 0
+            );
         if (walk && !run)
             this._state.Add(PlayerState.Walk);
         else
@@ -195,14 +205,55 @@ public class PlayerCharacterBehaviour : MonoBehaviour
                 movement.normalized *
                     (this._speed * Time.deltaTime)
                 );
-            if (isWalking) this._animator.SetTrigger(Walk);
-            if (isRunning) this._animator.SetTrigger(Run);
+        }
+        this._updateAnimator();
+    }
+
+    private void _updateAnimator()
+    {
+        // Collect values for forward, sideways, walk and run into integers
+        // for forward and sideways negative values mean backwards and to the left, zero mean no movement.
+        int forward = _floatToDirectionInt(Input.GetAxis("Vertical"));
+        int sideways = _floatToDirectionInt(Input.GetAxis("Horizontal"));
+        int isWalking = this._state.Contains(PlayerState.Walk) ? 1 : 0;
+        int isRunning = this._state.Contains(PlayerState.Run) ? 1 : 0;
+        // create an integer list that represent the current move state
+        int[] currentState = new int[] { isWalking, isRunning, forward, sideways };
+        // trigger stop animation if moving state has changed. This allows us to have transitions from stop to move
+        // animations without the need to have transitions between each possible movement animation.
+        bool resetMoveState = false;
+        for (int i = 0; i < currentState.Length; i++)
+        {
+            if (currentState[i] != this._previousMoveState[i])
+            {
+                resetMoveState = true;
+                break;
+            }
+        }
+        if (resetMoveState)
+        {
+            this._animator.SetTrigger(Stop);
+        }
+        if (isWalking == 1 && isRunning == 0)
+        {
+            this._animator.SetTrigger(Walk);
+        } else if (isRunning == 1)
+        {
+            this._animator.SetTrigger(Run);
         }
         else
         {
             this._animator.SetTrigger(Stop);
         }
+        this._animator.SetInteger(Forward, forward);
+        this._animator.SetInteger(Sideways, sideways);
+        this._previousMoveState = currentState;
+    }
 
+    private static int _floatToDirectionInt(float n)
+    {
+        if (n == 0f) return 0;
+        return (int) (n / Math.Abs(n));
     }
 
     private void _updateHealthBar( float health )
