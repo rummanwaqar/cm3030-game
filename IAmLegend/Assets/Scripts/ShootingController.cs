@@ -30,7 +30,7 @@ public class ShootingController : MonoBehaviour
 
     private void _shoot()
     {
-        if (!this._characterBehaviour.weapon) return;
+        if (this._characterBehaviour.weapon.Equals(null)) return;
         this._animator.SetTrigger(Shoot);
         if (Time.fixedTime > (_lastShotTime + waitTime))
         {

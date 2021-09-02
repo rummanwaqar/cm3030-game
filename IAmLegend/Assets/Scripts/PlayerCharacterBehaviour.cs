@@ -90,13 +90,19 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UsePistol()
     {
+        GameObject temp = this.weapon;
         this.weapon = this._inventory.GETRangeWeapon();
-        if (this.weapon)
+        if (this.weapon.Equals(null))
+        {
+            this.weapon = temp;
+            return;
+        }
+        else
         {
             this._animator.SetBool(HasPistol, true);
+            this.weapon.transform.SetParent(this._handContainer.transform);
+            this._holdWeapon();
         }
-        this._inventory.transform.SetParent(this._handContainer.transform);
-        this._holdWeapon();
     }
 
     private void _holdWeapon()
