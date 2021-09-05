@@ -13,6 +13,7 @@ public class ShootingController : MonoBehaviour
     private static readonly int Shoot = Animator.StringToHash("shoot");
     private PlayerCharacterBehaviour _characterBehaviour;
     private static readonly int Dead = Animator.StringToHash("dead");
+    
 
     void Start()
     {
