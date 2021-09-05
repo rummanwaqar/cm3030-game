@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    [SerializeField] private GameObject meleeWeapon1;
-    [SerializeField] private GameObject meleeWeapon2;
-    [SerializeField] private GameObject rangeWeapon1;
-    [SerializeField] private GameObject rangeWeapon2;
+    [SerializeField] private GameObject meleeWeapon1 = null;
+    [SerializeField] private GameObject meleeWeapon2 = null;
+    [SerializeField] private GameObject rangeWeapon1 = null;
+    [SerializeField] private GameObject rangeWeapon2 = null;
     private float _xAngle, _yAngle, _zAngle;
 
     [SerializeField] private GameObject inUse;
