@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Weapon
-  - Gun
   - Enemy
   - Dog
   - Bullet
-  - WeaponMelee
   - ZombieWave
+  - Melee
+  - Range
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 enum PlayerState { Walk, Run, Die }
 
 /// <summary>
@@ -20,6 +21,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Shoot = Animator.StringToHash(("shoot"));
     private static readonly int Stop = Animator.StringToHash("stop");
     private static readonly int Walk = Animator.StringToHash("walk");
+    private float _holdingJump = 0f;
     
     public GameObject weapon;
     
@@ -33,7 +35,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private Vector3 _lookPoint;
     private float _speed;
     private int _layerMaskFloor;
-    private bool _hasPistol;
     private GameObject _handContainer;
     private HealthSystem _healthSystem;
     private static readonly int Dead = Animator.StringToHash("dead");
@@ -46,6 +47,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
 
     private void Start()
     {
+        this.weapon = null;
         this._layerMaskFloor = LayerMask.GetMask("Floor");
         this._camera = Camera.main;
         this._rigidbody = GetComponent<Rigidbody>();
@@ -73,50 +75,50 @@ public class PlayerCharacterBehaviour : MonoBehaviour
 
     private void _chooseWeapon()
     {
-        if (this.weapon.Equals(null)) return;
-        bool change = Input.GetAxis("Jump") != 0;
-        if (this.weapon.tag.Contains("WeaponMelee"))
+        if (this.weapon is null) return;
+        if (Input.GetButtonDown("Jump"))
         {
-            this._inventory.SwitchMeleeWeapon();
+            this._holdingJump = Time.time;
         }
-        else
+        else if (Input.GetButtonUp("Jump"))
         {
-            this._inventory.SwitchRangeWeapon();
+            float delta = Time.time - this._holdingJump;
+            if (delta > 0.5)
+            {
+                this._inventory.DropWeapon(this.weapon);
+                this.weapon = null;
+                this._animator.SetBool(HasPistol, false);
+            }
+            else
+            {
+                this._inventory.SwitchWeapon(this.weapon);
+                if (this.weapon.tag.Contains("Range"))
+                {
+                    this.weapon = null;
+                    this.UsePistol();
+                } else if (this.weapon.tag.Contains("Melee"))
+                {
+                    this.weapon = null;
+                    this.UseMelee();
+                }
+            }
         }
+
     }
 
     /// <summary>
-    /// 
+    /// Switches to a range weapon if there is one available in the inventory.
+    ///
+    /// Does nothing otherwise.
     /// </summary>
     public void UsePistol()
     {
-        GameObject temp = this.weapon;
-        this.weapon = this._inventory.GETRangeWeapon();
-        if (this.weapon.Equals(null))
-        {
-            this.weapon = temp;
-            return;
-        }
-        else
-        {
-            this._animator.SetBool(HasPistol, true);
-            this.weapon.transform.SetParent(this._handContainer.transform);
-            this._holdWeapon();
-        }
-    }
-
-    private void _holdWeapon()
-    {
-        // Add newly grabbed item to the inventory slot.
-        this.weapon.transform.SetParent(this._handContainer.transform, false);
-        this.weapon.transform.SetPositionAndRotation(
-            new Vector3(0, 0, -10),
-            new Quaternion(0, 0, 0, 0)
-            );
-        // Reset the position and rotation of the weapon before use.
-        this.weapon.transform.localPosition = new Vector3(0, 0, 0);
-        this.weapon.transform.localRotation = new Quaternion(0, 0, 0, 0);
-        this.weapon.transform.localScale = new Vector3(1, 1, 1);
+        if (!(this.weapon is null) && this.weapon.tag.Contains("Range")) return;
+        GameObject range = this._inventory.CheckoutRangeWeapon();
+        if (range is null) return;
+        if (range == this.weapon) return;
+        if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
+        this._useWeapon(range, true);
     }
 
     /// <summary>
@@ -127,10 +129,49 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UseMelee()
     {
-        this.weapon = this._inventory.GETMeleeWeapon();
-        this._animator.SetBool(HasPistol, false);
+        if (!(this.weapon is null) && this.weapon.tag.Contains("Melee")) return;
+        GameObject melee = this._inventory.CheckoutMeleeWeapon();
+        if (melee is null) return;
+        if (melee == this.weapon) return;
+        if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
+        this._useWeapon(melee);
+    }
+
+    /// <summary>
+    /// Given a Weapon and a usePistolState, move the weapon to the player's hand and the current weapon to the
+    /// inventory.
+    /// Also, change the animation state to reflect this change.
+    /// </summary>
+    /// <param name="newWeapon">The weapon the player should hold.</param>
+    /// <param name="usePistolState">Indicates that the animation assume the player is holding a pistol.</param>
+    private void _useWeapon(GameObject newWeapon, bool usePistolState=false)
+    {
+        if (newWeapon is null) return;
+        this.weapon = newWeapon;
+        this._animator.SetBool(HasPistol, usePistolState);
         this._holdWeapon();
     }
+
+    /// <summary>
+    /// Moves the this.weapon to the hand of the player and adjust its position, rotation and scale.
+    /// </summary>
+    private void _holdWeapon()
+    {
+        // Add this.weapon to the hand container so that the player is holding it.
+        this.weapon.transform.SetParent(this._handContainer.transform, false);
+        // Fix the weapon position and rotation so that it is in sync with the hand.
+        this.weapon.transform.SetPositionAndRotation(
+            new Vector3(0, 0, -10),
+            new Quaternion(0, 0, 0, 0)
+            );
+        // Reset the position and rotation of the weapon before use.
+        this.weapon.transform.localPosition = new Vector3(0, 0, 0);
+        this.weapon.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        // Scale the weapon to it's design size. Do not trust the scale the item had in the floor or in the UI.
+        this.weapon.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    
 
     /// <summary>
     /// Computes the states the PlayerCharacter is in.
