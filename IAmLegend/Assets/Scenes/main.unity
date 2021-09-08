@@ -5828,11 +5828,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bulldog Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 7171820306146698788, guid: 2b02e19be1e86e147b536a72307aa5a9,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 00238ee690e4ca746b30ee8fba2075e1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b02e19be1e86e147b536a72307aa5a9, type: 3}
 --- !u!1001 &385244938
