@@ -292,7 +292,6 @@ public class InventoryController : MonoBehaviour
         container.Remove(weapon);
         // Set the _droppedWeapon attribute.
         this._droppedWeapon = weapon;
-        this._checkedOut = null;
     }
     
     /// <summary>
