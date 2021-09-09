@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
@@ -14,6 +13,7 @@ public class InventoryController : MonoBehaviour
     private MeleeRangeCollections<GameObject> _inventoryWeapons = new MeleeRangeCollections<GameObject>();
     private MeleeRangeCollections<GameObject> _inventorySlots = new MeleeRangeCollections<GameObject>();
     private float _xAngle, _yAngle, _zAngle;
+    // the active weapon is a weapon that was checked out of the inventory. Player is using it.
     private GameObject _checkedOut = null;
 
     [SerializeField] private GameObject inUse;
@@ -21,11 +21,8 @@ public class InventoryController : MonoBehaviour
     private Animator _animator;
     // the dropped weapon is a weapon recently dropped. We don't want to grab it again right away.
     private GameObject _droppedWeapon;
-    // the active weapon is a weapon that was checked out of the inventory. Player is using it.
-    private GameObject _activeWeapon;
     
     // Container to hold items in the inventory
-    private GameObject _inventoryContainer;
     private Dictionary<string, GameObject[]> _weapons = new Dictionary<string, GameObject[]>();
     
     // Start is called before the first frame update
@@ -34,8 +31,6 @@ public class InventoryController : MonoBehaviour
         this._inventoryCapacity = 2;
         this._inventoryWeapons.Melee = new List<GameObject>(this._inventoryCapacity);
         this._inventoryWeapons.Range = new List<GameObject>(this._inventoryCapacity);
-        
-        this._inventoryContainer = GameObject.Find("InventoryContainer");
         this._inventorySlots.Melee = new List<GameObject>();
         this._inventorySlots.Range = new List<GameObject>();
         this._inventorySlots.Melee.Add(GameObject.Find("MeleeSlot1"));
@@ -220,6 +215,10 @@ public class InventoryController : MonoBehaviour
         {
             weaponList.Add(newWeapon);
         }
+        else
+        {
+            Debug.Log("Inventory full.");
+        }
         this._updateSlots();
     }
 
@@ -293,6 +292,7 @@ public class InventoryController : MonoBehaviour
         container.Remove(weapon);
         // Set the _droppedWeapon attribute.
         this._droppedWeapon = weapon;
+        this._checkedOut = null;
     }
     
     /// <summary>

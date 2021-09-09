@@ -75,7 +75,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
 
     private void _chooseWeapon()
     {
-        if (this.weapon is null) return;
+        if (this.weapon is null) this._useAnyWeaponAvailable();
         if (Input.GetButtonDown("Jump"))
         {
             this._holdingJump = Time.time;
@@ -103,7 +103,18 @@ public class PlayerCharacterBehaviour : MonoBehaviour
                 }
             }
         }
+    }
 
+    /// <summary>
+    /// Set a range weapon as the active weapon. If range is not available, set melee.
+    /// </summary>
+    private void _useAnyWeaponAvailable()
+    {
+        this.UsePistol();
+        if (this.weapon is null)
+        {
+            this.UseMelee();
+        }
     }
 
     /// <summary>
