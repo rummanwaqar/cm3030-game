@@ -25,7 +25,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     
     public GameObject weapon;
     
-    [SerializeField] private float baseSpeed = 1.5f;
+    [SerializeField] private float baseSpeed = 2f;
     [SerializeField] private float runBoost = 2f;
     
     private Animator _animator;
