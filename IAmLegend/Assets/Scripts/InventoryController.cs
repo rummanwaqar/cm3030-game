@@ -126,7 +126,6 @@ public class InventoryController : MonoBehaviour
     public void CheckinWeapon(GameObject weapon)
     {
         if (weapon is null) return;
-        List<GameObject> weaponTypeList = _appropriateList(this._inventoryWeapons, weapon);
         if (this._checkedOut == weapon)
         {
             this._checkedOut = null;
