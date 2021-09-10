@@ -32018,9 +32018,10 @@ MonoBehaviour:
     - Search for pickups and guns for
     combos.
 
-    - Space for switch weapons/Long space to drop
+    - Left click: attack    Right click: change weapon
 
-    - Shift to run'
+    - Shift
+    to run'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
