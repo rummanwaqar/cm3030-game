@@ -130,6 +130,7 @@ public class InventoryController : MonoBehaviour
         {
             this._checkedOut = null;
         }
+        // Makes the recently checked in weapon the second one.
         this._updateSlots();
     }
 

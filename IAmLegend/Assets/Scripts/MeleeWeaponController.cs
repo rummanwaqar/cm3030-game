@@ -33,8 +33,13 @@ public class MeleeWeaponController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        // Do not bash if dead
         if (this._animator.GetBool(Dead)) return;
-        if (Input.GetAxis("Fire2") == 0f) return;
+        // Do not shoot without a weapon
+        if (this._characterBehaviour.weapon is null) return;
+        // Do ont shoot without a range weapon
+        if (!this._characterBehaviour.weapon.tag.Contains("Melee")) return;
+        if (Input.GetAxis("Fire1") == 0f) return;
         this._setState();
         if (this._meleeState == MeleeState.Idle)
         {

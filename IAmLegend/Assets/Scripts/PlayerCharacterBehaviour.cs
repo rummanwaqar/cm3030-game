@@ -21,7 +21,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Shoot = Animator.StringToHash(("shoot"));
     private static readonly int Stop = Animator.StringToHash("stop");
     private static readonly int Walk = Animator.StringToHash("walk");
-    private float _holdingJump = 0f;
+    private float _holdingWeaponSwitch = 0f;
     
     public GameObject weapon;
     
@@ -73,16 +73,23 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._chooseWeapon();
     }
 
+    /// <summary>
+    /// Allows player to choose the weapon to use.
+    ///
+    /// Pressing Fire2 will change between melee and range weapon.
+    /// Weapons rotate in their slot, so that 
+    /// </summary>
     private void _chooseWeapon()
     {
         if (this.weapon is null) this._useAnyWeaponAvailable();
-        if (Input.GetButtonDown("Jump"))
+        if (this.weapon is null) return;
+        if (Input.GetButton("Fire2"))
         {
-            this._holdingJump = Time.time;
+            this._holdingWeaponSwitch = Time.time;
         }
-        else if (Input.GetButtonUp("Jump"))
+        else if (Input.GetButtonUp("Fire2"))
         {
-            float delta = Time.time - this._holdingJump;
+            float delta = Time.time - this._holdingWeaponSwitch;
             if (delta > 0.5)
             {
                 this._inventory.DropWeapon(this.weapon);
@@ -91,14 +98,11 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             }
             else
             {
-                this._inventory.SwitchWeapon(this.weapon);
-                if (this.weapon.tag.Contains("Range"))
+                if (this.weapon.tag.Contains("Melee"))
                 {
-                    this.weapon = null;
                     this.UsePistol();
-                } else if (this.weapon.tag.Contains("Melee"))
+                } else if (this.weapon.tag.Contains("Range"))
                 {
-                    this.weapon = null;
                     this.UseMelee();
                 }
             }
@@ -125,7 +129,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     public void UsePistol()
     {
         if (!(this.weapon is null) && this.weapon.tag.Contains("Range")) return;
-        GameObject range = this._inventory.CheckoutRangeWeapon();
+        GameObject range = this._inventory.CheckoutWeapon("Range");
         if (range is null) return;
         if (range == this.weapon) return;
         if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
@@ -141,7 +145,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     public void UseMelee()
     {
         if (!(this.weapon is null) && this.weapon.tag.Contains("Melee")) return;
-        GameObject melee = this._inventory.CheckoutMeleeWeapon();
+        GameObject melee = this._inventory.CheckoutWeapon("Melee");
         if (melee is null) return;
         if (melee == this.weapon) return;
         if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
