@@ -259,6 +259,7 @@ public class InventoryController : MonoBehaviour
     /// <param name="slot">the slot to be used</param>
     private void _addToSlot(GameObject item, GameObject slot)
     {
+        if (item.transform.parent == slot.transform) return;
         // Add newly grabbed item to the inventory slot.
         item.transform.SetParent(slot.transform, false);
         item.transform.SetPositionAndRotation(
