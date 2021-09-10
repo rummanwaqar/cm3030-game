@@ -73,6 +73,7 @@ public class InventoryController : MonoBehaviour
     {
         GameObject go = other.gameObject;
         // Only grab items
+        if (go == this._checkedOut) return;
         if (go.layer == LayerMask.NameToLayer("Item"))
         {
             List<GameObject> container = _appropriateList(this._inventoryWeapons, go);
