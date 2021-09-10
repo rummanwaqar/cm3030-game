@@ -83,31 +83,34 @@ public class InventoryController : MonoBehaviour
     }
 
     /// <summary>
-    /// Gets the ready to use range weapon.
+    /// Gets the ready to use a weapon.
     ///
     /// If there is an item in the second slot but not in the first, items are switched before returning.
     /// </summary>
-    /// <returns>The ready to use range weapon.</returns>
-    public GameObject CheckoutRangeWeapon()
+    /// <returns>The ready to use weapon.</returns>
+    public GameObject CheckoutWeapon(string weaponType)
     {
-        if (this._inventoryWeapons.Range.Count == 0) return null;
-        if (this._inventoryWeapons.Range[0] is null) this.SwitchWeapon("Range");
-        this._checkedOut = this._inventoryWeapons.Range[0];
-        this._updateSlots();
-        return this._checkedOut;
-    }
 
-    /// <summary>
-    /// Gets the ready to use melee weapon.
-    ///
-    /// If there is an item in the second slot but not in the first, items are switched before returning.
-    /// </summary>
-    /// <returns>The ready to use melee weapon.</returns>
-    public GameObject CheckoutMeleeWeapon()
-    {
-        if (this._inventoryWeapons.Melee.Count == 0) return null;
-        if (this._inventoryWeapons.Melee[0] is null) this.SwitchWeapon("Melee");
-        this._checkedOut = this._inventoryWeapons.Melee[0];
+        List<GameObject> weaponList;
+        switch (weaponType)
+        {
+            case "Melee":
+                weaponList = this._inventoryWeapons.Melee;
+                break;
+            case "Range":
+                weaponList = this._inventoryWeapons.Range;
+                break;
+            default:
+                return null;
+        } 
+        // If there is no weapon, quit.
+        if (weaponList is null || weaponList.Count == 0) return null;
+        // If the first slot is empty but the second is not, use the second
+        if (weaponList[0] is null) this.SwitchWeapon(weaponType);
+        // Keep record of the checked out weapon
+        this._checkedOut = weaponList[0];
+        // Make the checked out weapon the second one.
+        this.SwitchWeapon(weaponType);
         this._updateSlots();
         return this._checkedOut;
     }
