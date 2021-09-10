@@ -64,7 +64,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// <summary>
     /// Executes methods that need to be executed at Physics update.
     /// </summary>
-    private void FixedUpdate()
+    private void Update()
     {
         if (this._animator.GetBool(Dead)) return;
         this._setState();
