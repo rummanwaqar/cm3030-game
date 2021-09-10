@@ -209,7 +209,7 @@ public class EnemyBehaviour : MonoBehaviour
         yield return new WaitForSeconds(deathAnimationTime);
 
         // Delete the zombie from the scene & update score
-        gameManager.addScore(scoreWhenDead);
+        gameManager.AddScore(scoreWhenDead);
         Destroy(gameObject);
     }
 

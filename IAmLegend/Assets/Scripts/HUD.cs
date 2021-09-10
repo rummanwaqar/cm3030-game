@@ -20,17 +20,21 @@ public class HUD : MonoBehaviour
     float lerpToEmpty;
     bool colorChanged;
 
+    // Get timer
+    [SerializeField] private GameManager gameManager;
+    private float localTimer;
+
     private void Start()
     {
-        emptyColor = lowHealthFilter.color;
-        redFilter = new Color(120, 0, 0, 0.25f);
+        emptyColor = lowHealthFilter.color;         // Low-health filter
+        redFilter = new Color(120, 0, 0, 0.25f);    // Low-health filter
     }
 
     private void Update()
     {
-        // Display time in seconds since the beginning 
-        timeTMP.SetText(Mathf.Round(Time.time).ToString());
-
+        // Display time in seconds since the beginning
+        DisplayTime();
+        // Display a red screen on low-health
         LowHealthFilter();
     }
 
@@ -52,5 +56,14 @@ public class HUD : MonoBehaviour
             lowHealthFilter.color = Color.Lerp(redFilter, emptyColor, lerpToEmpty);
             lerpToRed = 0;                  // reset the first interpolation
         }
+    }
+
+    private void DisplayTime()
+    {
+        localTimer = gameManager.GetTimer();         
+        int timeMinutes = Mathf.FloorToInt(localTimer / 60F);
+        int timeSeconds = Mathf.FloorToInt(localTimer - timeMinutes * 60);
+        string timeString = string.Format("{0:0}:{1:00}", timeMinutes, timeSeconds);
+        timeTMP.SetText(timeString + " AM");
     }
 }

@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("GameObjects")]
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject dog;
+    [SerializeField] private GameObject directionalLight;
+
     [Header("Zombie Waves Spawn Settings")]
     [SerializeField] private GameObject zombieWave;
     [SerializeField] private float spawnDistance;
@@ -14,7 +19,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Scoring")]
     [SerializeField] private TMP_Text scoreTMP;
+    [SerializeField] private TMP_Text scoreDeadScreenTMP;
+    [SerializeField] private TMP_Text scoreWinScreenTMP;
+    [SerializeField] private GameObject deadScreen;
+    [SerializeField] private GameObject winScreen;
     private int score;
+    private float timer;
 
     Vector3 playerCurPosition;
     Vector3 playerLastPosition;
@@ -31,8 +41,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // Update the timer
+        timer += Time.deltaTime;
         // Update score in the UI
         scoreTMP.SetText(score.ToString());
+        Sunrise();
+        EndGame();
     }
 
     void SpawnZombies()
@@ -52,8 +66,68 @@ public class GameManager : MonoBehaviour
         playerLastPosition = playerCurPosition;
     }
 
-    public void addScore(int points)
+    public void AddScore(int points)
     {
         score += points;
+    }
+
+    private void EndGame()
+    {
+        HealthSystem playerHealth = player.GetComponents<HealthSystem>()[0];
+        HealthSystem dogHealth = dog.GetComponents<HealthSystem>()[0];
+        // If the player is dead (lose) 
+        if(playerHealth.GetHealth() <= 0)
+        {
+            // If the dog is alive, triple score
+            if(dogHealth.GetHealth() > 0)
+            {
+                score *= 3;
+            }
+            scoreDeadScreenTMP.SetText(score.ToString());
+            deadScreen.SetActive(true);
+            Time.timeScale = 0;
+        }
+        // If it's 6:00 AM (won)
+        if(timer >= 360)
+        {
+            // If the dog is alive, triple score
+            if(dogHealth.GetHealth() > 0)
+            {
+                score *= 3;
+            }
+            scoreWinScreenTMP.SetText(score.ToString());
+            winScreen.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    private void Sunrise()
+    {
+        // Sunrise from 5:20 AM to 6:00 AM
+        Light lightSource = directionalLight.GetComponents<Light>()[0];
+        
+        int timeMinutes = Mathf.FloorToInt(timer / 60F);
+        int timeSeconds = Mathf.FloorToInt(timer - timeMinutes * 60);
+        
+        // If 5:30AM, increase sunlight and lerp to a white light source
+        if(lightSource.intensity < 1  && timeMinutes >= 5 &&  timeSeconds > 20)
+        {
+            lightSource.intensity += 0.001f;
+            lightSource.color =  Color.Lerp(lightSource.color, Color.white, Mathf.PingPong(Time.time, 1));
+        }
+    }
+    public float GetTimer()
+    {
+        return timer;
+    } 
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
