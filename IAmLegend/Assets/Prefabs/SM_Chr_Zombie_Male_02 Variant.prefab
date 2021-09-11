@@ -30,52 +30,6 @@ CapsuleCollider:
   m_Height: 1.7879751
   m_Direction: 1
   m_Center: {x: 0, y: 0.8940481, z: 0.011367798}
---- !u!114 &-521555311474274399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789882594217064594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e48c8c62ce23e4caa38ed526475e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
---- !u!114 &1256939845256920124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789882594217064594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6796f23f2491f4e4f97d7e2c66d23200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceSight: 0
-  distanceToAttack: 0
-  angleView: 0
-  targetsLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  obstaclesLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  detectedTarget: {fileID: 0}
-  damagePower: 0
-  attackingCountdown: 0
-  attackingRate: 0
-  deathAnimationTime: 0
-  healthSystem: {fileID: 0}
-  healthBar: {fileID: 0}
-  distanceToShowHealthBar: 0
-  player: {fileID: 0}
-  scoreWhenDead: 0
-  delayTimeFSM: 0
-  attackingSound: {fileID: 0}
 --- !u!82 &-2397161491777360387
 AudioSource:
   m_ObjectHideFlags: 0
@@ -172,6 +126,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-521555311474274399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789882594217064594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e48c8c62ce23e4caa38ed526475e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+--- !u!114 &1256939845256920124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789882594217064594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6796f23f2491f4e4f97d7e2c66d23200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceSight: 0
+  distanceToAttack: 0
+  angleView: 0
+  targetsLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  obstaclesLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  detectedTarget: {fileID: 0}
+  damagePower: 0
+  attackingCountdown: 0
+  attackingRate: 0
+  deathAnimationTime: 0
+  healthSystem: {fileID: 0}
+  healthBar: {fileID: 0}
+  distanceToShowHealthBar: 0
+  player: {fileID: 0}
+  scoreWhenDead: 0
+  delayTimeFSM: 0
+  attackingSound: {fileID: 0}
 --- !u!1001 &1788573822876349878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,6 +182,10 @@ PrefabInstance:
     - target: {fileID: 1331328711462180, guid: e8e6a8d0d7d9a1245a0d143f23cc283b, type: 3}
       propertyPath: m_Name
       value: SM_Chr_Zombie_Male_02 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331328711462180, guid: e8e6a8d0d7d9a1245a0d143f23cc283b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4267430597299062, guid: e8e6a8d0d7d9a1245a0d143f23cc283b, type: 3}
       propertyPath: m_RootOrder
@@ -231,7 +235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c929656c07909194ab8a5cd79f5f371d, type: 2}
+      objectReference: {fileID: 9100000, guid: 8da76dc53badf154eb82250717b22e02, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e6a8d0d7d9a1245a0d143f23cc283b, type: 3}
 --- !u!1 &1789882594217064594 stripped

@@ -30,52 +30,6 @@ CapsuleCollider:
   m_Height: 1.7914348
   m_Direction: 1
   m_Center: {x: 0.0037994385, y: 0.90433383, z: -0.03794861}
---- !u!114 &-4329907451834005647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5505449400234868156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6796f23f2491f4e4f97d7e2c66d23200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceSight: 0
-  distanceToAttack: 0
-  angleView: 0
-  targetsLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  obstaclesLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  detectedTarget: {fileID: 0}
-  damagePower: 0
-  attackingCountdown: 0
-  attackingRate: 0
-  deathAnimationTime: 0
-  healthSystem: {fileID: 0}
-  healthBar: {fileID: 0}
-  distanceToShowHealthBar: 0
-  player: {fileID: 0}
-  scoreWhenDead: 0
-  delayTimeFSM: 0
-  attackingSound: {fileID: 0}
---- !u!114 &1154081456683080205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5505449400234868156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e48c8c62ce23e4caa38ed526475e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
 --- !u!82 &6852486647757580039
 AudioSource:
   m_ObjectHideFlags: 0
@@ -172,6 +126,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4329907451834005647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505449400234868156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6796f23f2491f4e4f97d7e2c66d23200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceSight: 0
+  distanceToAttack: 0
+  angleView: 0
+  targetsLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  obstaclesLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  detectedTarget: {fileID: 0}
+  damagePower: 0
+  attackingCountdown: 0
+  attackingRate: 0
+  deathAnimationTime: 0
+  healthSystem: {fileID: 0}
+  healthBar: {fileID: 0}
+  distanceToShowHealthBar: 0
+  player: {fileID: 0}
+  scoreWhenDead: 0
+  delayTimeFSM: 0
+  attackingSound: {fileID: 0}
+--- !u!114 &1154081456683080205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505449400234868156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e48c8c62ce23e4caa38ed526475e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
 --- !u!1001 &5504478615264857628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c929656c07909194ab8a5cd79f5f371d, type: 2}
+      objectReference: {fileID: 9100000, guid: 8da76dc53badf154eb82250717b22e02, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 115e889341316e74b9a33d9cbcdd61b2, type: 3}
 --- !u!1 &5505449400234868156 stripped
