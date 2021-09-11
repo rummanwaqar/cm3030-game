@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         scoreCalculated = false;
-        timeMultipler = 2;
+        timeMultipler = 1;
 
         // Spawn a new wave every time cycle to increase difficulty
         float randomNum = Random.Range(spawnRateMin, spawnRateMax);
