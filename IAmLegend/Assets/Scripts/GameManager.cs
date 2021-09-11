@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         scoreCalculated = false;
-        timeMultipler = 1;
-        
+        timeMultipler = 2;
+
         // Spawn a new wave every time cycle to increase difficulty
         float randomNum = Random.Range(spawnRateMin, spawnRateMax);
         InvokeRepeating("SpawnZombies", 0f, randomNum);
@@ -52,8 +52,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Update the timer
-        timer += Time.deltaTime;
-        timer *= timeMultipler;
+        timer += (Time.deltaTime * timeMultipler);
         // Update score in the UI
         scoreTMP.SetText(score.ToString());
         Sunrise();
