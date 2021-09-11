@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6796f23f2491f4e4f97d7e2c66d23200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceSight: 11
+  distanceSight: 32
   distanceToAttack: 2.5
   angleView: 180
   targetsLayers:
@@ -792,7 +792,6 @@ MonoBehaviour:
   scoreWhenDead: 35
   delayTimeFSM: 0.5
   attackingSound: {fileID: -3510731240426194236}
-  gameManager: {fileID: 0}
 --- !u!82 &-3510731240426194236
 AudioSource:
   m_ObjectHideFlags: 0
