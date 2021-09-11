@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private int score;
     private bool scoreCalculated;
     private float timer;
-
+    private float timeMultipler;
     Vector3 playerCurPosition;
     Vector3 playerLastPosition;
 
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         scoreCalculated = false;
+        timeMultipler = 1;
         
         // Spawn a new wave every time cycle to increase difficulty
         float randomNum = Random.Range(spawnRateMin, spawnRateMax);
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
     {
         // Update the timer
         timer += Time.deltaTime;
+        timer *= timeMultipler;
         // Update score in the UI
         scoreTMP.SetText(score.ToString());
         Sunrise();
