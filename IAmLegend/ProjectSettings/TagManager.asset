@@ -10,6 +10,8 @@ TagManager:
   - ZombieWave
   - Melee
   - Range
+  - WeaponMelee
+  - Weapon
   layers:
   - Default
   - TransparentFX
