@@ -23106,8 +23106,12 @@ MonoBehaviour:
   player: {fileID: 1956485616}
   dog: {fileID: 68230130}
   directionalLight: {fileID: 672104652}
-  zombieWave: {fileID: 5151200583831224086, guid: 0aed0f13269de8940b7bfadd75a8f891,
-    type: 3}
+  zombieWave:
+  - {fileID: 5151200583831224086, guid: 0aed0f13269de8940b7bfadd75a8f891, type: 3}
+  - {fileID: 1197611820037364188, guid: 4da145ab48b2feb7799695fe93544990, type: 3}
+  - {fileID: 1636859138697444032, guid: b2da01f3f87e571a38606337b44c8e0a, type: 3}
+  - {fileID: 8681008378412819424, guid: 8d73290c98dc8b6358e5b560146ba647, type: 3}
+  - {fileID: 2455564438676539, guid: f1461081805d5becab9aa5fb3c986e82, type: 3}
   spawnDistance: 30
   spawnRateMin: 15
   spawnRateMax: 30

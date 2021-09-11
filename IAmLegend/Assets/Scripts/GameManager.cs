@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject directionalLight;
 
     [Header("Zombie Waves Spawn Settings")]
-    [SerializeField] private GameObject zombieWave;
+    [SerializeField] private List<GameObject> zombieWave;
     [SerializeField] private float spawnDistance;
     [SerializeField] private float spawnRateMin;
     [SerializeField] private float spawnRateMax;
@@ -71,7 +71,8 @@ public class GameManager : MonoBehaviour
             Quaternion playerRotation = player.transform.rotation;
 
             Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-            Instantiate(zombieWave, spawnPos, playerRotation);
+            int randomNum = Random.Range(0, zombieWave.Count);
+            Instantiate(zombieWave[randomNum], spawnPos, playerRotation);
         }
         playerLastPosition = playerCurPosition;
     }

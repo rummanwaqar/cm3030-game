@@ -23,7 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     [Header("Health & Damage")]
     [SerializeField] private float deathAnimationTime;
-    [SerializeField] private HealthSystem healthSystem;
+    private HealthSystem _healthSystem;
     [SerializeField] private Slider healthBar;
     [SerializeField] private float distanceToShowHealthBar;
     [SerializeField] private GameObject player;
@@ -51,6 +51,7 @@ public class EnemyBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
+        _healthSystem = GetComponent<HealthSystem>();
     }
     
 
@@ -99,12 +100,12 @@ public class EnemyBehaviour : MonoBehaviour
         yield return new WaitForSeconds(delayTimeFSM);
 
         // Update variables for the FSM's decisions
-        UpdateHealthBar(healthSystem.GetHealth());                         // Update health bar
+        UpdateHealthBar(_healthSystem.GetHealth());                         // Update health bar
 
         // If the player is close, display health bar
         ShowHealthBar();
 
-        if( healthSystem.GetHealth() <= 0 )
+        if( _healthSystem.GetHealth() <= 0 )
         {
             // No health, die
             StartCoroutine(Dead());
@@ -112,8 +113,8 @@ public class EnemyBehaviour : MonoBehaviour
         else if( currentDamage != 0 )
         {
             // If a damage is needed to be processed
-            healthSystem.SetDamage(currentDamage);
-            healthSystem.Hit();                                            // Process damage
+            _healthSystem.SetDamage(currentDamage);
+            _healthSystem.Hit();                                            // Process damage
             currentDamage = 0;                                             // The damage was processed
         }
         else if( detectedTarget != null )
@@ -191,12 +192,12 @@ public class EnemyBehaviour : MonoBehaviour
         switch( other.tag )
         {
             case "Bullet":
-                healthSystem.SetDamage(20);
-                healthSystem.Hit();
+                _healthSystem.SetDamage(20);
+                _healthSystem.Hit();
                 break;
             default:
-                healthSystem.SetDamage(0);
-                healthSystem.Hit();
+                _healthSystem.SetDamage(0);
+                _healthSystem.Hit();
                 break;
         }
     }
