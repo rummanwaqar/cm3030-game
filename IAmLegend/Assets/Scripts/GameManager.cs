@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject deadScreen;
     [SerializeField] private GameObject winScreen;
     private int score;
+    private bool scoreCalculated;
     private float timer;
 
     Vector3 playerCurPosition;
@@ -36,7 +37,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         score = 0;
-
+        scoreCalculated = false;
+        
         // Spawn a new wave every time cycle to increase difficulty
         float randomNum = Random.Range(spawnRateMin, spawnRateMax);
         InvokeRepeating("SpawnZombies", 0f, randomNum);
@@ -84,9 +86,10 @@ public class GameManager : MonoBehaviour
         if(playerHealth.GetHealth() <= 0)
         {
             // If the dog is alive, triple score
-            if(dogHealth.GetHealth() > 0)
+            if(dogHealth.GetHealth() > 0 && !scoreCalculated)
             {
                 score *= 3;
+                scoreCalculated = true;
             }
             scoreDeadScreenTMP.SetText(score.ToString());
             deadScreen.SetActive(true);
@@ -97,9 +100,10 @@ public class GameManager : MonoBehaviour
         if(timer >= 360)
         {
             // If the dog is alive, triple score
-            if(dogHealth.GetHealth() > 0)
+            if(dogHealth.GetHealth() > 0 && !scoreCalculated)
             {
                 score *= 3;
+                scoreCalculated = true;
             }
             scoreWinScreenTMP.SetText(score.ToString());
             winScreen.SetActive(true);
