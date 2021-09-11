@@ -55,7 +55,7 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._animator = GetComponent<Animator>();
         this._state = new HashSet<PlayerState> { };
         this._animator.SetBool(HasPistol, false);
-        this._handContainer =  GameObject.Find("/PlayerCharacter/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/R_hand_container").gameObject;
+        this._handContainer =  GameObject.Find("R_hand_container").gameObject;
         this._healthSystem = GetComponent<HealthSystem>();
         this._healthBar = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
         this._inventory = GetComponent<InventoryController>();
