@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     Vector3 playerCurPosition;
     Vector3 playerLastPosition;
 
+    HealthSystem playerHealth;
+    HealthSystem dogHealth;
+    Light lightSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,10 @@ public class GameManager : MonoBehaviour
         // Spawn a new wave every time cycle to increase difficulty
         float randomNum = Random.Range(spawnRateMin, spawnRateMax);
         InvokeRepeating("SpawnZombies", 0f, randomNum);
+
+        playerHealth = player.GetComponents<HealthSystem>()[0];
+        dogHealth = dog.GetComponents<HealthSystem>()[0];
+        lightSource = directionalLight.GetComponents<Light>()[0];
     }
 
     void Update()
@@ -73,8 +80,6 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
-        HealthSystem playerHealth = player.GetComponents<HealthSystem>()[0];
-        HealthSystem dogHealth = dog.GetComponents<HealthSystem>()[0];
         // If the player is dead (lose) 
         if(playerHealth.GetHealth() <= 0)
         {
@@ -86,6 +91,7 @@ public class GameManager : MonoBehaviour
             scoreDeadScreenTMP.SetText(score.ToString());
             deadScreen.SetActive(true);
             Time.timeScale = 0;
+            return;
         }
         // If it's 6:00 AM (won)
         if(timer >= 360)
@@ -98,13 +104,13 @@ public class GameManager : MonoBehaviour
             scoreWinScreenTMP.SetText(score.ToString());
             winScreen.SetActive(true);
             Time.timeScale = 0;
+            return;
         }
     }
 
     private void Sunrise()
     {
         // Sunrise from 5:20 AM to 6:00 AM
-        Light lightSource = directionalLight.GetComponents<Light>()[0];
         
         int timeMinutes = Mathf.FloorToInt(timer / 60F);
         int timeSeconds = Mathf.FloorToInt(timer - timeMinutes * 60);
