@@ -34918,6 +34918,6 @@ PrefabInstance:
         type: 3}
       propertyPath: weaponController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 705000901}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fcf87b84855c4c3b2e1fdb42c30e08, type: 3}
