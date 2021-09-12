@@ -21,14 +21,13 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Shoot = Animator.StringToHash(("shoot"));
     private static readonly int Stop = Animator.StringToHash("stop");
     private static readonly int Walk = Animator.StringToHash("walk");
-    private float _holdingWeaponSwitch = 0f;
     
     public GameObject weapon;
     
     [SerializeField] private float baseSpeed = 2f;
     [SerializeField] private float runBoost = 2f;
     
-    private Animator _animator;
+    public Animator animator;
     private Camera _camera;
     private HashSet<PlayerState> _state;
     private Rigidbody _rigidbody;
@@ -40,7 +39,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private static readonly int Dead = Animator.StringToHash("dead");
     private static readonly int Die = Animator.StringToHash("die");
     private Slider _healthBar;
-    private InventoryController _inventory;
     private static readonly int Forward = Animator.StringToHash("forward");
     private static readonly int Sideways = Animator.StringToHash("sideways");
     private int[] _previousMoveState = new[] {0, 0, 0, 0};
@@ -54,13 +52,12 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         this._camera = Camera.main;
         this._rigidbody = GetComponent<Rigidbody>();
         this._speed = this.baseSpeed;
-        this._animator = GetComponent<Animator>();
+        this.animator = GetComponent<Animator>();
         this._state = new HashSet<PlayerState> { };
-        this._animator.SetBool(HasPistol, false);
+        this.animator.SetBool(HasPistol, false);
         this._handContainer =  GameObject.Find("R_hand_container").gameObject;
         this._healthSystem = GetComponent<HealthSystem>();
         this._healthBar = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
-        this._inventory = GetComponent<InventoryController>();
     }
     
     /// <summary>
@@ -68,49 +65,12 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (this._animator.GetBool(Dead)) return;
+        if (this.animator.GetBool(Dead)) return;
         this._setState();
         this._rotate();
         this._move();
-        this._chooseWeapon();
     }
 
-    /// <summary>
-    /// Allows player to choose the weapon to use.
-    ///
-    /// Pressing Fire2 will change between melee and range weapon.
-    /// Weapons rotate in their slot, so that 
-    /// </summary>
-    private void _chooseWeapon()
-    {
-        if (this.weapon is null) this._useAnyWeaponAvailable();
-        if (this.weapon is null) return;
-        if (Input.GetButton("Fire2"))
-        {
-            this._holdingWeaponSwitch = Time.time;
-        }
-        else if (Input.GetButtonUp("Fire2"))
-        {
-            float delta = Time.time - this._holdingWeaponSwitch;
-            if (delta > 0.5)
-            {
-                this._inventory.DropWeapon(this.weapon);
-                this.weapon = null;
-                this._animator.SetBool(HasPistol, false);
-            }
-            else
-            {
-                if (this.weapon.tag.Contains("Melee"))
-                {
-                    this.UsePistol();
-                } else if (this.weapon.tag.Contains("Range"))
-                {
-                    this.UseMelee();
-                }
-            }
-        }
-    }
-    
     private void OnTriggerEnter(Collider other)
     {
         weaponController.PickUpInteraction(other.gameObject);
@@ -120,85 +80,6 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     {
         weaponController.PickUpInteractionComplete(other.gameObject);
     }
-
-    /// <summary>
-    /// Set a range weapon as the active weapon. If range is not available, set melee.
-    /// </summary>
-    private void _useAnyWeaponAvailable()
-    {
-        this.UsePistol();
-        if (this.weapon is null)
-        {
-            this.UseMelee();
-        }
-    }
-
-    /// <summary>
-    /// Switches to a range weapon if there is one available in the inventory.
-    ///
-    /// Does nothing otherwise.
-    /// </summary>
-    public void UsePistol()
-    {
-        /*if (!(this.weapon is null) && this.weapon.tag.Contains("Range")) return;
-        GameObject range = this._inventory.CheckoutWeapon("Range");
-        if (range is null) return;
-        if (range == this.weapon) return;
-        if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
-        this._useWeapon(range, true);*/
-    }
-
-    /// <summary>
-    /// Prepare the Player Character to use a melee weapon.
-    ///
-    /// If there is no melee weapon, it still deactivates the pistol. Use UsePistol method to reactivate pistol.
-    /// It sets the proper parent of the melee weapon and sets the trigger for melee attack animation.
-    /// </summary>
-    public void UseMelee()
-    {
-        /*if (!(this.weapon is null) && this.weapon.tag.Contains("Melee")) return;
-        GameObject melee = this._inventory.CheckoutWeapon("Melee");
-        if (melee is null) return;
-        if (melee == this.weapon) return;
-        if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
-        this._useWeapon(melee);*/
-    }
-
-    /// <summary>
-    /// Given a Weapon and a usePistolState, move the weapon to the player's hand and the current weapon to the
-    /// inventory.
-    /// Also, change the animation state to reflect this change.
-    /// </summary>
-    /// <param name="newWeapon">The weapon the player should hold.</param>
-    /// <param name="usePistolState">Indicates that the animation assume the player is holding a pistol.</param>
-    private void _useWeapon(GameObject newWeapon, bool usePistolState=false)
-    {
-        if (newWeapon is null) return;
-        this.weapon = newWeapon;
-        this._animator.SetBool(HasPistol, usePistolState);
-        this._holdWeapon();
-    }
-
-    /// <summary>
-    /// Moves the this.weapon to the hand of the player and adjust its position, rotation and scale.
-    /// </summary>
-    private void _holdWeapon()
-    {
-        // Add this.weapon to the hand container so that the player is holding it.
-        this.weapon.transform.SetParent(this._handContainer.transform, false);
-        // Fix the weapon position and rotation so that it is in sync with the hand.
-        this.weapon.transform.SetPositionAndRotation(
-            new Vector3(0, 0, -10),
-            new Quaternion(0, 0, 0, 0)
-            );
-        // Reset the position and rotation of the weapon before use.
-        this.weapon.transform.localPosition = new Vector3(0, 0, 0);
-        this.weapon.transform.localRotation = new Quaternion(0, 0, 0, 0);
-        // Scale the weapon to it's design size. Do not trust the scale the item had in the floor or in the UI.
-        this.weapon.transform.localScale = new Vector3(1, 1, 1);
-    }
-
-    
 
     /// <summary>
     /// Computes the states the PlayerCharacter is in.
@@ -215,8 +96,8 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             this._state.Remove(PlayerState.Run);
             this._state.Remove(PlayerState.Walk);
             this._state.Add(PlayerState.Die);
-            this._animator.SetTrigger(Die);
-            this._animator.SetBool(Dead, true);
+            this.animator.SetTrigger(Die);
+            this.animator.SetBool(Dead, true);
             return;
         }
         // Walk if any directional axis is not zero
@@ -306,21 +187,21 @@ public class PlayerCharacterBehaviour : MonoBehaviour
         }
         if (resetMoveState)
         {
-            this._animator.SetTrigger(Stop);
+            this.animator.SetTrigger(Stop);
         }
         if (isWalking == 1 && isRunning == 0)
         {
-            this._animator.SetTrigger(Walk);
+            this.animator.SetTrigger(Walk);
         } else if (isRunning == 1)
         {
-            this._animator.SetTrigger(Run);
+            this.animator.SetTrigger(Run);
         }
         else
         {
-            this._animator.SetTrigger(Stop);
+            this.animator.SetTrigger(Stop);
         }
-        this._animator.SetInteger(Forward, forward);
-        this._animator.SetInteger(Sideways, sideways);
+        this.animator.SetInteger(Forward, forward);
+        this.animator.SetInteger(Sideways, sideways);
         this._previousMoveState = currentState;
     }
 
