@@ -4,6 +4,7 @@ public class WeaponController : MonoBehaviour
 {
     public UiInventory uiInventory;
     public UiAction actionUi;
+    public Animator animator;
 
     private Gun _selectedWeapon = null;
     private int _selectedWeaponIndex = 0;
@@ -35,6 +36,10 @@ public class WeaponController : MonoBehaviour
         if (Input.GetButton("Fire1") && _selectedWeapon != null)
         {
             _selectedWeapon.Shoot();
+            if (!(animator is null))
+            {
+                animator.SetTrigger("shoot");
+            }
         }
         
         // pick up objects
@@ -125,6 +130,10 @@ public class WeaponController : MonoBehaviour
             if (index == _selectedWeaponIndex)
             {
                 _selectedWeapon = weapon.GetComponent<Gun>();
+                if (!(animator is null))
+                {
+                    animator.SetBool("hasPistol", true);
+                }
             }
             index++;
         }

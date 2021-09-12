@@ -19751,6 +19751,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e48c8c62ce23e4caa38ed526475e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1258925744 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1272155745699537216, guid: e5fcf87b84855c4c3b2e1fdb42c30e08,
+    type: 3}
+  m_PrefabInstance: {fileID: 1602848401175772935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1258925747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1217289233689839426, guid: e5fcf87b84855c4c3b2e1fdb42c30e08,
@@ -32165,6 +32171,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 76237606, guid: e5fcf87b84855c4c3b2e1fdb42c30e08, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 76237606, guid: e5fcf87b84855c4c3b2e1fdb42c30e08, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 981149638, guid: e5fcf87b84855c4c3b2e1fdb42c30e08, type: 3}
+      propertyPath: m_Intensity
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 981149638, guid: e5fcf87b84855c4c3b2e1fdb42c30e08, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 801556933557014003, guid: e5fcf87b84855c4c3b2e1fdb42c30e08,
         type: 3}
       propertyPath: m_Constraints
@@ -32235,6 +32257,11 @@ PrefabInstance:
       propertyPath: actionUi
       value: 
       objectReference: {fileID: 1664454715}
+    - target: {fileID: 8470256905566818270, guid: e5fcf87b84855c4c3b2e1fdb42c30e08,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1258925744}
     - target: {fileID: 8470256905566818270, guid: e5fcf87b84855c4c3b2e1fdb42c30e08,
         type: 3}
       propertyPath: uiInventory
