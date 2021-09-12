@@ -239,8 +239,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: b84b896bf08d7e74dba6e2ebe423067b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -253,7 +253,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 1
+  BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -285,7 +285,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -357,8 +357,7 @@ MonoBehaviour:
   player: {fileID: 0}
   scoreWhenDead: 35
   delayTimeFSM: 0.5
-  attackingSound: {fileID: -3510731240426194236, guid: 7be131ba3625b464e93d4c806f74022e,
-    type: 3}
+  attackingSound: {fileID: 8366594089474351764}
 --- !u!114 &3732331605644343196
 MonoBehaviour:
   m_ObjectHideFlags: 0
