@@ -43,7 +43,9 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     private InventoryController _inventory;
     private static readonly int Forward = Animator.StringToHash("forward");
     private static readonly int Sideways = Animator.StringToHash("sideways");
-    private int[] _previousMoveState = new []{0, 0, 0, 0};
+    private int[] _previousMoveState = new[] {0, 0, 0, 0};
+
+    public WeaponController weaponController;
 
     private void Start()
     {
@@ -108,6 +110,16 @@ public class PlayerCharacterBehaviour : MonoBehaviour
             }
         }
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        weaponController.PickUpInteraction(other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        weaponController.PickUpInteractionComplete(other.gameObject);
+    }
 
     /// <summary>
     /// Set a range weapon as the active weapon. If range is not available, set melee.
@@ -128,12 +140,12 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UsePistol()
     {
-        if (!(this.weapon is null) && this.weapon.tag.Contains("Range")) return;
+        /*if (!(this.weapon is null) && this.weapon.tag.Contains("Range")) return;
         GameObject range = this._inventory.CheckoutWeapon("Range");
         if (range is null) return;
         if (range == this.weapon) return;
         if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
-        this._useWeapon(range, true);
+        this._useWeapon(range, true);*/
     }
 
     /// <summary>
@@ -144,12 +156,12 @@ public class PlayerCharacterBehaviour : MonoBehaviour
     /// </summary>
     public void UseMelee()
     {
-        if (!(this.weapon is null) && this.weapon.tag.Contains("Melee")) return;
+        /*if (!(this.weapon is null) && this.weapon.tag.Contains("Melee")) return;
         GameObject melee = this._inventory.CheckoutWeapon("Melee");
         if (melee is null) return;
         if (melee == this.weapon) return;
         if (!(this.weapon is null)) this._inventory.CheckinWeapon(this.weapon);
-        this._useWeapon(melee);
+        this._useWeapon(melee);*/
     }
 
     /// <summary>

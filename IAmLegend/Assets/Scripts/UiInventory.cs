@@ -1,29 +1,26 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-struct ImageWithTransform
+internal readonly struct ImageWithTransform
 {
-    public Image image;
-    public RectTransform transform;
+    public readonly Image Image;
+    public readonly RectTransform ImageTransform;
 
     public ImageWithTransform(Image i, RectTransform t)
     {
-        image = i;
-        transform = t;
+        Image = i;
+        ImageTransform = t;
     }
 }
 
 public class UiInventory : MonoBehaviour
 {
     public Transform weaponSlotTemplate;
+    public int numSlots = 4;
 
     private const int Padding = 3;
-    private const int NumSlots = 4;
-    
+
     private Vector2 _weaponSlotSize;
     private List<Image> _backgroundImages;
     private List<ImageWithTransform> _weaponImages;
@@ -46,16 +43,16 @@ public class UiInventory : MonoBehaviour
     {
         if (slotIndex >= _weaponImages.Count) return;
         var imageWithTransform = _weaponImages[slotIndex];
-        imageWithTransform.image.enabled = true;
-        imageWithTransform.image.sprite = sprite;
+        imageWithTransform.Image.enabled = true;
+        imageWithTransform.Image.sprite = sprite;
         var width = _weaponSlotSize.x - 10;
         var height = width * sprite.rect.height / sprite.rect.width;
-        imageWithTransform.transform.sizeDelta = new Vector2(width, height);
+        imageWithTransform.ImageTransform.sizeDelta = new Vector2(width, height);
     }
 
     private void UnsetSlotImage(int slotIndex)
     {
-        _weaponImages[slotIndex].image.enabled = false;
+        _weaponImages[slotIndex].Image.enabled = false;
     }
 
     private void Awake()
@@ -71,7 +68,7 @@ public class UiInventory : MonoBehaviour
     private void ResizeAndPositionSelf()
     {
         // calculate size UiInventory object
-        var width = _weaponSlotSize.x * NumSlots + Padding * (NumSlots + 1);
+        var width = _weaponSlotSize.x * numSlots + Padding * (numSlots + 1);
         var height = _weaponSlotSize.y + Padding * 2;
         // calculate position of UiInventory object (anchored at bottom right)
         var x = -width - Padding;
@@ -84,7 +81,7 @@ public class UiInventory : MonoBehaviour
     
     private void CreateWeaponSlots()
     {
-        for (var i = 0; i < NumSlots; i++)
+        for (var i = 0; i < numSlots; i++)
         {
             var weaponSlotTransform = Instantiate(weaponSlotTemplate, transform);
             // position slot

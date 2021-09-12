@@ -11,36 +11,32 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject bulletSpawnPoint;
     public Sprite uiIcon;
+    public String gunName;
 
     private float _nextTimeToFire = 0f;
 
-    private void Update()
+    public void Shoot()
     {
-        if (Input.GetButton("Fire1") && Time.time >= _nextTimeToFire)
+        if (Time.time >= _nextTimeToFire)
         {
             _nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
-        }
-    }
+            var position = bulletSpawnPoint.transform.position;
+            var rotation = bulletSpawnPoint.transform.rotation;
 
-    private void Shoot()
-    {
-        var position = bulletSpawnPoint.transform.position;
-        var rotation = bulletSpawnPoint.transform.rotation;
-
-        if (numBullets > 1)
-        {
-            var distanceBetweenBullets = coneAngle / (numBullets - 1);
-            var currentAngle = -coneAngle / 2;
-            for (int i = 0; i < numBullets; i++)
+            if (numBullets > 1)
             {
-                Instantiate(bulletPrefab, position, rotation * Quaternion.Euler(Vector3.up * currentAngle));
-                currentAngle += distanceBetweenBullets;
+                var distanceBetweenBullets = coneAngle / (numBullets - 1);
+                var currentAngle = -coneAngle / 2;
+                for (int i = 0; i < numBullets; i++)
+                {
+                    Instantiate(bulletPrefab, position, rotation * Quaternion.Euler(Vector3.up * currentAngle));
+                    currentAngle += distanceBetweenBullets;
+                }
             }
-        }
-        else // handle one bullet
-        { 
-            Instantiate(bulletPrefab, position, rotation);
+            else // handle one bullet
+            {
+                Instantiate(bulletPrefab, position, rotation);
+            }
         }
     }
 }
