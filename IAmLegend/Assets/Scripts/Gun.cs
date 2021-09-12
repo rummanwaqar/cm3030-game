@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 
@@ -8,6 +9,7 @@ public class Gun : MonoBehaviour
     public int numBullets = 1;
     public float coneAngle = 50;
     
+    public GameObject muzzleFlash;
     public GameObject bulletPrefab;
     public GameObject bulletSpawnPoint;
     public Sprite uiIcon;
@@ -31,12 +33,22 @@ public class Gun : MonoBehaviour
                 {
                     Instantiate(bulletPrefab, position, rotation * Quaternion.Euler(Vector3.up * currentAngle));
                     currentAngle += distanceBetweenBullets;
+                    muzzleFlash.SetActive(true);
+                    StartCoroutine(MuzzleFlashWait());
                 }
             }
             else // handle one bullet
             {
                 Instantiate(bulletPrefab, position, rotation);
+                muzzleFlash.SetActive(true);
+                StartCoroutine(MuzzleFlashWait());
             }
         }
+    }
+
+    IEnumerator MuzzleFlashWait()
+    {
+        yield return new WaitForSeconds(0.05f);
+        muzzleFlash.SetActive(false);
     }
 }
