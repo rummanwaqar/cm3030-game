@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Item")) return;
+        if (other.gameObject.layer == LayerMask.NameToLayer("Item") || other.gameObject.CompareTag("Bullet")) return;
         Destroy(this.gameObject);
     }
 }
