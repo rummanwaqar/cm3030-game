@@ -33,16 +33,14 @@ public class Gun : MonoBehaviour
                 {
                     Instantiate(bulletPrefab, position, rotation * Quaternion.Euler(Vector3.up * currentAngle));
                     currentAngle += distanceBetweenBullets;
-                    muzzleFlash.SetActive(true);
-                    StartCoroutine(MuzzleFlashWait());
                 }
             }
             else // handle one bullet
             {
                 Instantiate(bulletPrefab, position, rotation);
-                muzzleFlash.SetActive(true);
-                StartCoroutine(MuzzleFlashWait());
             }
+            muzzleFlash.SetActive(true);
+            StartCoroutine(MuzzleFlashWait());
         }
     }
 
