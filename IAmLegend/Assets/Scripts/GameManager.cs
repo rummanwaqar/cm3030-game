@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     HealthSystem dogHealth;
     Light lightSource;
     // Start is called before the first frame update
+    
     void Start()
     {
         score = 0;
