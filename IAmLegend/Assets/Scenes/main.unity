@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 99227254f8e02c1408bcee0ce7dadc9e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 86239891e6e5b78138fc8becee9d99ac, type: 2}
 --- !u!1001 &4007882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1030,6 +1030,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 385102206}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &68230133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2087457838, guid: 2b02e19be1e86e147b536a72307aa5a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 385102206}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68230130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d28db078ba9df9948848fdfc605df5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &68678419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23810,6 +23822,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiHud
       objectReference: {fileID: 0}
+    - target: {fileID: 8546159335449823929, guid: c1402d88c837db9679bc7f024f1a720c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 68230133}
+    - target: {fileID: 8546159335449823929, guid: c1402d88c837db9679bc7f024f1a720c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSitState
+      objectReference: {fileID: 0}
     - target: {fileID: 8546159335659565832, guid: c1402d88c837db9679bc7f024f1a720c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -23819,6 +23841,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546159336099293619, guid: c1402d88c837db9679bc7f024f1a720c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 68230133}
+    - target: {fileID: 8546159336099293619, guid: c1402d88c837db9679bc7f024f1a720c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSitState
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1402d88c837db9679bc7f024f1a720c, type: 3}
