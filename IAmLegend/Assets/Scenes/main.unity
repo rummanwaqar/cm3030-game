@@ -33345,6 +33345,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4625083592664367526, guid: e5fcf87b84855c4c3b2e1fdb42c30e08,
+        type: 3}
+      propertyPath: runBoost
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8470256905566818270, guid: e5fcf87b84855c4c3b2e1fdb42c30e08,
         type: 3}
       propertyPath: actionUi
