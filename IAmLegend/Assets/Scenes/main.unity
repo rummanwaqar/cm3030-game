@@ -22147,12 +22147,12 @@ MonoBehaviour:
   weaponPickups:
   - {fileID: 4545513176930560763, guid: e855fb798f00669fdba5feb2ac6d0bc6, type: 3}
   - {fileID: 2651629564291913989, guid: 6b145e48b1e426ce59c8f070fd54b90b, type: 3}
-  minWeaponsEach: 10
-  maxWeaponsEach: 30
+  minWeaponsEach: 20
+  maxWeaponsEach: 55
   healthPickups:
   - {fileID: 1482962199089960272, guid: 77df9bf80182dc7c29ad40ca8b2ee132, type: 3}
-  minHealthItems: 70
-  maxHealthItems: 120
+  minHealthItems: 150
+  maxHealthItems: 300
   pickupHighlight: {fileID: 1272766633744775646, guid: f373f75d8fabae7dda0b1671ae990a17,
     type: 3}
   maxPosAxisX: 950
@@ -31061,37 +31061,37 @@ PrefabInstance:
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.042
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.6480103
+      value: 2.767
       objectReference: {fileID: 0}
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1272766633744775644, guid: f373f75d8fabae7dda0b1671ae990a17,
         type: 3}
@@ -31107,6 +31107,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SimplePickupLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272766633744775647, guid: f373f75d8fabae7dda0b1671ae990a17,
+        type: 3}
+      propertyPath: m_Range
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272766633744775647, guid: f373f75d8fabae7dda0b1671ae990a17,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272766633744775647, guid: f373f75d8fabae7dda0b1671ae990a17,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272766633744775647, guid: f373f75d8fabae7dda0b1671ae990a17,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272766633744775647, guid: f373f75d8fabae7dda0b1671ae990a17,
+        type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f373f75d8fabae7dda0b1671ae990a17, type: 3}
