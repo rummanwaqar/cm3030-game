@@ -2102,6 +2102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shotgun
       objectReference: {fileID: 0}
+    - target: {fileID: 2651629564291913989, guid: 6b145e48b1e426ce59c8f070fd54b90b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2656863232278807161, guid: 6b145e48b1e426ce59c8f070fd54b90b,
         type: 3}
       propertyPath: m_RootOrder
@@ -6811,6 +6816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AssaultRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545513176930560763, guid: e855fb798f00669fdba5feb2ac6d0bc6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4547617756212608829, guid: e855fb798f00669fdba5feb2ac6d0bc6,
         type: 3}
@@ -22056,6 +22066,7 @@ GameObject:
   - component: {fileID: 1386506935}
   - component: {fileID: 1386506934}
   - component: {fileID: 1386506936}
+  - component: {fileID: 1386506937}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -22115,6 +22126,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1664683120}
+--- !u!114 &1386506937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386506933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d5be8bf134e4791ad6640bd6e5648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPickups:
+  - {fileID: 1920583333783314424, guid: 4e8f2589bcb966a14a02a79ebef7e350, type: 3}
+  - {fileID: 2651629564291913989, guid: 6b145e48b1e426ce59c8f070fd54b90b, type: 3}
+  - {fileID: 4545513176930560763, guid: e855fb798f00669fdba5feb2ac6d0bc6, type: 3}
+  minWeaponsEach: 5
+  maxWeaponsEach: 20
+  healthPickups:
+  - {fileID: 1482962199089960272, guid: 77df9bf80182dc7c29ad40ca8b2ee132, type: 3}
+  minHealthItems: 40
+  maxHealthItems: 70
+  maxPosAxisX: 950
+  maxPosAxisZ: 900
 --- !u!4 &1389277130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 69f0af3a0a6c73b4ab4b89eb82cdc488,
