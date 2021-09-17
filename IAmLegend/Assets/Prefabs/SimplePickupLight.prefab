@@ -46,8 +46,8 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.50039995, g: 1, b: 0.3215686, a: 1}
   m_Intensity: 2
-  m_Range: 4
-  m_SpotAngle: 40
+  m_Range: 6
+  m_SpotAngle: 50
   m_InnerSpotAngle: 3
   m_CookieSize: 10
   m_Shadows:
@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b552483ba13ac18b4992b4aad095ab39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transform: {fileID: 0}
+  _position: {x: 0, y: 0, z: 0}
 --- !u!65 &-6852209189963649854
 BoxCollider:
   m_ObjectHideFlags: 0

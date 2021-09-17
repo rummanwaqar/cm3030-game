@@ -25,7 +25,7 @@ public class PickupSpawner : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         ItemSpawner(weaponPickups, minWeaponsEach, maxWeaponsEach, maxPosAxisX, maxPosAxisZ);
         ItemSpawner(healthPickups, minHealthItems, maxHealthItems, maxPosAxisX, maxPosAxisZ);
@@ -39,12 +39,11 @@ public class PickupSpawner : MonoBehaviour
         {
             foreach(GameObject _item in _items)
             {
-                // Generate random position for the item and its highlight
+                // Generate random position for the item
                 Vector3 _itemSpawnPos = new Vector3(Random.Range(0, _maxPosAxisX), _item.transform.position.y, Random.Range(0, _maxPosAxisZ));
                 Vector3 _highlightSpawnPos = new Vector3(_itemSpawnPos.x, pickupHighlight.transform.position.y, _itemSpawnPos.z);
-
+                
                 Instantiate(_item, _itemSpawnPos, _item.transform.rotation);
-                Instantiate(pickupHighlight, _highlightSpawnPos, pickupHighlight.transform.rotation);
             }
         }
     }

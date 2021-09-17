@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class SimplePickupLight : MonoBehaviour
 {
-    void OnTriggerEnter( Collider other )
-    {   
-        // Destroy the object when the player enters into it
-        if(other.tag == "Player")
+    //[SerializeField] private GameObject weapon;
+    [SerializeField] private Transform _transform;
+    [SerializeField] private Vector3 _pickupPosition;
+
+    private void Start()
+    {
+        _transform = GetComponents<Transform>()[0];
+        _pickupPosition = _transform.position;
+    }
+
+    private void Update()
+    {
+        // If the pickup's position changed, destroy its highlight
+        if(_transform.position != _pickupPosition)
         {
             Destroy(gameObject);
         }
