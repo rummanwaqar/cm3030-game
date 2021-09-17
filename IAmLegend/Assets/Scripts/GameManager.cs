@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     Vector3 playerCurPosition;
     Vector3 playerLastPosition;
 
-    HealthSystem playerHealth;
+    HealthSystem playerHealthSystem;
     HealthSystem dogHealth;
     Light lightSource;
     // Start is called before the first frame update
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         float randomNum = Random.Range(spawnRateMin, spawnRateMax);
         InvokeRepeating("SpawnZombies", 0f, randomNum);
 
-        playerHealth = player.GetComponents<HealthSystem>()[0];
+        playerHealthSystem = player.GetComponents<HealthSystem>()[0];
         dogHealth = dog.GetComponents<HealthSystem>()[0];
         lightSource = directionalLight.GetComponents<Light>()[0];
     }
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         // If the player is dead (lose) 
-        if(playerHealth.GetHealth() <= 0)
+        if(playerHealthSystem.GetHealth() <= 0)
         {
             // If the dog is alive, triple score
             if(dogHealth.GetHealth() > 0 && !scoreCalculated)

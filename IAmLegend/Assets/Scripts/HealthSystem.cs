@@ -22,7 +22,7 @@ public class HealthSystem : MonoBehaviour
     }
     public void Hit()
     {
-        health -= damagePower;       // Update health
+        health -= damagePower;                  // Update health
     }
     public void SetRecover( float _recoverAmount )
     {
@@ -30,6 +30,9 @@ public class HealthSystem : MonoBehaviour
     }
     public void Recover()
     {
-        health += recoverAmounth;       // Update health
+        health += recoverAmounth;               // Update health
+        health = Mathf.Clamp(health, 0, 100);   // Health of max 100
+
+        recoverAmounth = 0;                     // Reset recover variable
     }
 }
