@@ -23858,6 +23858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiHud
       objectReference: {fileID: 0}
+    - target: {fileID: 8546159334572592579, guid: c1402d88c837db9679bc7f024f1a720c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8546159335449823929, guid: c1402d88c837db9679bc7f024f1a720c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

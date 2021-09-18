@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceSight: 32
-  distanceToAttack: 2.5
+  distanceToAttack: 1.5
   angleView: 180
   targetsLayers:
     serializedVersion: 2
@@ -494,7 +494,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   detectedTarget: {fileID: 0}
-  damagePower: 15
+  damagePower: 10
   attackingCountdown: 3
   attackingRate: 0.5
   deathAnimationTime: 1.25
