@@ -22139,15 +22139,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPickups:
-  - {fileID: 1920583333783314424, guid: 4e8f2589bcb966a14a02a79ebef7e350, type: 3}
-  - {fileID: 2651629564291913989, guid: 6b145e48b1e426ce59c8f070fd54b90b, type: 3}
   - {fileID: 4545513176930560763, guid: e855fb798f00669fdba5feb2ac6d0bc6, type: 3}
-  minWeaponsEach: 5
-  maxWeaponsEach: 20
+  - {fileID: 2651629564291913989, guid: 6b145e48b1e426ce59c8f070fd54b90b, type: 3}
+  minWeaponsEach: 20
+  maxWeaponsEach: 55
   healthPickups:
   - {fileID: 1482962199089960272, guid: 77df9bf80182dc7c29ad40ca8b2ee132, type: 3}
-  minHealthItems: 40
-  maxHealthItems: 70
+  minHealthItems: 150
+  maxHealthItems: 300
+  pickupHighlight: {fileID: 1272766633744775646, guid: f373f75d8fabae7dda0b1671ae990a17,
+    type: 3}
   maxPosAxisX: 950
   maxPosAxisZ: 900
 --- !u!4 &1389277130 stripped
@@ -23856,6 +23857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UiHud
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546159334572592579, guid: c1402d88c837db9679bc7f024f1a720c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546159335449823929, guid: c1402d88c837db9679bc7f024f1a720c,
         type: 3}

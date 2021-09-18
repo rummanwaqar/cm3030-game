@@ -158,7 +158,7 @@ public class EnemyBehaviour : MonoBehaviour
         animator.SetTrigger("Attacking");
         attackingSound.Play();
 
-        // If the target is close, deal damange
+        // If the target is close, deal damage
         DealDamage();
     }
     private void DealDamage()
